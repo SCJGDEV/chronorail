@@ -1,0 +1,58 @@
+/* ChronoRail design tokens · Pro Light (ChronoRack Light colorway).
+   Shared with the ChronoMedia plugin kit. Graphite is the dark variant. */
+:root{
+  /* chassis */
+  --chassis-1:#F2F2EF;
+  --chassis-2:#E6E5E1;
+  --chassis-3:#D4D3CF;
+  --seam:#C6C5C1;
+  --edge:#AEADA9;
+  --bevel-hi:rgba(255,255,255,.95);
+  --bevel-lo:rgba(0,0,0,.08);
+
+  /* recessed readout wells */
+  --well:#020A0B;
+  --well-edge:#000000;
+  --well-text:#D8F8FC;
+  --well-dim:#4F8E99;
+
+  /* silk-screen legends */
+  --legend:#17181A;
+  --legend-dim:#5A5E63;
+
+  /* accent: data, links, active states only */
+  --cyan:#00E5FF;
+  --cyan-screen:#5FD6EA;
+  --cyan-hi:#7FF3FF;
+  --cyan-ink:#006E7A;          /* cyan-family text that passes contrast on the light chassis */
+
+  /* status LEDs */
+  --led-active:#00E5FF;
+  --led-good:#00E676;
+  --led-warn:#FFB300;
+  --led-error:#FF3B30;
+  --led-off:#9A9995;
+
+  /* extras */
+  --ink-black:#0A0A0A;
+  --stark-white:#F5F5F5;
+  --mid-grey:#888888;
+
+  /* type */
+  --font-ui:"Inter",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --font-id:"Chakra Petch","Arial Narrow",system-ui,sans-serif;
+  --font-mono:"JetBrains Mono",ui-monospace,SFMono-Regular,Menlo,monospace;
+
+  /* shape */
+  --r:3px;
+  --plate-shadow:0 1px 0 var(--bevel-hi) inset,0 -1px 0 var(--bevel-lo) inset,0 3px 10px rgba(0,0,0,.10);
+  --well-shadow:inset 0 2px 7px rgba(0,0,0,.85),0 1px 0 rgba(255,255,255,.7);
+}
+:root[data-theme="graphite"]{
+  --chassis-1:#1B1F26; --chassis-2:#15181D; --chassis-3:#0A0C0F; --seam:#262C35; --edge:#323A46;
+  --bevel-hi:rgba(255,255,255,.05); --bevel-lo:rgba(0,0,0,.4);
+  --legend:#D3D9E1; --legend-dim:#8A95A4; --cyan-ink:#62E6FF; --led-off:#4D5663;
+  --plate-shadow:0 1px 0 rgba(255,255,255,.04) inset,0 6px 18px rgba(0,0,0,.45);
+  --well-shadow:inset 0 2px 7px rgba(0,0,0,.9);
+  color-scheme:dark;
+}

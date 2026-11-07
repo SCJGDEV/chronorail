@@ -1,0 +1,53 @@
+{
+  "schema_version": 1,
+  "stacks": [
+    {
+      "id": "zero-cost-starter",
+      "code": "ST-1",
+      "name": "Zero-cost starter rack",
+      "summary": "Free or free-tier tools that cover a DAW, synths, sampled instruments and space effects.",
+      "listing_ids": [
+        "ardour",
+        "surge-synth-team-surge-xt",
+        "vital-audio-vital",
+        "spitfire-audio-labs",
+        "valhalla-dsp-supermassive",
+        "neural-amp-modeler",
+        "voxengo-span"
+      ],
+      "draft": true
+    },
+    {
+      "id": "home-vocal-chain",
+      "code": "ST-2",
+      "name": "Home vocal chain",
+      "summary": "One path from mic to a controlled, clear vocal in a home room.",
+      "listing_ids": [
+        "shure-sm7b",
+        "focusrite-scarlett-4th-gen",
+        "sennheiser-hd-650",
+        "fabfilter-pro-c-2",
+        "fabfilter-pro-q-4",
+        "oeksound-soothe2",
+        "celemony-melodyne-5"
+      ],
+      "draft": true
+    },
+    {
+      "id": "beatmaker-desk",
+      "code": "ST-3",
+      "name": "Beatmaker desk",
+      "summary": "Pattern DAW, small controller, drum browser and texture tools for fast beat sketches.",
+      "listing_ids": [
+        "image-line-fl-studio",
+        "akai-professional-mpk-mini-plus",
+        "roland-sp-404mkii",
+        "xln-audio-xo",
+        "xln-audio-rc-20-retro-color",
+        "scaler-music-scaler-3",
+        "kali-audio-lp-6-v2"
+      ],
+      "draft": true
+    }
+  ]
+}

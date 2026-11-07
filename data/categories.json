@@ -1,0 +1,208 @@
+{
+  "schema_version": 1,
+  "categories": [
+    {
+      "slug": "daws",
+      "name": "DAWs",
+      "code": "DW",
+      "kind": "software",
+      "status": "starter"
+    },
+    {
+      "slug": "virtual-instruments",
+      "name": "Virtual instruments",
+      "code": "VI",
+      "kind": "software",
+      "status": "starter"
+    },
+    {
+      "slug": "effects-plugins",
+      "name": "Effects plugins",
+      "code": "FX",
+      "kind": "software",
+      "status": "starter"
+    },
+    {
+      "slug": "utility-midi-plugins",
+      "name": "Utility & MIDI plugins",
+      "code": "MD",
+      "kind": "software",
+      "status": "starter"
+    },
+    {
+      "slug": "sample-packs-libraries",
+      "name": "Sample packs & libraries",
+      "code": "SP",
+      "kind": "software",
+      "status": "starter"
+    },
+    {
+      "slug": "sample-managers",
+      "name": "Sample managers",
+      "code": "SM",
+      "kind": "software",
+      "status": "starter"
+    },
+    {
+      "slug": "audio-interfaces",
+      "name": "Audio interfaces",
+      "code": "IF",
+      "kind": "hardware",
+      "status": "starter"
+    },
+    {
+      "slug": "midi-controllers-keyboards",
+      "name": "MIDI controllers & keyboards",
+      "code": "KB",
+      "kind": "hardware",
+      "status": "starter"
+    },
+    {
+      "slug": "monitors-headphones",
+      "name": "Monitors & headphones",
+      "code": "MN",
+      "kind": "hardware",
+      "status": "starter"
+    },
+    {
+      "slug": "microphones",
+      "name": "Microphones",
+      "code": "MC",
+      "kind": "hardware",
+      "status": "starter"
+    },
+    {
+      "slug": "hardware-synths-drum-machines",
+      "name": "Hardware synths & drum machines",
+      "code": "HS",
+      "kind": "hardware",
+      "status": "starter"
+    },
+    {
+      "slug": "outboard-processors",
+      "name": "Outboard processors",
+      "code": "OB",
+      "kind": "hardware",
+      "status": "starter"
+    },
+    {
+      "slug": "ai-music-generation",
+      "name": "AI music generation",
+      "code": "AG",
+      "kind": "software",
+      "status": "starter"
+    },
+    {
+      "slug": "ai-stems-mix-master",
+      "name": "AI stems, mix & master",
+      "code": "AS",
+      "kind": "software",
+      "status": "starter"
+    },
+    {
+      "slug": "mixing-mastering-software",
+      "name": "Mixing & mastering software",
+      "code": "MX",
+      "kind": "software",
+      "status": "starter"
+    },
+    {
+      "slug": "analysis-metering",
+      "name": "Analysis & metering",
+      "code": "MT",
+      "kind": "software",
+      "status": "starter"
+    },
+    {
+      "slug": "learning-education",
+      "name": "Learning & education",
+      "code": "ED",
+      "kind": "service",
+      "status": "starter"
+    },
+    {
+      "slug": "distribution-aggregators",
+      "name": "Distribution & aggregators",
+      "code": "DS",
+      "kind": "service",
+      "status": "starter"
+    },
+    {
+      "slug": "marketplaces",
+      "name": "Marketplaces",
+      "code": "MK",
+      "kind": "service",
+      "status": "starter"
+    },
+    {
+      "slug": "collaboration-feedback",
+      "name": "Collaboration & feedback",
+      "code": "CO",
+      "kind": "service",
+      "status": "starter"
+    },
+    {
+      "slug": "notation-scoring",
+      "name": "Notation & scoring",
+      "code": "NT",
+      "kind": "software",
+      "status": "starter"
+    },
+    {
+      "slug": "live-dj-performance",
+      "name": "Live & DJ performance",
+      "code": "DJ",
+      "kind": "software",
+      "status": "starter"
+    },
+    {
+      "slug": "mobile-music-apps",
+      "name": "Mobile music apps",
+      "code": "MB",
+      "kind": "software",
+      "status": "starter"
+    },
+    {
+      "slug": "field-recording-sound-design",
+      "name": "Field recording & sound design",
+      "code": "FR",
+      "kind": "software",
+      "status": "starter"
+    },
+    {
+      "slug": "publishing-rights-metadata",
+      "name": "Publishing, rights & metadata",
+      "code": "PR",
+      "kind": "service",
+      "status": "starter"
+    },
+    {
+      "slug": "communities-forums",
+      "name": "Communities & forums",
+      "code": "CM",
+      "kind": "service",
+      "status": "starter"
+    },
+    {
+      "slug": "guitar-amp-tools",
+      "name": "Guitar & amp tools",
+      "code": "GT",
+      "kind": "software",
+      "status": "starter"
+    },
+    {
+      "slug": "vocal-tools",
+      "name": "Vocal tools",
+      "code": "VX",
+      "kind": "software",
+      "status": "starter"
+    },
+    {
+      "slug": "drum-groove-tools",
+      "name": "Drum & groove tools",
+      "code": "DR",
+      "kind": "software",
+      "status": "starter"
+    }
+  ]
+}

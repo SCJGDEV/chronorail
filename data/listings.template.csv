@@ -1,0 +1,2 @@
+id,name,maker,category,subcategory,tags,short_description,who_its_for,platforms,formats,price_type,price_note,license,official_url,affiliate_ok,affiliate_url,featured,paid_placement,scjg_owned,verification_status,last_checked,confidence
+example-synth,Example Synth,Example Audio,virtual-instruments,synth,synth; wavetable,One factual sentence in our own words.,Who it helps,Windows; macOS,VST3; AU; CLAP,paid,UNVERIFIED,Proprietary,https://example.com,false,,false,false,false,unverified,,low

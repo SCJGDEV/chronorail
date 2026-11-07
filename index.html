@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>ChronoRail · Music-production tool directory</title>
+<meta name="description" content="A free, curated, AI-readable directory of music-production tools: DAWs, plugins, sample packs, hardware, AI music tools, learning and distribution.">
+<meta name="theme-color" content="#E6E5E1">
+<link rel="icon" href="assets/icon.svg" type="image/svg+xml">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="alternate" type="application/json" href="feed/listings.json" title="ChronoRail listings feed">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Chakra+Petch:wght@500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap">
+<link rel="stylesheet" href="assets/tokens.css">
+<link rel="stylesheet" href="assets/app.css">
+<script src="config.js"></script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="unit bar-unit" role="banner">
+  <div class="rail">
+    <a class="wm" href="#" aria-label="Home"><span class="wm-name" data-brand>CHRONORAIL</span><span class="wm-sub">DIRECTORY</span></a>
+    <nav class="nav" aria-label="Main">
+      <a href="#categories" data-nav="categories">Categories</a>
+      <a href="#search" data-nav="search">Search</a>
+      <a href="#about" data-nav="about">About</a>
+      <a href="#submit" data-nav="submit">Submit</a>
+      <button class="key sm" type="button" data-discover>Discover</button>
+    </nav>
+  </div>
+</header>
+<div class="sample-strip" id="sampleStrip" hidden role="note"><span class="led warn" aria-hidden="true"></span>SAMPLE DATA · every listing below is unverified prototype data, not a published record.</div>
+<main id="main" tabindex="-1">
+  <section class="unit"><div class="msg">Loading the rack…</div></section>
+</main>
+<footer class="foot" role="contentinfo">
+  <div class="foot-row">
+    <span><span data-brand-plain>ChronoRail</span> is part of <span data-family>ChronoMedia</span>. Working name, not trademark-cleared.</span>
+    <a href="feed/listings.json">JSON feed</a>
+    <a href="llms.txt">llms.txt</a>
+    <button class="key sm" type="button" id="themeBtn" aria-pressed="false">Graphite</button>
+  </div>
+  <form class="foot-row waitlist" id="waitlist" novalidate>
+    <label for="wlEmail" class="lab">Weekly email · waitlist</label>
+    <input id="wlEmail" type="email" placeholder="you@example.com" autocomplete="email">
+    <button class="key sm" type="submit">Join</button>
+    <span class="wl-msg" id="wlMsg" aria-live="polite"></span>
+  </form>
+  <div class="foot-row hallmark" title="Manufacturer hallmark">
+    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.5l8.2 4.75v9.5L12 21.5l-8.2-4.75v-9.5z" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M9 9.5h6M9 14.5h6" stroke="currentColor" stroke-width="1.5"/></svg>
+    <span>MFG · <span data-maker>SCJG</span> · Pagosa Springs, CO</span>
+  </div>
+</footer>
+<script src="assets/app.js"></script>
+</body>
+</html>

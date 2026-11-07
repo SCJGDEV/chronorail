@@ -1,0 +1,53 @@
+# ChronoRail
+
+> A free, curated, AI-readable directory of music-production tools: DAWs, plugins, sample packs, hardware, AI music tools, learning, distribution and related services. Part of ChronoMedia, made by SCJG (Pagosa Springs, Colorado).
+
+## Data
+- [Listings feed (JSON)](/feed/listings.json): every listing with all fields. 255 listings, generated 2026-11-07.
+- [Categories](/data/categories.json): 29 category slugs with module codes.
+- [Stacks](/data/stacks.json): curated lists of listing IDs.
+
+## Fields
+id, name, maker, category, subcategory, tags[], short_description, who_its_for, platforms[], formats[], price_type (free | freemium | paid | one-time | subscription | varies | unknown), price_note, license, official_url, affiliate_ok, affiliate_url, featured, paid_placement, scjg_owned, verification_status (unverified | verified | needs-recheck | rejected), last_checked (YYYY-MM-DD), confidence.
+
+## Policies
+- Descriptions are short, factual and written by SCJG. Vendor marketing is not copied.
+- Values marked UNVERIFIED were not confirmed. Check official_url before relying on price, license, OS or format.
+- Order is by name or last_checked only. Featured, paid placement and affiliate status never change order; they are labeled when true.
+- scjg_owned = true marks products made by SCJG (ChronoStudio, ChronoRack, Lava Lava).
+
+## Pages
+- Listing: /#l-{id} (includes schema.org JSON-LD)
+- Category: /#c-{category}
+- About and verification: /#about
+
+## Categories with listings
+- DW DAWs (daws): 12
+- VI Virtual instruments (virtual-instruments): 13
+- FX Effects plugins (effects-plugins): 16
+- MD Utility & MIDI plugins (utility-midi-plugins): 8
+- SP Sample packs & libraries (sample-packs-libraries): 11
+- SM Sample managers (sample-managers): 6
+- IF Audio interfaces (audio-interfaces): 11
+- KB MIDI controllers & keyboards (midi-controllers-keyboards): 8
+- MN Monitors & headphones (monitors-headphones): 11
+- MC Microphones (microphones): 8
+- HS Hardware synths & drum machines (hardware-synths-drum-machines): 9
+- OB Outboard processors (outboard-processors): 8
+- AG AI music generation (ai-music-generation): 8
+- AS AI stems, mix & master (ai-stems-mix-master): 8
+- MX Mixing & mastering software (mixing-mastering-software): 8
+- MT Analysis & metering (analysis-metering): 8
+- ED Learning & education (learning-education): 8
+- DS Distribution & aggregators (distribution-aggregators): 8
+- MK Marketplaces (marketplaces): 8
+- CO Collaboration & feedback (collaboration-feedback): 8
+- NT Notation & scoring (notation-scoring): 7
+- DJ Live & DJ performance (live-dj-performance): 8
+- MB Mobile music apps (mobile-music-apps): 8
+- FR Field recording & sound design (field-recording-sound-design): 7
+- PR Publishing, rights & metadata (publishing-rights-metadata): 8
+- CM Communities & forums (communities-forums): 8
+- GT Guitar & amp tools (guitar-amp-tools): 8
+- VX Vocal tools (vocal-tools): 8
+- DR Drum & groove tools (drum-groove-tools): 8

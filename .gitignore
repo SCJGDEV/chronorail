@@ -1,0 +1,5 @@
+# Internal working files: seeds, source notes, review queue. Never public.
+listings/
+.DS_Store
+node_modules/
+.wrangler/
