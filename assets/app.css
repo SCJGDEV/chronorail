@@ -84,8 +84,7 @@ textarea{resize:vertical;min-height:80px;line-height:1.4}
 .hero{display:grid;grid-template-columns:minmax(0,1.4fr) minmax(0,1fr);gap:16px;padding:18px 18px 20px}
 .hero h1{font:300 clamp(30px,6vw,54px)/1 var(--font-ui);letter-spacing:.16em;margin:6px 0 12px;color:var(--legend)}
 .hero p{margin:0 0 14px;color:var(--legend-dim);max-width:52ch}
-.readout{align-self:start;padding:14px 16px;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;align-content:start;
-  background-image:linear-gradient(var(--disp-rule) 1px,transparent 1px),linear-gradient(90deg,var(--disp-rule) 1px,transparent 1px),radial-gradient(120% 90% at 28% 18%,var(--glass-hot),var(--glass) 68%);background-size:6px 6px,6px 6px,auto}
+.readout{align-self:start;padding:14px 16px;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;align-content:start}
 .readout .n{font:500 30px/1 var(--font-mono);color:var(--ink);text-shadow:var(--glow-cyan-hero)}   /* the one hero readout */
 .readout .k{font:600 9px/1.3 var(--font-ui);letter-spacing:.18em;color:var(--ink-label);text-transform:uppercase;margin-top:8px}
 .readout .full{grid-column:1/-1;font-size:11px;color:var(--ink);display:flex;gap:8px;align-items:center;border-top:1px solid var(--disp-rule);padding-top:10px}
@@ -235,4 +234,3 @@ textarea{resize:vertical;min-height:80px;line-height:1.4}
   .ctl .pill::after{inset:-4px -2px}
 }
 @media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
-[data-hc="1"] .readout{background-image:none;background-color:var(--glass)}

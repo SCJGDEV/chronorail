@@ -1,5 +1,5 @@
 /* ChronoRail offline cache. Shell: cache-first. Data: network-first, falls back to cache. */
-const V = "cr-v2";
+const V = "cr-v3";
 const SHELL = ["./", "index.html", "config.js", "assets/tokens.css", "assets/app.css", "assets/app.js", "assets/skin.js", "assets/icon.svg", "404.html"];
 const DATA = ["data/listings.json", "data/categories.json", "data/stacks.json"];
 self.addEventListener("install", e => e.waitUntil(caches.open(V).then(c => c.addAll(SHELL.concat(DATA))).then(() => self.skipWaiting())));
