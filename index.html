@@ -1,19 +1,20 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-skin="CRL" data-glass="" data-hc="0">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <title>ChronoRail · Music-production tool directory</title>
 <meta name="description" content="A free, curated, AI-readable directory of music-production tools: DAWs, plugins, sample packs, hardware, AI music tools, learning and distribution.">
-<meta name="theme-color" content="#E6E5E1">
+<meta name="theme-color" content="#cfd2d5">
 <link rel="icon" href="assets/icon.svg" type="image/svg+xml">
 <link rel="manifest" href="manifest.webmanifest">
 <link rel="alternate" type="application/json" href="feed/listings.json" title="ChronoRail listings feed">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Chakra+Petch:wght@500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Chakra+Petch:wght@500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap">
 <link rel="stylesheet" href="assets/tokens.css">
 <link rel="stylesheet" href="assets/app.css">
+<script src="assets/skin.js"></script>
 <script src="config.js"></script>
 </head>
 <body>
@@ -35,11 +36,25 @@
   <section class="unit"><div class="msg">Loading the rack…</div></section>
 </main>
 <footer class="foot" role="contentinfo">
+  <div class="foot-row ctl" role="group" aria-label="Display controls">
+    <div class="cg"><span class="cl">SKIN</span>
+      <div class="pills" role="group" aria-label="Skin">
+        <button class="pill" type="button" data-sk="PRO" data-gl="d" aria-pressed="false">PRO D</button>
+        <button class="pill" type="button" data-sk="PRO" data-gl="l" aria-pressed="false">PRO L</button>
+        <button class="pill" type="button" data-sk="PRO" data-gl="" aria-pressed="false">CORE D</button>
+        <button class="pill" type="button" data-sk="CRL" data-gl="" aria-pressed="false">CORE L</button>
+      </div></div>
+    <div class="cg"><span class="cl">DISPLAY</span>
+      <div class="pills"><button class="pill" type="button" id="hcBtn" aria-pressed="false" aria-label="High contrast">HC</button></div></div>
+    <div class="lad wrap"><span class="cl">TRACES</span>
+      <div class="lad"><div class="bars" id="trc" role="slider" tabindex="0" aria-label="Board traces" aria-valuemin="0" aria-valuemax="10" aria-valuenow="5"></div>
+      <div class="sc" aria-hidden="true"><span>0</span><span>5</span><span>10</span></div></div></div>
+    <div class="serial" aria-hidden="true">⬡ CHRONORAIL · S/N CL-0001<br>BUILT BY SCJG</div>
+  </div>
   <div class="foot-row">
     <span><span data-brand-plain>ChronoRail</span> is part of <span data-family>ChronoMedia</span>. Working name, not trademark-cleared.</span>
     <a href="feed/listings.json">JSON feed</a>
     <a href="llms.txt">llms.txt</a>
-    <button class="key sm" type="button" id="themeBtn" aria-pressed="false">Graphite</button>
   </div>
   <form class="foot-row waitlist" id="waitlist" novalidate>
     <label for="wlEmail" class="lab">Weekly email · waitlist</label>

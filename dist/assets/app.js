@@ -555,11 +555,7 @@ function shell() {
   document.querySelectorAll("[data-family]").forEach(e => e.textContent = SITE.family || "ChronoMedia");
   document.querySelectorAll("[data-maker]").forEach(e => e.textContent = SITE.maker || "SCJG");
   document.querySelectorAll("[data-discover]").forEach(b => b.addEventListener("click", discover));
-  const tb = document.getElementById("themeBtn");
-  const setTheme = t => { document.documentElement.dataset.theme = t === "graphite" ? "graphite" : ""; tb.setAttribute("aria-pressed", t === "graphite" ? "true" : "false"); };
-  let t = ""; try { t = localStorage.getItem("cr.theme") || ""; } catch (_) {}
-  setTheme(t);
-  tb.addEventListener("click", () => { const n = document.documentElement.dataset.theme === "graphite" ? "" : "graphite"; setTheme(n); try { localStorage.setItem("cr.theme", n); } catch (_) {} });
+  /* skins (CORE L default, PRO D / PRO L / CORE D, HC, TRACES) live in assets/skin.js */
   const wl = document.getElementById("waitlist");
   wl.addEventListener("submit", e => { e.preventDefault(); document.getElementById("wlMsg").textContent = "The weekly email isn't live yet. Nothing was saved or sent."; });
 }

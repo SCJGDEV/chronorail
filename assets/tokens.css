@@ -1,58 +1,202 @@
-/* ChronoRail design tokens · Pro Light (ChronoRack Light colorway).
-   Shared with the ChronoMedia plugin kit. Graphite is the dark variant. */
+/* ChronoRail · PRO skin tokens v1.1 (2026-11-06)
+   Matched to ChronoRack V2.23.1 (ee1d0c7): GLD = PRO D (smoked glass over the live board),
+   GLL = PRO L (frosted glass), PRO = CORE D, CRL = CORE L, + HC.  Lockup = doc 33.
+   "inferred" = new for ChronoRail, not tested on device.
+   Skin = tokens + extends. Components read tokens only. No hex in component CSS. */
+
 :root{
-  /* chassis */
-  --chassis-1:#F2F2EF;
-  --chassis-2:#E6E5E1;
-  --chassis-3:#D4D3CF;
-  --seam:#C6C5C1;
-  --edge:#AEADA9;
-  --bevel-hi:rgba(255,255,255,.95);
-  --bevel-lo:rgba(0,0,0,.08);
+  /* ---------- shared ---------- */
+  --u:1px;
+  --pitch:calc(var(--u)*28);     /* 1P = 28u; a rail = 48P; modules 8/12/16/24/32P (inferred) */
+  --f-ui:"Inter",system-ui,sans-serif;
+  --f-mono:"JetBrains Mono",ui-monospace,Menlo,monospace;
 
-  /* recessed readout wells */
-  --well:#020A0B;
-  --well-edge:#000000;
-  --well-text:#D8F8FC;
-  --well-dim:#4F8E99;
+  /* LED language (fixed) */
+  --led-cyan:#5fe3f5; --led-green:#00e676; --led-amber:#ffb300; --led-red:#ff3b30;
+  --led-off:#24272c;
 
-  /* silk-screen legends */
-  --legend:#17181A;
-  --legend-dim:#5A5E63;
+  /* Glow 25% fixed; hero 50% (one per view); never neon */
+  --glow-cyan:0 0 2px rgba(150,245,255,.23),0 0 9px rgba(95,214,234,.18),0 0 22px rgba(95,214,234,.09);
+  --glow-cyan-hero:0 0 2px rgba(150,245,255,.46),0 0 9px rgba(95,214,234,.36),0 0 22px rgba(95,214,234,.18);
+  --glow-green:0 0 2px rgba(120,255,180,.22),0 0 8px rgba(0,230,118,.16);
+  --glow-amber:0 0 2px rgba(255,220,150,.22),0 0 8px rgba(255,179,0,.16);
+  --glow-red:0 0 2px rgba(255,160,150,.22),0 0 8px rgba(255,59,48,.16);
 
-  /* accent: data, links, active states only */
-  --cyan:#00E5FF;
-  --cyan-screen:#5FD6EA;
-  --cyan-hi:#7FF3FF;
-  --cyan-ink:#006E7A;          /* cyan-family text that passes contrast on the light chassis */
+  /* Lockup (doc 33) */
+  --steel-text:linear-gradient(180deg,#eef0f2 0%,#a4a8ad 48%,#74787d 53%,#c3c6ca 100%);
+  --tag-ink:rgba(127,243,255,.66);
 
-  /* status LEDs */
-  --led-active:#00E5FF;
-  --led-good:#00E676;
-  --led-warn:#FFB300;
-  --led-error:#FF3B30;
-  --led-off:#9A9995;
+  /* Display glass: DARK in every skin except CORE L (ChronoRack keeps PRO L displays dark) */
+  --glass:#06080b; --glass-hot:#0b1014; --ink:#7ff3ff; --ink-dim:rgba(127,243,255,.45); --ink-slate:#8b95a5;
+  --inset:inset 0 2px 6px rgba(0,0,0,.9),inset 0 0 0 1px rgba(0,0,0,.8),0 1px 0 rgba(255,255,255,.06);
+  --disp-outline:transparent;
 
-  /* extras */
-  --ink-black:#0A0A0A;
-  --stark-white:#F5F5F5;
-  --mid-grey:#888888;
+  /* Keys: dark matte caps, light pipe ABOVE the legend (centre 44%, 3u tall) */
+  --cap-1:#1c1e22; --cap-2:#111316; --kedge:#000; --kink:rgba(184,191,200,.78); --kinkon:#e9fbff;
+  --kbev:inset 0 1px 0 rgba(255,255,255,.07),inset 0 -1px 0 rgba(0,0,0,.6);
+  --kdrop:0 2px 0 rgba(0,0,0,.55),0 3px 8px rgba(0,0,0,.4);
 
-  /* type */
-  --font-ui:"Inter",system-ui,-apple-system,"Segoe UI",sans-serif;
-  --font-id:"Chakra Petch","Arial Narrow",system-ui,sans-serif;
-  --font-mono:"JetBrains Mono",ui-monospace,SFMono-Regular,Menlo,monospace;
+  /* Label plates (flat anodised, etched legend) — pale plate, dark ink, every skin */
+  --plq:linear-gradient(180deg,#d9dcdf,#b9bdc2); --plq-ink:#15171a; --plq-edge:rgba(0,0,0,.55);
 
-  /* shape */
-  --r:3px;
-  --plate-shadow:0 1px 0 var(--bevel-hi) inset,0 -1px 0 var(--bevel-lo) inset,0 3px 10px rgba(0,0,0,.10);
-  --well-shadow:inset 0 2px 7px rgba(0,0,0,.85),0 1px 0 rgba(255,255,255,.7);
+  /* Pills (footer segment keys) */
+  --pill-edge:rgba(150,235,250,.28); --pill-ink:rgba(184,191,200,.9); --pill-on:rgba(95,227,245,.16); --pill-on-ink:#bdf6ff;
+
+  /* Spacing */
+  --g1:calc(var(--u)*4); --g2:calc(var(--u)*8); --g3:calc(var(--u)*12); --g4:calc(var(--u)*16); --g6:calc(var(--u)*24);
+  --r-plate:calc(var(--u)*3); --r-key:calc(var(--u)*4); --r-disp:calc(var(--u)*4);
+  --touch:44px; --focus:0 0 0 2px #000,0 0 0 4px var(--led-cyan);
 }
-:root[data-theme="graphite"]{
-  --chassis-1:#1B1F26; --chassis-2:#15181D; --chassis-3:#0A0C0F; --seam:#262C35; --edge:#323A46;
-  --bevel-hi:rgba(255,255,255,.05); --bevel-lo:rgba(0,0,0,.4);
-  --legend:#D3D9E1; --legend-dim:#8A95A4; --cyan-ink:#62E6FF; --led-off:#4D5663;
-  --plate-shadow:0 1px 0 rgba(255,255,255,.04) inset,0 6px 18px rgba(0,0,0,.45);
-  --well-shadow:inset 0 2px 7px rgba(0,0,0,.9);
-  color-scheme:dark;
+
+/* =================== PRO D (GLD) · default =================== */
+[data-skin="PRO"][data-glass="d"]{
+  /* live board (canvas reads these) */
+  --bd-bg0:#04070a; --bd-bg1:#030506; --bd-hatch:rgba(60,150,170,.08);
+  --bd-tr:rgba(70,175,200,.52); --bd-trf:rgba(60,150,175,.24); --bd-trm:rgba(90,200,225,.6);
+  --bd-tra:rgba(220,160,60,.34); --bd-via:rgba(95,214,234,.42); --bd-pkt:#9ff4ff;
+  /* one continuous glass sheet over the board */
+  --sheet:linear-gradient(180deg,rgba(8,11,14,.72),rgba(5,7,10,.76)); --sheet-blur:0px;
+  /* units = etched outlines with faint LED glow, no fill */
+  --unit-fill:transparent;
+  --unit-edge:inset 0 0 0 1px rgba(150,235,250,.13),inset 0 1px 0 rgba(255,255,255,.08);
+  --unit-halo:0 0 calc(var(--u)*10) rgba(95,214,234,.10);
+  --title-sheen:linear-gradient(180deg,rgba(255,255,255,.035),rgba(255,255,255,0));
+  --title-rule:inset 0 -1px 0 rgba(150,235,250,.12);
+  --legend:rgba(208,211,216,.86); --legend-dim:rgba(184,191,200,.6);
+  --disp-outline:rgba(255,255,255,.07);
+  --rail-fill:rgba(10,14,18,.55); --rail-edge:rgba(150,235,250,.20); --rail-slot:rgba(0,0,0,.85); --latch:rgba(170,230,245,.55);
+  --screw:rgba(150,235,250,.28);
+  --chrome:rgba(6,8,11,.82); --chrome-edge:rgba(150,235,250,.14); --blur:6px;
+  --scrim:rgba(2,3,5,.6);
 }
+
+/* =================== PRO L (GLL): frosted glass, dark displays + dark keys =================== */
+[data-skin="PRO"][data-glass="l"]{
+  --bd-bg0:#e3e8ec; --bd-bg1:#d5dce1; --bd-hatch:rgba(60,80,95,.08);
+  --bd-tr:rgba(40,70,90,.55); --bd-trf:rgba(40,70,90,.26); --bd-trm:rgba(20,120,145,.65);
+  --bd-tra:rgba(170,110,20,.30); --bd-via:rgba(30,120,140,.55); --bd-pkt:#0a8fa6;
+  --sheet:linear-gradient(180deg,rgba(240,244,247,.75),rgba(230,235,239,.79)); --sheet-blur:.6px;
+  --unit-fill:transparent;
+  --unit-edge:inset 0 0 0 1px rgba(30,120,140,.22),inset 0 1px 0 rgba(255,255,255,.7);
+  --unit-halo:0 0 calc(var(--u)*10) rgba(40,170,200,.12);
+  --title-sheen:linear-gradient(180deg,rgba(255,255,255,.35),rgba(255,255,255,.08));
+  --title-rule:inset 0 -1px 0 rgba(30,120,140,.18);
+  --legend:#17181a; --legend-dim:#4c5056;                    /* ink follows its surface */
+  --disp-outline:rgba(255,255,255,.75);
+  --rail-fill:rgba(255,255,255,.45); --rail-edge:rgba(30,120,140,.30); --rail-slot:rgba(20,30,38,.55); --latch:rgba(30,60,75,.55);
+  --screw:rgba(20,30,38,.75);
+  --chrome:rgba(232,236,240,.86); --chrome-edge:rgba(30,120,140,.22); --blur:6px;
+  --pill-edge:rgba(30,120,140,.35); --pill-ink:#2b3036; --pill-on:rgba(30,150,175,.18); --pill-on-ink:#064f5c;
+  /* lockup stays doc-33 steel: the header marquee is dark glass in PRO L too */
+  --scrim:rgba(200,205,210,.6);
+}
+
+/* =================== PRO (CORE D): opaque graphite, no board =================== */
+[data-skin="PRO"][data-glass=""]{
+  --bd-bg0:#050506; --bd-bg1:#050506;
+  --sheet:none;
+  --unit-fill:repeating-linear-gradient(0deg,rgba(128,128,128,.045) 0 1px,transparent 1px 3px),linear-gradient(180deg,#27292d,#25272b 55%,#232529);
+  --unit-edge:inset 0 1px 0 rgba(255,255,255,.08),inset 0 -1px 0 rgba(0,0,0,.85);
+  --unit-halo:0 6px 14px rgba(0,0,0,.35);
+  --title-sheen:transparent; --title-rule:inset 0 -1px 0 rgba(0,0,0,.4);
+  --legend:rgba(208,211,216,.84); --legend-dim:rgba(208,211,216,.64);
+  --rail-fill:linear-gradient(180deg,#3a3d42,#26282c 45%,#1b1d20); --rail-edge:rgba(255,255,255,.10); --rail-slot:#050608; --latch:#9ea2a7;
+  --screw:#6f7378;
+  --chrome:linear-gradient(180deg,#141518,#121316 55%,#101114); --chrome-edge:rgba(255,255,255,.08); --blur:0px;
+  --scrim:rgba(2,3,5,.72);
+}
+
+/* =================== CRL (CORE L): light opaque, light displays =================== */
+[data-skin="CRL"]{
+  --bd-bg0:#cfd2d5; --bd-bg1:#cfd2d5; --sheet:none;
+  --unit-fill:repeating-linear-gradient(0deg,rgba(128,128,128,.035) 0 1px,transparent 1px 3px),linear-gradient(180deg,#f2f2ef,#e4e4e1 55%,#cfcfcb);
+  --unit-edge:inset 0 1px 0 rgba(255,255,255,.9),inset 0 -1px 0 rgba(0,0,0,.25);
+  --unit-halo:0 4px 10px rgba(0,0,0,.14);
+  --title-sheen:transparent; --title-rule:inset 0 -1px 0 rgba(0,0,0,.12);
+  --legend:#17181a; --legend-dim:#55585d;
+  --glass:#dfe9ec; --glass-hot:#eef5f7; --ink:#075c6b; --ink-dim:rgba(7,92,107,.6);
+  --inset:inset 0 2px 5px rgba(0,0,0,.28),inset 0 0 0 1px rgba(0,0,0,.25),0 1px 0 rgba(255,255,255,.8);
+  --cap-1:#f6f7f8; --cap-2:#dfe2e5; --kedge:#2a3036; --kink:#1f3440; --kinkon:#0a4a57;
+  --kbev:inset 1px 1px 0 #fff,inset -1px -1px 0 rgba(0,0,0,.18); --kdrop:0 2px 0 rgba(0,0,0,.18),0 3px 6px rgba(0,0,0,.12);
+  --led-off:#b9bdc2;
+  --rail-fill:linear-gradient(180deg,#e7e9eb,#c4c7cb 45%,#a8acb1); --rail-edge:rgba(255,255,255,.8); --rail-slot:#5a5e63; --latch:#6f7378; --screw:#55595e;
+  --chrome:linear-gradient(180deg,#e9e9e6,#dcdcd8 55%,#cacac6); --chrome-edge:rgba(255,255,255,.8); --blur:0px;
+  --pill-edge:rgba(30,40,50,.3); --pill-ink:#2b3036; --pill-on:rgba(30,150,175,.18); --pill-on-ink:#064f5c;
+  --steel-text:linear-gradient(180deg,#6f7378 0%,#3c4046 48%,#24272b 53%,#55595e 100%); --tag-ink:#0a6b7a;
+  --tick-bg:rgba(255,255,255,.45);
+  --scrim:rgba(200,205,210,.7);
+}
+
+/* =================== HC (per base) =================== */
+[data-hc="1"]{--glow-cyan:none;--glow-cyan-hero:none;--glow-green:none;--glow-amber:none;--glow-red:none;--unit-halo:none;--ink-dim:var(--ink);--legend-dim:var(--legend);--sheet:none}
+[data-hc="1"][data-glass="d"],[data-hc="1"][data-skin="PRO"][data-glass=""]{--glass:#000;--glass-hot:#000;--ink:#a8f8ff;--legend:#fff;--bd-bg0:#000;--bd-bg1:#000;--unit-edge:inset 0 0 0 1px rgba(255,255,255,.5)}
+[data-hc="1"][data-glass="l"],[data-hc="1"][data-skin="CRL"]{--legend:#000;--bd-bg0:#fff;--bd-bg1:#fff;--unit-edge:inset 0 0 0 1px rgba(0,0,0,.6)}
+[data-hc="1"][data-skin="CRL"]{--glass:#fff;--glass-hot:#fff;--ink:#003a44}
+
+@media (prefers-reduced-transparency:reduce),(prefers-contrast:more){
+  [data-glass="d"]{--sheet:linear-gradient(#07090c,#07090c);--blur:0px}
+  [data-glass="l"]{--sheet:linear-gradient(#eef1f3,#eef1f3);--blur:0px}
+}
+
+/* =====================================================================
+   ChronoRail DIRECTORY LAYER (2026-11-06)
+   Everything above this line is the PRO Skin Package v1.1 token file, unchanged.
+   Below: semantic tokens the directory's existing layout needs, per skin.
+   app.css reads tokens only. No colour literals in app.css.
+   ===================================================================== */
+:root{
+  --font-ui:var(--f-ui); --font-mono:var(--f-mono);
+  --font-id:"Chakra Petch","Arial Narrow",system-ui,sans-serif;   /* module IDs only */
+  --led-active:var(--led-cyan); --led-good:var(--led-green); --led-warn:var(--led-amber); --led-error:var(--led-red);
+  --led-ring:rgba(0,0,0,.55); --led-glow:5px;
+  --pipe-cyan:0 0 6px rgba(95,227,245,.65);
+  --page-bg:var(--bd-bg0);
+  --seam:rgba(150,235,250,.12);
+  --disp-rule:rgba(127,243,255,.10);
+  --ink-label:rgba(127,243,255,.62);       /* small labels inside displays (≥4.5:1 on --glass) */
+  --ink-warn:#ffd27a;                      /* UNVERIFIED text inside displays */
+  --warn-ink:#ffcc66; --err-ink:#ff8a80;   /* status text on the glass sheet */
+  --accent-ink:#5fe3f5;                    /* focus ring, small accent marks */
+  --cell-hover:rgba(150,235,250,.05);
+  --plq-hi:inset 0 1px 0 rgba(255,255,255,.6);
+  /* header marquee: dark glass in every glass skin */
+  --hdr-bg:linear-gradient(180deg,rgba(6,8,11,.9),rgba(4,6,8,.93));
+  --hdr-ink:rgba(208,211,216,.9); --hdr-dim:rgba(184,191,200,.66);
+  --hdr-edge:rgba(150,235,250,.14); --hdr-screw:rgba(150,235,250,.28);
+  --hdr-inset:inset 0 2px 6px rgba(0,0,0,.6),inset 0 0 0 1px rgba(0,0,0,.8);
+  --chrome-shadow:0 1px 0 rgba(0,0,0,.6);
+}
+[data-skin="PRO"][data-glass="d"]{color-scheme:dark;
+  --legend-dim:rgba(184,191,200,.72);      /* raised from .60 for ≥4.5:1 over the brightest board spot */
+}
+[data-skin="PRO"][data-glass="l"]{color-scheme:light;
+  --seam:rgba(30,120,140,.2);
+  --warn-ink:#7a5400; --err-ink:#b42318; --accent-ink:#0a6b7a;
+  --cell-hover:rgba(255,255,255,.3); --led-ring:rgba(0,0,0,.35);
+  --chrome-shadow:0 1px 0 rgba(255,255,255,.6);
+}
+[data-skin="PRO"][data-glass=""]{color-scheme:dark;
+  --seam:rgba(0,0,0,.55);
+  --cell-hover:rgba(255,255,255,.03);
+  --hdr-bg:var(--chrome); --hdr-edge:var(--chrome-edge); --hdr-screw:var(--screw);
+}
+[data-skin="CRL"]{color-scheme:light;
+  --seam:rgba(0,0,0,.13);
+  --disp-rule:rgba(7,92,107,.16); --ink-label:#2f6f7a; --ink-warn:#7a5400;
+  --warn-ink:#7a5400; --err-ink:#b42318; --accent-ink:#0a6b7a;
+  --cell-hover:rgba(255,255,255,.5); --led-ring:rgba(0,0,0,.3);
+  --hdr-bg:var(--chrome); --hdr-ink:#17181a; --hdr-dim:#4f5359; --hdr-edge:var(--chrome-edge); --hdr-screw:var(--screw);
+  --hdr-inset:inset 0 1px 0 rgba(255,255,255,.8),inset 0 -1px 0 rgba(0,0,0,.18);
+  --chrome-shadow:0 1px 0 rgba(0,0,0,.15);
+}
+/* HC: board off, glow 0, pure black/white, bold outlines */
+[data-hc="1"]{--led-glow:0px;--pipe-cyan:none;--hdr-dim:var(--hdr-ink);--ink-label:var(--ink);--cell-hover:transparent}
+[data-hc="1"][data-glass="d"],[data-hc="1"][data-skin="PRO"][data-glass=""]{
+  --seam:rgba(255,255,255,.45);--disp-rule:rgba(255,255,255,.35);--unit-fill:transparent;
+  --hdr-bg:#000;--hdr-ink:#fff;--hdr-edge:#fff;--chrome:#000;--chrome-edge:#fff;--pill-ink:#fff;--kink:#fff;--warn-ink:#ffd27a}
+[data-hc="1"][data-glass="l"]{
+  --seam:rgba(0,0,0,.55);--sheet:none;--chrome:#fff;--chrome-edge:#000;--pill-ink:#000;
+  --hdr-bg:#000;--hdr-ink:#fff;--hdr-edge:#000;--kink:#fff}
+[data-hc="1"][data-skin="CRL"]{
+  --seam:rgba(0,0,0,.55);--disp-rule:rgba(0,0,0,.4);--unit-fill:transparent;
+  --hdr-bg:#fff;--hdr-ink:#000;--hdr-edge:#000;--chrome:#fff;--chrome-edge:#000;--pill-ink:#000;--kink:#000}

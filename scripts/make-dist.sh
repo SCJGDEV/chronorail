@@ -6,7 +6,7 @@ cd "$(dirname "$0")/.."
 node scripts/build-data.mjs --strict
 rm -rf dist && mkdir -p dist/assets dist/data dist/feed
 cp index.html 404.html config.js llms.txt manifest.webmanifest sw.js _headers dist/
-cp assets/tokens.css assets/app.css assets/app.js assets/icon.svg dist/assets/
+cp assets/tokens.css assets/app.css assets/app.js assets/skin.js assets/icon.svg dist/assets/
 cp data/listings.json data/categories.json data/stacks.json dist/data/
 cp feed/listings.json dist/feed/
 # Keep search engines out until the seed is checked. Run with INDEX=1 to allow indexing.
