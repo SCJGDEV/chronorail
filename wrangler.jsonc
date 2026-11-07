@@ -1,0 +1,9 @@
+{
+  // Cloudflare Workers static assets. The site is pre-built into ./dist by scripts/make-dist.sh.
+  "name": "chronorail",
+  "compatibility_date": "2026-11-01",
+  "assets": {
+    "directory": "./dist",
+    "not_found_handling": "404-page"
+  }
+}
