@@ -208,7 +208,10 @@ textarea{resize:vertical;min-height:80px;line-height:1.4}
 /* ---- mobile: stacked module list ---- */
 @media (max-width:720px){
   .hero,.detail,.form{grid-template-columns:minmax(0,1fr)}
-  .rail{padding-inline:26px}
+  .rail{padding-inline:26px;gap:4px 10px}
+  /* phone: ID + title on one line (never stacked), count on its own telemetry line */
+  .rail h1,.rail h2{flex:1 1 0;min-width:0;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;letter-spacing:.12em}
+  .rail .cnt{flex-basis:100%;text-align:right;font-size:9.5px}
   .bar-unit .rail{gap:6px}
   .nav{gap:2px 12px}
   .rackgrid{grid-template-columns:minmax(0,1fr);gap:0;padding:0}
