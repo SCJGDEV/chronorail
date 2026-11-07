@@ -145,7 +145,7 @@ Listing IDs like `DW-03` are computed: category code plus position by name withi
 
 ## Deploy
 
-Live: https://chronorail.pages.dev (direct upload). Repo deploys: connect this repo as a Cloudflare Worker (`wrangler.jsonc` serves `./dist` as static assets).
+Live: https://chronorail.silascjgoss.workers.dev (Cloudflare Worker, deploys on push to main; `wrangler.jsonc` serves `./dist`). The older direct-upload copy at chronorail.pages.dev is frozen.
 
 Update flow: edit data → `bash scripts/make-dist.sh` → commit `data/`, `feed/`, `llms.txt` and `dist/` → push. Cloudflare redeploys on push.
 
