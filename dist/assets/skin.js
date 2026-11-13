@@ -1,6 +1,6 @@
 /* ChronoRail · PRO skin controller + live circuit board.
    Load in <head> (sync) so the saved skin applies before first paint.
-   Skins: CORE L (default) · PRO D · PRO L · CORE D · CORE L · NEU L · NEU D, plus HC on any base. TRACES 0–10.
+   Skins: NEU L (default) · NEU D · PRO D · PRO L · CORE D · CORE L, plus HC on any base. TRACES 0–10.
    Board: traces drawn once per size/skin/trace change; packets ≤30 fps, paused when hidden,
    off under prefers-reduced-motion and in HC. Colours come from --bd-* tokens. */
 (function () {
@@ -12,7 +12,7 @@
   /* ---- 1. apply saved state immediately (before CSS paints) ---- */
   var saved = load("cr.skin");
   if (!saved && load("cr.theme") === "graphite") saved = "PRO|";   // v1 Graphite users land on CORE D
-  var s = (saved || "CRL|").split("|");
+  var s = (saved || "NEU|l").split("|");
   H.dataset.skin = s[0] === "CRL" || s[0] === "NEU" ? s[0] : "PRO";
   if (H.dataset.skin === "NEU") { H.dataset.glass = ""; H.dataset.tone = s[1] === "d" ? "d" : "l"; }
   else { H.dataset.glass = H.dataset.skin === "CRL" ? "" : (s[1] === "d" || s[1] === "l" ? s[1] : ""); delete H.dataset.tone; }

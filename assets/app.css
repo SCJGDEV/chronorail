@@ -189,6 +189,10 @@ textarea{resize:vertical;min-height:80px;line-height:1.4}
 .wl-msg{font-size:12px}
 .hallmark{font:600 9.5px/1 var(--font-ui);letter-spacing:.18em;text-transform:uppercase}
 .hallmark svg{width:16px;height:16px}
+/* "Built by SCJG" sign-off, matched to scjg.cc dock (.plate-sn): mono caps 10px, wordmark 58×16 at 70% */
+.builtby{margin-left:auto;display:inline-flex;align-items:center;gap:10px;font:500 10px/1 var(--font-mono);letter-spacing:.12em;text-transform:uppercase;color:var(--legend-dim);text-decoration:none}
+.hallmark .builtby svg.wm-scjg{width:58px;height:16px;color:var(--legend);opacity:.7;transition:opacity .15s}
+.builtby:hover svg.wm-scjg,.builtby:focus-visible svg.wm-scjg{opacity:1}
 .ctl{gap:12px 24px;padding-bottom:12px;border-bottom:1px solid var(--chrome-edge)}
 .cg{display:flex;gap:10px;align-items:center}
 .cl{font:600 9px/1 var(--font-ui);letter-spacing:.2em;color:var(--legend-dim)}

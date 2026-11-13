@@ -1,11 +1,11 @@
 <!DOCTYPE html>
-<html lang="en" data-skin="CRL" data-glass="" data-hc="0">
+<html lang="en" data-skin="NEU" data-glass="" data-tone="l" data-hc="0">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <title>ChronoRail · Music-production tool directory</title>
 <meta name="description" content="A free, curated, AI-readable directory of music-production tools: DAWs, plugins, sample packs, hardware, AI music tools, learning and distribution.">
-<meta name="theme-color" content="#cfd2d5">
+<meta name="theme-color" content="#e8e4dc">
 <link rel="icon" href="assets/icon.svg" type="image/svg+xml">
 <link rel="manifest" href="manifest.webmanifest">
 <link rel="alternate" type="application/json" href="feed/listings.json" title="ChronoRail listings feed">
@@ -39,19 +39,19 @@
   <div class="foot-row ctl" role="group" aria-label="Display controls">
     <div class="cg"><span class="cl">SKIN</span>
       <div class="pills" role="group" aria-label="Skin">
+        <button class="pill" type="button" data-sk="NEU" data-gl="" data-tn="l" aria-pressed="false">NEU L</button>
+        <button class="pill" type="button" data-sk="NEU" data-gl="" data-tn="d" aria-pressed="false">NEU D</button>
         <button class="pill" type="button" data-sk="PRO" data-gl="d" aria-pressed="false">PRO D</button>
         <button class="pill" type="button" data-sk="PRO" data-gl="l" aria-pressed="false">PRO L</button>
         <button class="pill" type="button" data-sk="PRO" data-gl="" aria-pressed="false">CORE D</button>
         <button class="pill" type="button" data-sk="CRL" data-gl="" aria-pressed="false">CORE L</button>
-        <button class="pill" type="button" data-sk="NEU" data-gl="" data-tn="l" aria-pressed="false">NEU L</button>
-        <button class="pill" type="button" data-sk="NEU" data-gl="" data-tn="d" aria-pressed="false">NEU D</button>
       </div></div>
     <div class="cg"><span class="cl">DISPLAY</span>
       <div class="pills"><button class="pill" type="button" id="hcBtn" aria-pressed="false" aria-label="High contrast">HC</button></div></div>
     <div class="lad wrap"><span class="cl">TRACES</span>
       <div class="lad"><div class="bars" id="trc" role="slider" tabindex="0" aria-label="Board traces" aria-valuemin="0" aria-valuemax="10" aria-valuenow="5"></div>
       <div class="sc" aria-hidden="true"><span>0</span><span>5</span><span>10</span></div></div></div>
-    <div class="serial" aria-hidden="true">⬡ CHRONORAIL · S/N CL-0001<br>BUILT BY SCJG</div>
+    <div class="serial" aria-hidden="true">⬡ CHRONORAIL · S/N CL-0001</div>
   </div>
   <div class="foot-row">
     <span><span data-brand-plain>ChronoRail</span> is part of <span data-family>ChronoMedia</span>. Working name, not trademark-cleared.</span>
@@ -66,7 +66,8 @@
   </form>
   <div class="foot-row hallmark" title="Manufacturer hallmark">
     <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.5l8.2 4.75v9.5L12 21.5l-8.2-4.75v-9.5z" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M9 9.5h6M9 14.5h6" stroke="currentColor" stroke-width="1.5"/></svg>
-    <span>MFG · <span data-maker>SCJG</span> · Pagosa Springs, CO</span>
+    <span>MFG · Pagosa Springs, CO</span>
+    <a class="builtby" href="https://scjg.cc" rel="noopener">Built by <svg class="wm-scjg" viewBox="-4 -4 296.1 82" role="img" aria-label="SCJG"><g fill="currentColor"><path d="M31 73L31 73Q22.60 73 14.65 69.75Q6.70 66.50 0.60 60.60L0.60 60.60L7.90 51.80Q13.80 57.30 19.55 59.90Q25.30 62.50 31.80 62.50L31.80 62.50Q36.50 62.50 40.05 61.20Q43.60 59.90 45.55 57.55Q47.50 55.20 47.50 52.10L47.50 52.10Q47.50 47.90 44.55 45.65Q41.60 43.40 34.60 42.30L34.60 42.30L21.90 40.10Q12.60 38.50 7.90 33.85Q3.20 29.20 3.20 21.70L3.20 21.70Q3.20 15.40 6.45 10.75Q9.70 6.10 15.70 3.60Q21.70 1.10 29.80 1.10L29.80 1.10Q37.40 1.10 44.90 3.60Q52.40 6.10 58.30 10.70L58.30 10.70L51.50 20Q40.40 11.50 29 11.50L29 11.50Q24.80 11.50 21.60 12.65Q18.40 13.80 16.65 15.85Q14.90 17.90 14.90 20.70L14.90 20.70Q14.90 24.50 17.55 26.50Q20.20 28.50 26.20 29.50L26.20 29.50L38.40 31.50Q49.30 33.30 54.50 38.10Q59.70 42.90 59.70 51.10L59.70 51.10Q59.70 57.70 56.15 62.65Q52.60 67.60 46.15 70.30Q39.70 73 31 73Z"/><path d="M106.99 73.10L106.99 73.10Q99.19 73.10 92.49 70.35Q85.79 67.60 80.74 62.65Q75.69 57.70 72.89 51.15Q70.09 44.60 70.09 37L70.09 37Q70.09 29.40 72.89 22.85Q75.69 16.30 80.74 11.35Q85.79 6.40 92.54 3.65Q99.29 0.90 106.99 0.90L106.99 0.90Q112.59 0.90 117.94 2.40Q123.29 3.90 127.84 6.70Q132.39 9.50 135.69 13.50L135.69 13.50L127.39 21.80Q123.49 17.10 118.19 14.70Q112.89 12.30 106.99 12.30L106.99 12.30Q101.79 12.30 97.39 14.15Q92.99 16 89.69 19.35Q86.39 22.70 84.54 27.20Q82.69 31.70 82.69 37L82.69 37Q82.69 42.20 84.54 46.70Q86.39 51.20 89.74 54.55Q93.09 57.90 97.59 59.75Q102.09 61.60 107.39 61.60L107.39 61.60Q113.19 61.60 118.34 59.25Q123.49 56.90 127.19 52.50L127.19 52.50L135.29 60.60Q131.99 64.40 127.44 67.25Q122.89 70.10 117.64 71.60Q112.39 73.10 106.99 73.10Z"/><path d="M171.19 73.10L171.19 73.10Q161.09 73.10 153.99 67.95Q146.89 62.80 143.79 53.30L143.79 53.30L155.19 49Q157.49 55.50 161.49 58.65Q165.49 61.80 171.29 61.80L171.29 61.80Q178.39 61.80 182.69 57.15Q186.99 52.50 186.99 44.80L186.99 44.80L186.99 2L199.39 2L199.39 45.10Q199.39 53.50 195.89 59.80Q192.39 66.10 186.09 69.60Q179.79 73.10 171.19 73.10Z"/><path d="M249.57 73.10L249.57 73.10Q241.87 73.10 235.17 70.30Q228.47 67.50 223.42 62.55Q218.37 57.60 215.57 51.05Q212.77 44.50 212.77 37L212.77 37Q212.77 29.50 215.57 22.95Q218.37 16.40 223.37 11.45Q228.37 6.50 235.02 3.70Q241.67 0.90 249.37 0.90L249.37 0.90Q257.87 0.90 265.42 4.20Q272.97 7.50 277.97 13.50L277.97 13.50L269.37 21.50Q265.67 17 260.47 14.65Q255.27 12.30 249.37 12.30L249.37 12.30Q244.27 12.30 239.92 14.15Q235.57 16 232.27 19.35Q228.97 22.70 227.17 27.20Q225.37 31.70 225.37 37L225.37 37Q225.37 42.30 227.22 46.80Q229.07 51.30 232.37 54.70Q235.67 58.10 240.07 59.95Q244.47 61.80 249.67 61.80L249.67 61.80Q255.27 61.80 259.87 59.55Q264.47 57.30 267.42 53.30Q270.37 49.30 271.17 44.30L271.17 44.30L249.17 44.30L249.17 33.50L284.27 33.50L284.27 37.60Q284.27 45.20 281.67 51.65Q279.07 58.10 274.37 62.95Q269.67 67.80 263.32 70.45Q256.97 73.10 249.57 73.10Z"/></g></svg></a>
   </div>
 </footer>
 <script src="assets/app.js"></script>
