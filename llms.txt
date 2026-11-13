@@ -3,7 +3,7 @@
 > A free, curated, AI-readable directory of music-production tools: DAWs, plugins, sample packs, hardware, AI music tools, learning, distribution and related services. Part of ChronoMedia, made by SCJG (Pagosa Springs, Colorado).
 
 ## Data
-- [Listings feed (JSON)](/feed/listings.json): every listing with all fields. 255 listings, generated 2026-11-07.
+- [Listings feed (JSON)](/feed/listings.json): every listing with all fields. 255 listings, generated 2026-11-13.
 - [Categories](/data/categories.json): 29 category slugs with module codes.
 - [Stacks](/data/stacks.json): curated lists of listing IDs.
 

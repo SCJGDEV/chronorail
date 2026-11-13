@@ -204,3 +204,84 @@
 [data-hc="1"][data-skin="CRL"]{
   --seam:rgba(0,0,0,.55);--disp-rule:rgba(0,0,0,.4);--unit-fill:transparent;
   --hdr-bg:#fff;--hdr-ink:#000;--hdr-edge:#000;--chrome:#fff;--chrome-edge:#000;--pill-ink:#000;--kink:#000}
+
+/* =====================================================================
+   NEU · Soft Relief (2026-11-13). Tyler's Neumorphic Look Recipe (Elements FX handoff 2026-11-08),
+   ported to CSS as an SCJG variation. Method from RECIPE.md: one soft key light from the upper left,
+   raised = light upper-left / shade lower-right, sunken = reverse, sections engraved (not cards),
+   stadium membrane keys with a lamp dot, plate falls off radially from the upper-left corner.
+   NEU L = SCJG cream plate (variation; warm shade). NEU D = Tyler's dark palette (RECIPE.md values).
+   Displays stay inset dark glass with cyan data (ChronoRack Relief v3 rule). Accent = SCJG cyan, not teal.
+   Board off. data-skin="NEU" data-glass="" data-tone="l|d".
+   ===================================================================== */
+[data-skin="NEU"]{
+  --r-plate:16px; --r-key:999px; --r-disp:8px;
+  --sheet:none; --sheet-blur:0px; --blur:0px;
+  --unit-fill:transparent; --unit-halo:0 0 0 transparent;
+  --title-sheen:transparent; --screw:transparent; --hdr-screw:transparent;
+  --hdr-bg:transparent; --chrome:transparent; --disp-outline:transparent;
+  --cap-1:transparent; --cap-2:transparent; --kedge:transparent;
+  --hdr-inset:0 0 0 transparent;
+  --glow-cyan:none;
+  --led-glow:4px;
+  --lamp-on-glow:0 0 5px rgba(95,227,245,.55);
+  --tick-bg:transparent;
+  --led-off-glass:rgba(127,243,255,.22);
+}
+/* ---- NEU L · cream (SCJG variation) ---- */
+[data-skin="NEU"][data-tone="l"]{color-scheme:light;
+  --bd-bg0:#e8e4dc; --bd-bg1:#d6d1c7;
+  /* 5-stop radial in the plate's own proportions: stops 0 / .354 / .5 / .707 / 1 of the diagonal */
+  --page-bg:radial-gradient(farthest-corner at 0 0,#f8f5ef 0%,#f0ece5 35.4%,#e9e5dd 50%,#e3dfd6 70.7%,#d7d2c8 100%) fixed;
+  --legend:#2b2a27; --legend-dim:#57534b;
+  --relief-hi:rgba(255,255,255,.78); --relief-sh:rgba(74,62,40,.24);
+  /* sections: an engraved channel (shade line + light catch below-right) */
+  --unit-edge:inset 0 0 0 1.5px rgba(74,62,40,.17),inset 1.5px 1.5px 0 rgba(255,255,255,.55);
+  --title-rule:inset 0 -1px 0 rgba(74,62,40,.10);
+  --seam:rgba(74,62,40,.12); --cell-hover:rgba(255,255,255,.4);
+  --hdr-ink:#2b2a27; --hdr-dim:#57534b; --hdr-edge:rgba(74,62,40,.17); --chrome-shadow:1.5px 1.5px 0 rgba(255,255,255,.55);
+  --chrome-edge:rgba(74,62,40,.17);
+  --steel-text:linear-gradient(180deg,#4b4840 0%,#2b2a27 100%); --tag-ink:#085a66;
+  /* displays: dark glass sunk into the cream plate */
+  --glass:#0b0d0e; --glass-hot:#161a1c; --ink:#7ff3ff; --ink-dim:rgba(127,243,255,.6);
+  --ink-label:rgba(127,243,255,.66); --ink-warn:#ffd27a; --disp-rule:rgba(127,243,255,.12);
+  --inset:inset 0 2px 6px rgba(0,0,0,.9),inset 0 0 0 1px rgba(0,0,0,.8),1.5px 1.5px 1px rgba(255,255,255,.8),-1px -1px 1px rgba(74,62,40,.18);
+  /* membrane keys: plate-coloured top, light does the work */
+  --kink:#3a3833; --kinkon:#0a5f6d;
+  --kbev:inset -2.5px -3px 7px rgba(74,62,40,.22),inset 1.5px 1.5px 5px rgba(255,255,255,.85);
+  --kdrop:-1px -2px 9px rgba(255,255,255,.85),2px 3px 7px rgba(74,62,40,.16);
+  --kpress:inset 2px 2px 6px rgba(74,62,40,.24),inset -1px -1px 4px rgba(255,255,255,.7),-1px -1px 3px rgba(255,255,255,.4);
+  --led-off:rgba(43,42,39,.22); --led-ring:rgba(74,62,40,.25);
+  --plq:transparent; --plq-ink:#3f3c36; --plq-edge:rgba(74,62,40,.22); --plq-hi:inset 1px 1px 0 rgba(255,255,255,.8);
+  --pill-edge:rgba(74,62,40,.28); --pill-ink:#3a3833; --pill-on:rgba(10,107,122,.10); --pill-on-ink:#064f5c;
+  --warn-ink:#6e4c00; --err-ink:#9a1d14; --accent-ink:#085a66;
+}
+/* ---- NEU D · Tyler's dark (RECIPE.md palette) ---- */
+[data-skin="NEU"][data-tone="d"]{color-scheme:dark;
+  --bd-bg0:#2b292b; --bd-bg1:#201f21;
+  --page-bg:radial-gradient(farthest-corner at 0 0,#514d4f 0%,#383537 35.4%,#2b292b 50%,#262426 70.7%,#201f21 100%) fixed;
+  --legend:#e2e2df; --legend-dim:#c9c2c5;
+  --relief-hi:rgba(255,255,255,.10); --relief-sh:rgba(0,0,0,.6);
+  --unit-edge:inset 0 0 0 2px rgba(0,0,0,.46),inset 1.5px 1.5px 0 rgba(255,255,255,.07);
+  --title-rule:inset 0 -1px 0 rgba(0,0,0,.30);
+  --seam:rgba(0,0,0,.34); --cell-hover:rgba(255,255,255,.04);
+  --hdr-ink:#e2e2df; --hdr-dim:#c9c2c5; --hdr-edge:rgba(0,0,0,.46); --chrome-shadow:1.5px 1.5px 0 rgba(255,255,255,.07);
+  --chrome-edge:rgba(0,0,0,.46);
+  --steel-text:linear-gradient(180deg,#eeedeb 0%,#aca8aa 100%); --tag-ink:#7ff3ff;
+  --glass:#0d0d0e; --glass-hot:#18191b; --ink:#7ff3ff; --ink-dim:rgba(127,243,255,.6);
+  --ink-label:rgba(127,243,255,.66); --ink-warn:#ffd27a; --disp-rule:rgba(127,243,255,.12);
+  --inset:inset 0 2px 6px rgba(0,0,0,.9),inset 0 0 0 1px rgba(0,0,0,.85),1px 1px 0 rgba(255,255,255,.07);
+  --kink:#d9d9d6; --kinkon:#7ff3ff;
+  /* dark keys: no white halo; soft black drop, dark rim, heavy lower-right shade */
+  --kbev:inset 0 0 4px rgba(0,0,0,.36),inset -3px -4px 9px rgba(0,0,0,.6),inset 1.5px 1.5px 4px rgba(255,255,255,.10);
+  --kdrop:0 2px 6px rgba(0,0,0,.45);
+  --kpress:inset 2px 3px 7px rgba(0,0,0,.55),inset 0 0 4px rgba(0,0,0,.36);
+  --led-off:rgba(217,217,214,.22); --led-ring:rgba(0,0,0,.5);
+  --plq:transparent; --plq-ink:#c9c4c6; --plq-edge:rgba(0,0,0,.5); --plq-hi:inset 1px 1px 0 rgba(255,255,255,.07);
+  --pill-edge:rgba(217,217,214,.22); --pill-ink:#c9c4c6; --pill-on:rgba(95,227,245,.12); --pill-on-ink:#bdf6ff;
+  --warn-ink:#ffcc66; --err-ink:#ffb3ab; --accent-ink:#5fe3f5;
+}
+[data-hc="1"][data-skin="NEU"][data-tone="l"]{--page-bg:#fff;--bd-bg0:#fff;--legend:#000;--legend-dim:#000;--kink:#000;--plq-ink:#000;
+  --unit-edge:inset 0 0 0 1.5px #000;--seam:rgba(0,0,0,.55);--hdr-ink:#000;--hdr-edge:#000;--pill-ink:#000;--chrome-edge:#000;--glass:#000;--glass-hot:#000}
+[data-hc="1"][data-skin="NEU"][data-tone="d"]{--page-bg:#000;--bd-bg0:#000;--legend:#fff;--legend-dim:#fff;--kink:#fff;--plq-ink:#fff;
+  --unit-edge:inset 0 0 0 1.5px #fff;--seam:rgba(255,255,255,.45);--hdr-ink:#fff;--hdr-edge:#fff;--pill-ink:#fff;--chrome-edge:#fff;--glass:#000;--glass-hot:#000}

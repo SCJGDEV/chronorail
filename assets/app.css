@@ -232,8 +232,27 @@ textarea{resize:vertical;min-height:80px;line-height:1.4}
   .ctl{flex-wrap:nowrap;gap:8px}
   .ctl .lad.wrap,.ctl .serial,.ctl .cl{display:none}
   .ctl .cg:first-child{flex:1;min-width:0}
-  .ctl .pills{flex-wrap:nowrap;gap:6px;width:100%}
-  .ctl .pill{flex:1;min-height:36px;line-height:36px;padding:0 4px;letter-spacing:.06em;font-size:9px}
+  .ctl .pills{flex-wrap:wrap;gap:6px;width:100%}
+  .ctl .pill{flex:1 0 calc(25% - 6px);min-height:36px;line-height:36px;padding:0 4px;letter-spacing:.06em;font-size:9px}
+  .ctl .cg:last-child .pill{flex:none;padding:0 12px}
   .ctl .pill::after{inset:-4px -2px}
 }
 @media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
+
+/* ---- NEU · Soft Relief component deltas (values come from tokens.css) ---- */
+[data-skin="NEU"] body{background:var(--page-bg)}
+[data-skin="NEU"] .rail::before,[data-skin="NEU"] .rail::after{display:none}
+[data-skin="NEU"] .rail{padding-inline:20px}
+/* membrane key: stadium, lamp dot 1/3 into the seat, word shifted right; never latched in */
+[data-skin="NEU"] .key{padding:0 20px 0 32px;transition:box-shadow .12s ease-out,transform .12s ease-out}
+[data-skin="NEU"] .key::before{top:50%;left:14px;right:auto;width:7px;height:7px;margin-top:-3.5px;border-radius:50%;background:var(--led-off);box-shadow:none}
+[data-skin="NEU"] .key[aria-pressed="true"]::before,[data-skin="NEU"] .key.on::before,[data-skin="NEU"] .key.prim::before{background:var(--led-cyan);box-shadow:var(--lamp-on-glow)}
+[data-skin="NEU"] .key:active{transform:translateY(1.5px);box-shadow:var(--kpress)}
+[data-skin="NEU"] .key.prim{text-shadow:none;color:var(--kinkon)}
+[data-skin="NEU"] .key.sm,[data-skin="NEU"] .chips .key{padding:0 14px 0 26px}
+[data-skin="NEU"] .key.sm::before,[data-skin="NEU"] .chips .key::before{top:50%;left:11px;width:6px;height:6px;margin-top:-3px}
+/* label plates = small raised pills */
+[data-skin="NEU"] .tag,[data-skin="NEU"] .draft,[data-skin="NEU"] .frow>.lab{border-radius:999px;padding:5px 10px}
+[data-skin="NEU"] .pill{box-shadow:inset 0 0 0 1px var(--pill-edge),var(--plq-hi)}
+[data-skin="NEU"] .well .led.off,[data-skin="NEU"] .mid .led.off{--c:var(--led-off-glass)}
+@media (max-width:720px){[data-skin="NEU"] .key{padding:0 14px 0 28px}}

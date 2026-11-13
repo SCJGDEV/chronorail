@@ -1,6 +1,6 @@
 /* ChronoRail · PRO skin controller + live circuit board.
    Load in <head> (sync) so the saved skin applies before first paint.
-   Skins: CORE L (default) · PRO D · PRO L · CORE D · CORE L, plus HC on any base. TRACES 0–10.
+   Skins: CORE L (default) · PRO D · PRO L · CORE D · CORE L · NEU L · NEU D, plus HC on any base. TRACES 0–10.
    Board: traces drawn once per size/skin/trace change; packets ≤30 fps, paused when hidden,
    off under prefers-reduced-motion and in HC. Colours come from --bd-* tokens. */
 (function () {
@@ -13,8 +13,9 @@
   var saved = load("cr.skin");
   if (!saved && load("cr.theme") === "graphite") saved = "PRO|";   // v1 Graphite users land on CORE D
   var s = (saved || "CRL|").split("|");
-  H.dataset.skin = s[0] === "CRL" ? "CRL" : "PRO";
-  H.dataset.glass = H.dataset.skin === "CRL" ? "" : (s[1] === "d" || s[1] === "l" ? s[1] : "");
+  H.dataset.skin = s[0] === "CRL" || s[0] === "NEU" ? s[0] : "PRO";
+  if (H.dataset.skin === "NEU") { H.dataset.glass = ""; H.dataset.tone = s[1] === "d" ? "d" : "l"; }
+  else { H.dataset.glass = H.dataset.skin === "CRL" ? "" : (s[1] === "d" || s[1] === "l" ? s[1] : ""); delete H.dataset.tone; }
   H.dataset.hc = load("cr.hc") === "1" ? "1" : "0";
   var TK = Math.max(0, Math.min(10, parseInt(load("cr.trc"), 10)));
   if (isNaN(TK)) TK = 5;
@@ -84,7 +85,7 @@
   }
   function sync() {
     document.querySelectorAll("[data-sk]").forEach(function (b) {
-      var on = b.dataset.sk === H.dataset.skin && b.dataset.gl === H.dataset.glass;
+      var on = b.dataset.sk === H.dataset.skin && (H.dataset.skin === "NEU" ? b.dataset.tn === H.dataset.tone : b.dataset.gl === H.dataset.glass);
       b.classList.toggle("on", on); b.setAttribute("aria-pressed", on ? "true" : "false");
     });
     var hc = document.getElementById("hcBtn");
@@ -94,7 +95,12 @@
       [].forEach.call(trc.children, function (e, j) { e.classList.toggle("on", j <= TK && TK > 0); }); }
     meta();
   }
-  function setSkin(sk, gl) { H.dataset.skin = sk; H.dataset.glass = gl; save("cr.skin", sk + "|" + gl); sync(); build(); }
+  function setSkin(sk, gl, tn) {
+    H.dataset.skin = sk;
+    if (sk === "NEU") { H.dataset.glass = ""; H.dataset.tone = tn === "d" ? "d" : "l"; save("cr.skin", "NEU|" + H.dataset.tone); }
+    else { H.dataset.glass = gl; delete H.dataset.tone; save("cr.skin", sk + "|" + gl); }
+    sync(); build();
+  }
   function setHc(on) { H.dataset.hc = on ? "1" : "0"; save("cr.hc", on ? "1" : "0"); sync(); build(); }
   function setTk(v) { TK = Math.max(0, Math.min(10, v)); save("cr.trc", String(TK)); sync(); build(); }
 
@@ -107,7 +113,7 @@
       frag.append(bd, pk, sh); document.body.prepend(frag);
     } else { bd = document.getElementById("bd"); pk = document.getElementById("pk"); }
 
-    document.querySelectorAll("[data-sk]").forEach(function (b) { b.addEventListener("click", function () { setSkin(b.dataset.sk, b.dataset.gl); }); });
+    document.querySelectorAll("[data-sk]").forEach(function (b) { b.addEventListener("click", function () { setSkin(b.dataset.sk, b.dataset.gl, b.dataset.tn); }); });
     var hc = document.getElementById("hcBtn");
     if (hc) hc.addEventListener("click", function () { setHc(H.dataset.hc !== "1"); });
     var trc = document.getElementById("trc");
