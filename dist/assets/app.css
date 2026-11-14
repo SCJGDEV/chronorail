@@ -187,12 +187,14 @@ textarea{resize:vertical;min-height:80px;line-height:1.4}
 .foot-row{display:flex;gap:10px 16px;align-items:center;flex-wrap:wrap}
 .waitlist input{max-width:260px;padding:7px 10px;font-size:14px}
 .wl-msg{font-size:12px}
-.hallmark{font:600 9.5px/1 var(--font-ui);letter-spacing:.18em;text-transform:uppercase}
-.hallmark svg{width:16px;height:16px}
-/* "Built by SCJG" sign-off, matched to scjg.cc dock (.plate-sn): mono caps 10px, wordmark 58×16 at 70% */
-.builtby{margin-left:auto;display:inline-flex;align-items:center;gap:10px;font:500 10px/1 var(--font-mono);letter-spacing:.12em;text-transform:uppercase;color:var(--legend-dim);text-decoration:none}
-.hallmark .builtby svg.wm-scjg{width:58px;height:16px;color:var(--legend);opacity:.7;transition:opacity .15s}
-.builtby:hover svg.wm-scjg,.builtby:focus-visible svg.wm-scjg{opacity:1}
+.hallmark{justify-content:center;font:600 9.5px/1 var(--font-ui);letter-spacing:.18em;text-transform:uppercase}
+/* "Built by SCJG" sign-off: centred, links to scjg.cc, lights cyan while pressed */
+.builtby{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:var(--touch);padding:0 12px;border-radius:6px;font:500 10px/1 var(--font-mono);letter-spacing:.12em;text-transform:uppercase;color:var(--legend-dim);text-decoration:none;transition:color .12s,text-shadow .12s,filter .12s;-webkit-tap-highlight-color:transparent}
+.hallmark .builtby svg.wm-scjg{width:58px;height:16px;color:var(--legend);opacity:.7;transition:opacity .15s,color .12s,filter .12s}
+.builtby:hover svg.wm-scjg{opacity:1}
+.builtby:focus-visible{outline:none;box-shadow:var(--focus)}
+.builtby:active,.builtby:active svg.wm-scjg,.hallmark .builtby:active svg.wm-scjg{color:var(--led-cyan);opacity:1;text-shadow:var(--pipe-cyan);filter:drop-shadow(0 0 4px var(--led-cyan))}
+[data-hc="1"] .builtby:active,[data-hc="1"] .hallmark .builtby:active svg.wm-scjg{filter:none;text-shadow:none}
 .ctl{gap:12px 24px;padding-bottom:12px;border-bottom:1px solid var(--chrome-edge)}
 .cg{display:flex;gap:10px;align-items:center}
 .cl{font:600 9px/1 var(--font-ui);letter-spacing:.2em;color:var(--legend-dim)}
