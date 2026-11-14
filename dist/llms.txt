@@ -3,7 +3,7 @@
 > A free, curated, AI-readable directory of music-production tools: DAWs, plugins, sample packs, hardware, AI music tools, learning, distribution and related services. Part of ChronoMedia, made by SCJG (Pagosa Springs, Colorado).
 
 ## Data
-- [Listings feed (JSON)](/feed/listings.json): every listing with all fields. 255 listings, generated 2026-11-14.
+- [Listings feed (JSON)](/feed/listings.json): every listing with all fields. 253 listings, generated 2026-11-14.
 - [Categories](/data/categories.json): 29 category slugs with module codes.
 - [Stacks](/data/stacks.json): curated lists of listing IDs.
 
@@ -30,7 +30,7 @@ id, name, maker, category, subcategory, tags[], short_description, who_its_for, 
 - SM Sample managers (sample-managers): 6
 - IF Audio interfaces (audio-interfaces): 11
 - KB MIDI controllers & keyboards (midi-controllers-keyboards): 8
-- MN Monitors & headphones (monitors-headphones): 11
+- MN Monitors & headphones (monitors-headphones): 10
 - MC Microphones (microphones): 8
 - HS Hardware synths & drum machines (hardware-synths-drum-machines): 9
 - OB Outboard processors (outboard-processors): 8
@@ -47,7 +47,7 @@ id, name, maker, category, subcategory, tags[], short_description, who_its_for, 
 - MB Mobile music apps (mobile-music-apps): 8
 - FR Field recording & sound design (field-recording-sound-design): 7
 - PR Publishing, rights & metadata (publishing-rights-metadata): 8
-- CM Communities & forums (communities-forums): 8
+- CM Communities & forums (communities-forums): 7
 - GT Guitar & amp tools (guitar-amp-tools): 8
 - VX Vocal tools (vocal-tools): 8
 - DR Drum & groove tools (drum-groove-tools): 8

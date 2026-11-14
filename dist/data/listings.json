@@ -739,39 +739,6 @@
       "sample": false
     },
     {
-      "id": "audiobus-forum",
-      "name": "Audiobus Forum",
-      "maker": "Audiobus Pty Ltd",
-      "category": "communities-forums",
-      "subcategory": "mobile-and-ios-music-production-forum",
-      "tags": [
-        "ios-music",
-        "auv3",
-        "ipad-production",
-        "mobile-synths",
-        "forum"
-      ],
-      "short_description": "Community forum for iPad and iPhone music production.",
-      "who_its_for": "Mobile and iPad producers",
-      "platforms": [
-        "Web"
-      ],
-      "formats": [],
-      "price_type": "free",
-      "price_note": "",
-      "license": "Proprietary",
-      "official_url": "https://forum.audiob.us/",
-      "affiliate_ok": false,
-      "affiliate_url": "",
-      "featured": false,
-      "paid_placement": false,
-      "scjg_owned": false,
-      "verification_status": "needs-recheck",
-      "last_checked": "",
-      "confidence": "ai-sourced",
-      "sample": false
-    },
-    {
       "id": "arturia-audiofuse-16rig",
       "name": "AudioFuse 16Rig",
       "maker": "Arturia",
@@ -1570,6 +1537,46 @@
       "sample": false
     },
     {
+      "id": "supertone-clear",
+      "name": "Clear",
+      "maker": "Antinode Audio (formerly Supertone)",
+      "category": "vocal-tools",
+      "subcategory": "ai-voice-separator",
+      "tags": [
+        "noise-reduction",
+        "de-reverb",
+        "voice-isolation",
+        "dialogue",
+        "vocal-cleanup",
+        "ai"
+      ],
+      "short_description": "AI vocal processor that separates voice, ambience and reverb with three controls.",
+      "who_its_for": "Vocal producers and podcasters cleaning up home recordings",
+      "platforms": [
+        "macOS",
+        "Windows"
+      ],
+      "formats": [
+        "VST",
+        "VST3",
+        "AU",
+        "AAX"
+      ],
+      "price_type": "one-time",
+      "price_note": "$49 (limited-time price when checked)",
+      "license": "Proprietary",
+      "official_url": "https://antinodeaudio.com/clear",
+      "affiliate_ok": false,
+      "affiliate_url": "",
+      "featured": false,
+      "paid_placement": false,
+      "scjg_owned": false,
+      "verification_status": "verified",
+      "last_checked": "2026-11-14",
+      "confidence": "high",
+      "sample": false
+    },
+    {
       "id": "eastwest-composercloud-plus",
       "name": "ComposerCloud+",
       "maker": "EastWest Sounds",
@@ -1942,12 +1949,7 @@
         "macOS",
         "Windows"
       ],
-      "formats": [
-        "VST3",
-        "AU",
-        "AAX",
-        "Standalone"
-      ],
+      "formats": [],
       "price_type": "one-time",
       "price_note": "$1,149 (out of stock when checked)",
       "license": "N/A (hardware)",
@@ -3734,7 +3736,7 @@
     {
       "id": "spitfire-audio-labs",
       "name": "LABS",
-      "maker": "Spitfire Audio",
+      "maker": "Splice (formerly Spitfire Audio)",
       "category": "sample-packs-libraries",
       "subcategory": "curated-instrument-library",
       "tags": [
@@ -3757,15 +3759,15 @@
         "AAX"
       ],
       "price_type": "freemium",
-      "price_note": "Free packs + LABS+ subscription · UNVERIFIED",
+      "price_note": "Free tier · UNVERIFIED (now part of Splice INSTRUMENT)",
       "license": "Proprietary",
-      "official_url": "https://labs.spitfireaudio.com/",
+      "official_url": "https://splice.com/instrument/labs-instrument",
       "affiliate_ok": false,
       "affiliate_url": "",
       "featured": false,
       "paid_placement": false,
       "scjg_owned": false,
-      "verification_status": "needs-recheck",
+      "verification_status": "unverified",
       "last_checked": "",
       "confidence": "ai-sourced",
       "sample": false
@@ -4767,37 +4769,6 @@
       "sample": false
     },
     {
-      "id": "audeze-mm-500",
-      "name": "MM-500",
-      "maker": "Audeze",
-      "category": "monitors-headphones",
-      "subcategory": "planar-magnetic-studio-headphones",
-      "tags": [
-        "headphones",
-        "planar-magnetic",
-        "open-back",
-        "mixing",
-        "low-distortion"
-      ],
-      "short_description": "Open-back planar magnetic headphones tuned for mixing.",
-      "who_its_for": "Mix engineers working away from their main room",
-      "platforms": [],
-      "formats": [],
-      "price_type": "one-time",
-      "price_note": "$1699 · UNVERIFIED",
-      "license": "N/A (hardware)",
-      "official_url": "https://www.audeze.com/products/mm-500",
-      "affiliate_ok": false,
-      "affiliate_url": "",
-      "featured": false,
-      "paid_placement": false,
-      "scjg_owned": false,
-      "verification_status": "needs-recheck",
-      "last_checked": "",
-      "confidence": "ai-sourced",
-      "sample": false
-    },
-    {
       "id": "meldaproduction-mmultianalyzer",
       "name": "MMultiAnalyzer",
       "maker": "MeldaProduction",
@@ -5008,12 +4979,7 @@
         "macOS",
         "Windows"
       ],
-      "formats": [
-        "VST3",
-        "AU",
-        "AAX",
-        "Standalone"
-      ],
+      "formats": [],
       "price_type": "one-time",
       "price_note": "",
       "license": "N/A (hardware)",
@@ -5949,12 +5915,7 @@
         "macOS",
         "Windows"
       ],
-      "formats": [
-        "VST3",
-        "AU",
-        "AAX",
-        "Standalone"
-      ],
+      "formats": [],
       "price_type": "one-time",
       "price_note": "$4,999",
       "license": "N/A (hardware)",
@@ -7303,7 +7264,7 @@
     },
     {
       "id": "oeksound-soothe2",
-      "name": "soothe2",
+      "name": "soothe3",
       "maker": "oeksound",
       "category": "effects-plugins",
       "subcategory": "dynamic-resonance-suppressor",
@@ -7327,7 +7288,7 @@
         "AAX"
       ],
       "price_type": "one-time",
-      "price_note": "$209 (€199) · UNVERIFIED",
+      "price_note": "Buy, rent-to-own or upgrade · price UNVERIFIED",
       "license": "Proprietary",
       "official_url": "https://oeksound.com/plugins/soothe3/",
       "affiliate_ok": false,
@@ -7335,7 +7296,7 @@
       "featured": false,
       "paid_placement": false,
       "scjg_owned": false,
-      "verification_status": "needs-recheck",
+      "verification_status": "unverified",
       "last_checked": "",
       "confidence": "ai-sourced",
       "sample": false
@@ -7581,11 +7542,7 @@
         "Windows",
         "iOS"
       ],
-      "formats": [
-        "VST3",
-        "AU",
-        "Standalone"
-      ],
+      "formats": [],
       "price_type": "one-time",
       "price_note": "",
       "license": "N/A (hardware)",
@@ -8093,45 +8050,6 @@
       "verification_status": "verified",
       "last_checked": "2026-11-14",
       "confidence": "high",
-      "sample": false
-    },
-    {
-      "id": "supertone-clear",
-      "name": "Supertone Clear",
-      "maker": "Supertone",
-      "category": "vocal-tools",
-      "subcategory": "ai-voice-separator",
-      "tags": [
-        "noise-reduction",
-        "de-reverb",
-        "voice-isolation",
-        "dialogue",
-        "vocal-cleanup",
-        "ai"
-      ],
-      "short_description": "AI vocal processor that separates voice, ambience and reverb with three controls.",
-      "who_its_for": "Vocal producers and podcasters cleaning up home recordings",
-      "platforms": [
-        "macOS",
-        "Windows"
-      ],
-      "formats": [
-        "VST3",
-        "AU",
-        "AAX"
-      ],
-      "price_type": "one-time",
-      "price_note": "$99 · UNVERIFIED",
-      "license": "Proprietary",
-      "official_url": "https://antinodeaudio.com/clear",
-      "affiliate_ok": false,
-      "affiliate_url": "",
-      "featured": false,
-      "paid_placement": false,
-      "scjg_owned": false,
-      "verification_status": "needs-recheck",
-      "last_checked": "",
-      "confidence": "ai-sourced",
       "sample": false
     },
     {
@@ -9260,19 +9178,12 @@
         "mixing",
         "reference"
       ],
-      "short_description": "Closed-back headphones with software that simulates studios, cars and club systems.",
+      "short_description": "Closed- and open-back headphones with software that simulates studios, cars and club systems.",
       "who_its_for": "Mixers in untreated rooms or on the road",
-      "platforms": [
-        "macOS",
-        "Windows"
-      ],
-      "formats": [
-        "VST3",
-        "AU",
-        "AAX"
-      ],
+      "platforms": [],
+      "formats": [],
       "price_type": "one-time",
-      "price_note": "",
+      "price_note": "$399 (Horizon One Essentials) / $599 (Platinum)",
       "license": "N/A (hardware)",
       "official_url": "https://stevenslateaudio.com/vsx",
       "affiliate_ok": false,
@@ -9280,9 +9191,9 @@
       "featured": false,
       "paid_placement": false,
       "scjg_owned": false,
-      "verification_status": "needs-recheck",
-      "last_checked": "",
-      "confidence": "ai-sourced",
+      "verification_status": "verified",
+      "last_checked": "2026-11-14",
+      "confidence": "high",
       "sample": false
     },
     {
