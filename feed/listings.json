@@ -1,8 +1,8 @@
 {
   "name": "ChronoRail listings feed",
   "schema_version": 1,
-  "generated_at": "2026-11-14T23:35:51.501Z",
-  "count": 253,
+  "generated_at": "2026-11-15T01:49:56.853Z",
+  "count": 294,
   "sample": false,
   "license_note": "Listing data is curated by SCJG. Descriptions are SCJG's own words. Verify details on each official_url.",
   "ranking_policy": "Order is by name. Featured, paid and affiliate status never changes order.",
@@ -317,6 +317,35 @@
       "sample": false
     },
     {
+      "id": "dbx-560a",
+      "name": "560A",
+      "maker": "dbx",
+      "category": "outboard-processors",
+      "subcategory": "500-series-compressor",
+      "tags": [
+        "500-series",
+        "compressor",
+        "vca"
+      ],
+      "short_description": "Single-slot 500-series compressor/limiter module.",
+      "who_its_for": "Producers building a 500-series rack",
+      "platforms": [],
+      "formats": [],
+      "price_type": "unknown",
+      "price_note": "UNVERIFIED",
+      "license": "N/A (hardware)",
+      "official_url": "https://dbxpro.com/en/products/560a",
+      "affiliate_ok": false,
+      "affiliate_url": "",
+      "featured": false,
+      "paid_placement": false,
+      "scjg_owned": false,
+      "verification_status": "unverified",
+      "last_checked": "",
+      "confidence": "medium",
+      "sample": false
+    },
+    {
       "id": "genelec-8030c",
       "name": "8030C",
       "maker": "Genelec",
@@ -621,6 +650,38 @@
       "sample": false
     },
     {
+      "id": "alltrack",
+      "name": "AllTrack",
+      "maker": "AllTrack",
+      "category": "publishing-rights-metadata",
+      "subcategory": "performing-rights-org",
+      "tags": [
+        "pro",
+        "mechanical-royalties",
+        "neighboring-rights",
+        "independent"
+      ],
+      "short_description": "Rights organization for independents covering performance, mechanical and neighboring rights.",
+      "who_its_for": "Independent songwriters and publishers",
+      "platforms": [
+        "Web"
+      ],
+      "formats": [],
+      "price_type": "unknown",
+      "price_note": "Fees UNVERIFIED",
+      "license": "Proprietary",
+      "official_url": "https://www.alltrack.com/",
+      "affiliate_ok": false,
+      "affiliate_url": "",
+      "featured": false,
+      "paid_placement": false,
+      "scjg_owned": false,
+      "verification_status": "unverified",
+      "last_checked": "",
+      "confidence": "medium",
+      "sample": false
+    },
+    {
       "id": "ik-multimedia-amplitube-5",
       "name": "AmpliTube",
       "maker": "IK Multimedia",
@@ -844,6 +905,36 @@
       "sample": false
     },
     {
+      "id": "audient-asp800",
+      "name": "ASP800",
+      "maker": "Audient",
+      "category": "outboard-processors",
+      "subcategory": "mic-preamp",
+      "tags": [
+        "mic-preamp",
+        "8-channel",
+        "adat",
+        "rackmount"
+      ],
+      "short_description": "Eight-channel mic preamp with ADAT output for adding inputs to an interface.",
+      "who_its_for": "Producers expanding an interface with more preamps",
+      "platforms": [],
+      "formats": [],
+      "price_type": "unknown",
+      "price_note": "Dealer pricing · UNVERIFIED",
+      "license": "N/A (hardware)",
+      "official_url": "https://audient.com/products/mic-pres/asp800/",
+      "affiliate_ok": false,
+      "affiliate_url": "",
+      "featured": false,
+      "paid_placement": false,
+      "scjg_owned": false,
+      "verification_status": "unverified",
+      "last_checked": "",
+      "confidence": "medium",
+      "sample": false
+    },
+    {
       "id": "audio-technica-at4040",
       "name": "AT4040",
       "maker": "Audio-Technica",
@@ -913,6 +1004,38 @@
       "verification_status": "unverified",
       "last_checked": "",
       "confidence": "ai-sourced",
+      "sample": false
+    },
+    {
+      "id": "audio-science-review-forum",
+      "name": "Audio Science Review",
+      "maker": "Audio Science Review",
+      "category": "communities-forums",
+      "subcategory": "forum",
+      "tags": [
+        "forum",
+        "measurements",
+        "monitors",
+        "interfaces"
+      ],
+      "short_description": "Forum centered on measurement-based reviews of audio gear.",
+      "who_its_for": "Producers who choose gear by measurements",
+      "platforms": [
+        "Web"
+      ],
+      "formats": [],
+      "price_type": "unknown",
+      "price_note": "Some areas donor-only · cost UNVERIFIED",
+      "license": "Proprietary",
+      "official_url": "https://www.audiosciencereview.com/forum/",
+      "affiliate_ok": false,
+      "affiliate_url": "",
+      "featured": false,
+      "paid_placement": false,
+      "scjg_owned": false,
+      "verification_status": "unverified",
+      "last_checked": "",
+      "confidence": "medium",
       "sample": false
     },
     {
@@ -1023,6 +1146,36 @@
       "verification_status": "unverified",
       "last_checked": "",
       "confidence": "ai-sourced",
+      "sample": false
+    },
+    {
+      "id": "black-lion-audio-auteur-mkiii",
+      "name": "Auteur mkIII",
+      "maker": "Black Lion Audio",
+      "category": "outboard-processors",
+      "subcategory": "mic-preamp",
+      "tags": [
+        "mic-preamp",
+        "di",
+        "2-channel",
+        "half-rack"
+      ],
+      "short_description": "Two-channel half-rack mic, line and DI preamp.",
+      "who_its_for": "Desktop producers upgrading interface preamps",
+      "platforms": [],
+      "formats": [],
+      "price_type": "paid",
+      "price_note": "$419",
+      "license": "N/A (hardware)",
+      "official_url": "https://blacklionaudio.com/en/products/auteur-mkiii",
+      "affiliate_ok": false,
+      "affiliate_url": "",
+      "featured": false,
+      "paid_placement": false,
+      "scjg_owned": false,
+      "verification_status": "verified",
+      "last_checked": "2026-11-14",
+      "confidence": "high",
       "sample": false
     },
     {
@@ -1294,6 +1447,42 @@
       "sample": false
     },
     {
+      "id": "bespoke-synth",
+      "name": "Bespoke Synth",
+      "maker": "Bespoke Synth",
+      "category": "virtual-instruments",
+      "subcategory": "modular",
+      "tags": [
+        "modular",
+        "open-source",
+        "linux",
+        "live-coding"
+      ],
+      "short_description": "Free modular environment for patching instruments, effects and MIDI on an open canvas.",
+      "who_its_for": "Producers exploring modular workflows on a computer",
+      "platforms": [
+        "macOS",
+        "Windows",
+        "Linux"
+      ],
+      "formats": [
+        "Standalone"
+      ],
+      "price_type": "free",
+      "price_note": "Free (optional donation)",
+      "license": "GPL-3.0",
+      "official_url": "https://www.bespokesynth.com/",
+      "affiliate_ok": false,
+      "affiliate_url": "",
+      "featured": false,
+      "paid_placement": false,
+      "scjg_owned": false,
+      "verification_status": "verified",
+      "last_checked": "2026-11-14",
+      "confidence": "high",
+      "sample": false
+    },
+    {
       "id": "bfd-drums-bfd3",
       "name": "BFD",
       "maker": "BFD Drums",
@@ -1526,6 +1715,41 @@
       "sample": false
     },
     {
+      "id": "mediaarea-bwf-metaedit",
+      "name": "BWF MetaEdit",
+      "maker": "MediaArea",
+      "category": "publishing-rights-metadata",
+      "subcategory": "file-metadata",
+      "tags": [
+        "bwf",
+        "wav",
+        "metadata",
+        "archival",
+        "open-source"
+      ],
+      "short_description": "Free tool for embedding, validating and exporting Broadcast WAV metadata.",
+      "who_its_for": "Mastering engineers and archivists delivering WAVs",
+      "platforms": [
+        "macOS",
+        "Windows",
+        "Linux"
+      ],
+      "formats": [],
+      "price_type": "free",
+      "price_note": "Free",
+      "license": "Public domain",
+      "official_url": "https://mediaarea.net/BWFMetaEdit",
+      "affiliate_ok": false,
+      "affiliate_url": "",
+      "featured": false,
+      "paid_placement": false,
+      "scjg_owned": false,
+      "verification_status": "verified",
+      "last_checked": "2026-11-14",
+      "confidence": "high",
+      "sample": false
+    },
+    {
       "id": "brainworx-bx-masterdesk-pro",
       "name": "bx_masterdesk PRO",
       "maker": "Brainworx",
@@ -1598,6 +1822,35 @@
       "sample": false
     },
     {
+      "id": "cranborne-audio-camden-ec1",
+      "name": "Camden EC1",
+      "maker": "Cranborne Audio",
+      "category": "outboard-processors",
+      "subcategory": "mic-preamp",
+      "tags": [
+        "mic-preamp",
+        "saturation",
+        "half-rack"
+      ],
+      "short_description": "Half-rack mic, line and instrument preamp with analog saturation control.",
+      "who_its_for": "Solo recordists tracking vocals and guitars",
+      "platforms": [],
+      "formats": [],
+      "price_type": "unknown",
+      "price_note": "UNVERIFIED",
+      "license": "N/A (hardware)",
+      "official_url": "https://www.cranborne-audio.com/camdenec1",
+      "affiliate_ok": false,
+      "affiliate_url": "",
+      "featured": false,
+      "paid_placement": false,
+      "scjg_owned": false,
+      "verification_status": "unverified",
+      "last_checked": "",
+      "confidence": "medium",
+      "sample": false
+    },
+    {
       "id": "mixed-in-key-captain-plugins-epic",
       "name": "Captain Plugins Epic",
       "maker": "Mixed In Key",
@@ -1634,6 +1887,49 @@
       "verification_status": "unverified",
       "last_checked": "",
       "confidence": "ai-sourced",
+      "sample": false
+    },
+    {
+      "id": "distrho-cardinal",
+      "name": "Cardinal",
+      "maker": "DISTRHO",
+      "category": "virtual-instruments",
+      "subcategory": "modular",
+      "tags": [
+        "modular",
+        "open-source",
+        "linux",
+        "clap",
+        "vcv-rack"
+      ],
+      "short_description": "Free modular synth plugin built on VCV Rack, with its module set bundled in.",
+      "who_its_for": "Producers trying modular inside a DAW",
+      "platforms": [
+        "macOS",
+        "Windows",
+        "Linux",
+        "FreeBSD",
+        "Web"
+      ],
+      "formats": [
+        "AU",
+        "CLAP",
+        "LV2",
+        "VST2",
+        "VST3"
+      ],
+      "price_type": "free",
+      "price_note": "Free",
+      "license": "Open source",
+      "official_url": "https://cardinal.kx.studio/",
+      "affiliate_ok": false,
+      "affiliate_url": "",
+      "featured": false,
+      "paid_placement": false,
+      "scjg_owned": false,
+      "verification_status": "verified",
+      "last_checked": "2026-11-14",
+      "confidence": "high",
       "sample": false
     },
     {
@@ -1743,6 +2039,36 @@
       "price_note": "$49 (limited-time price when checked)",
       "license": "Proprietary",
       "official_url": "https://antinodeaudio.com/clear",
+      "affiliate_ok": false,
+      "affiliate_url": "",
+      "featured": false,
+      "paid_placement": false,
+      "scjg_owned": false,
+      "verification_status": "verified",
+      "last_checked": "2026-11-14",
+      "confidence": "high",
+      "sample": false
+    },
+    {
+      "id": "cloud-microphones-cloudlifter-cl-1",
+      "name": "Cloudlifter CL-1",
+      "maker": "Cloud Microphones",
+      "category": "outboard-processors",
+      "subcategory": "inline-mic-booster",
+      "tags": [
+        "mic-booster",
+        "dynamic-mic",
+        "ribbon-mic",
+        "phantom-powered"
+      ],
+      "short_description": "Phantom-powered inline box that adds clean gain ahead of dynamic and ribbon mics.",
+      "who_its_for": "Home recordists with low-output dynamic mics",
+      "platforms": [],
+      "formats": [],
+      "price_type": "paid",
+      "price_note": "$129",
+      "license": "N/A (hardware)",
+      "official_url": "https://cloudmicrophones.com/products/cloudlifter-cl-1",
       "affiliate_ok": false,
       "affiliate_url": "",
       "featured": false,
@@ -2139,6 +2465,38 @@
       "verification_status": "unverified",
       "last_checked": "",
       "confidence": "ai-sourced",
+      "sample": false
+    },
+    {
+      "id": "disco",
+      "name": "DISCO",
+      "maker": "DISCO",
+      "category": "publishing-rights-metadata",
+      "subcategory": "catalog-management",
+      "tags": [
+        "catalog",
+        "sync",
+        "pitching",
+        "metadata"
+      ],
+      "short_description": "Cloud catalog for organizing tracks and metadata and sharing pitch playlists.",
+      "who_its_for": "Sync composers, publishers and indie labels",
+      "platforms": [
+        "Web"
+      ],
+      "formats": [],
+      "price_type": "subscription",
+      "price_note": "Artist $10.80/mo / Plus $16.99/mo / Pro $26.99/mo (as shown when checked)",
+      "license": "Proprietary",
+      "official_url": "https://www.disco.ac/",
+      "affiliate_ok": false,
+      "affiliate_url": "",
+      "featured": false,
+      "paid_placement": false,
+      "scjg_owned": false,
+      "verification_status": "verified",
+      "last_checked": "2026-11-14",
+      "confidence": "high",
       "sample": false
     },
     {
@@ -2699,6 +3057,39 @@
       "sample": false
     },
     {
+      "id": "sound-particles-energy-panner",
+      "name": "Energy Panner",
+      "maker": "Sound Particles",
+      "category": "effects-plugins",
+      "subcategory": "auto-panner",
+      "tags": [
+        "panning",
+        "movement",
+        "dynamic"
+      ],
+      "short_description": "Plugin that pans sound automatically in response to the signal's level.",
+      "who_its_for": "Electronic producers and immersive mixers",
+      "platforms": [],
+      "formats": [
+        "VST",
+        "AU",
+        "AAX"
+      ],
+      "price_type": "unknown",
+      "price_note": "UNVERIFIED",
+      "license": "Proprietary",
+      "official_url": "https://soundparticles.com/products/energypanner",
+      "affiliate_ok": false,
+      "affiliate_url": "",
+      "featured": false,
+      "paid_placement": false,
+      "scjg_owned": false,
+      "verification_status": "unverified",
+      "last_checked": "",
+      "confidence": "medium",
+      "sample": false
+    },
+    {
       "id": "soundparticles-explorer",
       "name": "Explorer",
       "maker": "Sound Particles",
@@ -2934,6 +3325,36 @@
       "sample": false
     },
     {
+      "id": "triton-audio-fethead",
+      "name": "FetHead",
+      "maker": "Triton Audio",
+      "category": "outboard-processors",
+      "subcategory": "inline-mic-booster",
+      "tags": [
+        "mic-booster",
+        "dynamic-mic",
+        "ribbon-mic",
+        "phantom-powered"
+      ],
+      "short_description": "Barrel-sized XLR inline preamp that boosts dynamic and ribbon mics using phantom power.",
+      "who_its_for": "Podcasters and musicians with dynamic or ribbon mics",
+      "platforms": [],
+      "formats": [],
+      "price_type": "paid",
+      "price_note": "€69.95",
+      "license": "N/A (hardware)",
+      "official_url": "https://www.tritonaudio.com/product/fethead/",
+      "affiliate_ok": false,
+      "affiliate_url": "",
+      "featured": false,
+      "paid_placement": false,
+      "scjg_owned": false,
+      "verification_status": "verified",
+      "last_checked": "2026-11-14",
+      "confidence": "high",
+      "sample": false
+    },
+    {
       "id": "filepass",
       "name": "Filepass",
       "maker": "Filepass",
@@ -3069,6 +3490,40 @@
       "scjg_owned": false,
       "verification_status": "verified",
       "last_checked": "2026-11-06",
+      "confidence": "high",
+      "sample": false
+    },
+    {
+      "id": "frescobaldi",
+      "name": "Frescobaldi",
+      "maker": "Frescobaldi",
+      "category": "notation-scoring",
+      "subcategory": "lilypond-editor",
+      "tags": [
+        "lilypond",
+        "engraving",
+        "open-source",
+        "linux"
+      ],
+      "short_description": "Desktop editor for LilyPond scores with a live engraved preview.",
+      "who_its_for": "Composers working in LilyPond",
+      "platforms": [
+        "macOS",
+        "Windows",
+        "Linux"
+      ],
+      "formats": [],
+      "price_type": "free",
+      "price_note": "Free (v4.0.6)",
+      "license": "GPL",
+      "official_url": "https://frescobaldi.org/",
+      "affiliate_ok": false,
+      "affiliate_url": "",
+      "featured": false,
+      "paid_placement": false,
+      "scjg_owned": false,
+      "verification_status": "verified",
+      "last_checked": "2026-11-14",
       "confidence": "high",
       "sample": false
     },
@@ -3362,6 +3817,38 @@
       "verification_status": "unverified",
       "last_checked": "",
       "confidence": "ai-sourced",
+      "sample": false
+    },
+    {
+      "id": "hooktheory-hookpad",
+      "name": "Hookpad",
+      "maker": "Hooktheory",
+      "category": "notation-scoring",
+      "subcategory": "songwriting-sketchpad",
+      "tags": [
+        "songwriting",
+        "chords",
+        "melody",
+        "web-app"
+      ],
+      "short_description": "Browser songwriting pad for sketching chord progressions and melodies.",
+      "who_its_for": "Songwriters who think in chords first",
+      "platforms": [
+        "Web"
+      ],
+      "formats": [],
+      "price_type": "freemium",
+      "price_note": "Free / $7.99/mo or $199 lifetime",
+      "license": "Proprietary",
+      "official_url": "https://www.hooktheory.com/hookpad",
+      "affiliate_ok": false,
+      "affiliate_url": "",
+      "featured": false,
+      "paid_placement": false,
+      "scjg_owned": false,
+      "verification_status": "verified",
+      "last_checked": "2026-11-14",
+      "confidence": "high",
       "sample": false
     },
     {
@@ -3683,6 +4170,42 @@
       "verification_status": "unverified",
       "last_checked": "",
       "confidence": "ai-sourced",
+      "sample": false
+    },
+    {
+      "id": "kde-kid3",
+      "name": "Kid3",
+      "maker": "KDE",
+      "category": "publishing-rights-metadata",
+      "subcategory": "tagger",
+      "tags": [
+        "tagging",
+        "metadata",
+        "batch",
+        "open-source",
+        "linux"
+      ],
+      "short_description": "Batch tag editor for MP3, FLAC, MP4 and other audio formats.",
+      "who_its_for": "Producers tagging release files",
+      "platforms": [
+        "macOS",
+        "Windows",
+        "Linux",
+        "Android"
+      ],
+      "formats": [],
+      "price_type": "free",
+      "price_note": "Free",
+      "license": "GPL",
+      "official_url": "https://kid3.kde.org/",
+      "affiliate_ok": false,
+      "affiliate_url": "",
+      "featured": false,
+      "paid_placement": false,
+      "scjg_owned": false,
+      "verification_status": "verified",
+      "last_checked": "2026-11-14",
+      "confidence": "high",
       "sample": false
     },
     {
@@ -4134,6 +4657,40 @@
       "sample": false
     },
     {
+      "id": "gnu-lilypond",
+      "name": "LilyPond",
+      "maker": "GNU Project",
+      "category": "notation-scoring",
+      "subcategory": "engraving",
+      "tags": [
+        "engraving",
+        "text-input",
+        "open-source",
+        "linux"
+      ],
+      "short_description": "Text-input engraving program that compiles typed notation into print-quality scores.",
+      "who_its_for": "Composers comfortable writing notation as text",
+      "platforms": [
+        "macOS",
+        "Windows",
+        "Linux"
+      ],
+      "formats": [],
+      "price_type": "free",
+      "price_note": "Free (v2.26.0)",
+      "license": "GPL",
+      "official_url": "https://lilypond.org/",
+      "affiliate_ok": false,
+      "affiliate_url": "",
+      "featured": false,
+      "paid_placement": false,
+      "scjg_owned": false,
+      "verification_status": "verified",
+      "last_checked": "2026-11-14",
+      "confidence": "high",
+      "sample": false
+    },
+    {
       "id": "lines-community",
       "name": "lines",
       "maker": "monome",
@@ -4201,6 +4758,37 @@
       "verification_status": "verified",
       "last_checked": "2026-11-06",
       "confidence": "high",
+      "sample": false
+    },
+    {
+      "id": "linuxmusicians",
+      "name": "LinuxMusicians",
+      "maker": "LinuxMusicians",
+      "category": "communities-forums",
+      "subcategory": "forum",
+      "tags": [
+        "forum",
+        "linux",
+        "open-source"
+      ],
+      "short_description": "Forum for making music on Linux: DAWs, audio setup and plugins.",
+      "who_its_for": "Linux-based home-studio producers",
+      "platforms": [
+        "Web"
+      ],
+      "formats": [],
+      "price_type": "unknown",
+      "price_note": "UNVERIFIED",
+      "license": "Proprietary",
+      "official_url": "https://linuxmusicians.com/",
+      "affiliate_ok": false,
+      "affiliate_url": "",
+      "featured": false,
+      "paid_placement": false,
+      "scjg_owned": false,
+      "verification_status": "unverified",
+      "last_checked": "",
+      "confidence": "medium",
       "sample": false
     },
     {
@@ -4365,6 +4953,38 @@
       "sample": false
     },
     {
+      "id": "loopy-pro-forum",
+      "name": "Loopy Pro Forum",
+      "maker": "Loopy Pro",
+      "category": "communities-forums",
+      "subcategory": "forum",
+      "tags": [
+        "forum",
+        "ios",
+        "ipad",
+        "looping"
+      ],
+      "short_description": "Community forum for Loopy Pro users and iOS music-making.",
+      "who_its_for": "iPad and iPhone musicians",
+      "platforms": [
+        "Web"
+      ],
+      "formats": [],
+      "price_type": "unknown",
+      "price_note": "UNVERIFIED",
+      "license": "Proprietary",
+      "official_url": "https://forum.loopypro.com/",
+      "affiliate_ok": false,
+      "affiliate_url": "",
+      "featured": false,
+      "paid_placement": false,
+      "scjg_owned": false,
+      "verification_status": "unverified",
+      "last_checked": "",
+      "confidence": "medium",
+      "sample": false
+    },
+    {
       "id": "kali-audio-lp-6-v2",
       "name": "LP-6 V2 (Lone Pine)",
       "maker": "Kali Audio",
@@ -4393,6 +5013,76 @@
       "scjg_owned": false,
       "verification_status": "verified",
       "last_checked": "2026-11-06",
+      "confidence": "high",
+      "sample": false
+    },
+    {
+      "id": "om-system-ls-p5",
+      "name": "LS-P5",
+      "maker": "OM SYSTEM",
+      "category": "field-recording-sound-design",
+      "subcategory": "handheld-recorder",
+      "tags": [
+        "field-recorder",
+        "portable",
+        "stereo"
+      ],
+      "short_description": "Pocket stereo recorder for field capture and practice recording.",
+      "who_its_for": "Field recordists and musicians recording on the go",
+      "platforms": [],
+      "formats": [],
+      "price_type": "paid",
+      "price_note": "$249.99 (out of stock when checked)",
+      "license": "N/A (hardware)",
+      "official_url": "https://explore.omsystem.com/us/en/ls-p5-black",
+      "affiliate_ok": false,
+      "affiliate_url": "",
+      "featured": false,
+      "paid_placement": false,
+      "scjg_owned": false,
+      "verification_status": "verified",
+      "last_checked": "2026-11-14",
+      "confidence": "high",
+      "sample": false
+    },
+    {
+      "id": "lsp-plugins",
+      "name": "LSP Plugins",
+      "maker": "LSP Project",
+      "category": "effects-plugins",
+      "subcategory": "plugin-suite",
+      "tags": [
+        "open-source",
+        "linux",
+        "clap",
+        "lv2",
+        "mixing",
+        "analysis"
+      ],
+      "short_description": "Free open-source suite of mixing, dynamics and analysis plugins.",
+      "who_its_for": "Linux producers and budget-minded mixers",
+      "platforms": [
+        "Linux"
+      ],
+      "formats": [
+        "CLAP",
+        "LV2",
+        "VST2",
+        "VST3",
+        "LADSPA",
+        "Standalone"
+      ],
+      "price_type": "free",
+      "price_note": "Free (donations welcome)",
+      "license": "Open source",
+      "official_url": "https://lsp-plug.in/",
+      "affiliate_ok": false,
+      "affiliate_url": "",
+      "featured": false,
+      "paid_placement": false,
+      "scjg_owned": false,
+      "verification_status": "verified",
+      "last_checked": "2026-11-14",
       "confidence": "high",
       "sample": false
     },
@@ -4837,6 +5527,35 @@
       "verification_status": "verified",
       "last_checked": "2026-11-06",
       "confidence": "high",
+      "sample": false
+    },
+    {
+      "id": "sound-devices-mixpre-3-ii",
+      "name": "MixPre-3 II",
+      "maker": "Sound Devices",
+      "category": "field-recording-sound-design",
+      "subcategory": "portable-recorder",
+      "tags": [
+        "field-recorder",
+        "32-bit-float",
+        "usb-interface"
+      ],
+      "short_description": "Compact 32-bit float recorder with three preamps that also works as a USB interface.",
+      "who_its_for": "Location recordists who also need a small interface",
+      "platforms": [],
+      "formats": [],
+      "price_type": "unknown",
+      "price_note": "UNVERIFIED",
+      "license": "N/A (hardware)",
+      "official_url": "https://www.sounddevices.com/product/mixpre-3-ii/",
+      "affiliate_ok": false,
+      "affiliate_url": "",
+      "featured": false,
+      "paid_placement": false,
+      "scjg_owned": false,
+      "verification_status": "unverified",
+      "last_checked": "",
+      "confidence": "medium",
       "sample": false
     },
     {
@@ -5323,6 +6042,68 @@
       "sample": false
     },
     {
+      "id": "musicbrainz",
+      "name": "MusicBrainz",
+      "maker": "MetaBrainz Foundation",
+      "category": "publishing-rights-metadata",
+      "subcategory": "metadata-database",
+      "tags": [
+        "metadata",
+        "identifiers",
+        "open-data",
+        "community"
+      ],
+      "short_description": "Open community database of artists, releases and recordings with stable identifiers.",
+      "who_its_for": "Artists and labels cleaning up release metadata",
+      "platforms": [
+        "Web"
+      ],
+      "formats": [],
+      "price_type": "free",
+      "price_note": "Free",
+      "license": "Open data · UNVERIFIED",
+      "official_url": "https://musicbrainz.org/",
+      "affiliate_ok": false,
+      "affiliate_url": "",
+      "featured": false,
+      "paid_placement": false,
+      "scjg_owned": false,
+      "verification_status": "verified",
+      "last_checked": "2026-11-14",
+      "confidence": "high",
+      "sample": false
+    },
+    {
+      "id": "musicbrainz-picard",
+      "name": "MusicBrainz Picard",
+      "maker": "MetaBrainz Foundation",
+      "category": "publishing-rights-metadata",
+      "subcategory": "tagger",
+      "tags": [
+        "tagging",
+        "metadata",
+        "fingerprinting",
+        "open-source"
+      ],
+      "short_description": "Open-source tagger that matches audio files to MusicBrainz release data.",
+      "who_its_for": "Independent artists managing large libraries",
+      "platforms": [],
+      "formats": [],
+      "price_type": "free",
+      "price_note": "Free · platforms UNVERIFIED",
+      "license": "GPL-2.0+",
+      "official_url": "https://picard.musicbrainz.org/",
+      "affiliate_ok": false,
+      "affiliate_url": "",
+      "featured": false,
+      "paid_placement": false,
+      "scjg_owned": false,
+      "verification_status": "unverified",
+      "last_checked": "",
+      "confidence": "medium",
+      "sample": false
+    },
+    {
       "id": "muso-ai",
       "name": "Muso.AI",
       "maker": "Muso.AI",
@@ -5584,6 +6365,35 @@
       "sample": false
     },
     {
+      "id": "rode-ntg5",
+      "name": "NTG5",
+      "maker": "RØDE",
+      "category": "microphones",
+      "subcategory": "shotgun",
+      "tags": [
+        "shotgun-mic",
+        "location-sound",
+        "dialogue"
+      ],
+      "short_description": "Lightweight short shotgun mic sold as a location kit for dialogue and ambience.",
+      "who_its_for": "Recordists capturing dialogue and ambience outdoors",
+      "platforms": [],
+      "formats": [],
+      "price_type": "paid",
+      "price_note": "$569 (location kit)",
+      "license": "N/A (hardware)",
+      "official_url": "https://rode.com/en-us/products/ntg5",
+      "affiliate_ok": false,
+      "affiliate_url": "",
+      "featured": false,
+      "paid_placement": false,
+      "scjg_owned": false,
+      "verification_status": "verified",
+      "last_checked": "2026-11-14",
+      "confidence": "high",
+      "sample": false
+    },
+    {
       "id": "steinberg-nuendo",
       "name": "Nuendo",
       "maker": "Steinberg",
@@ -5618,6 +6428,45 @@
       "verification_status": "unverified",
       "last_checked": "",
       "confidence": "ai-sourced",
+      "sample": false
+    },
+    {
+      "id": "thewavewarden-odin-2",
+      "name": "Odin 2",
+      "maker": "TheWaveWarden",
+      "category": "virtual-instruments",
+      "subcategory": "synth",
+      "tags": [
+        "synth",
+        "open-source",
+        "linux",
+        "clap"
+      ],
+      "short_description": "Free polyphonic synth with drawable waveforms and a broad filter selection.",
+      "who_its_for": "Sound designers wanting a free full-size synth",
+      "platforms": [
+        "macOS",
+        "Windows",
+        "Linux"
+      ],
+      "formats": [
+        "VST3",
+        "AU",
+        "CLAP",
+        "LV2"
+      ],
+      "price_type": "free",
+      "price_note": "Free",
+      "license": "Open source",
+      "official_url": "https://thewavewarden.com/pages/odin-2",
+      "affiliate_ok": false,
+      "affiliate_url": "",
+      "featured": false,
+      "paid_placement": false,
+      "scjg_owned": false,
+      "verification_status": "verified",
+      "last_checked": "2026-11-14",
+      "confidence": "high",
       "sample": false
     },
     {
@@ -5768,6 +6617,77 @@
       "verification_status": "unverified",
       "last_checked": "",
       "confidence": "ai-sourced",
+      "sample": false
+    },
+    {
+      "id": "flock-audio-patch",
+      "name": "PATCH",
+      "maker": "Flock Audio",
+      "category": "outboard-processors",
+      "subcategory": "digital-patchbay",
+      "tags": [
+        "patchbay",
+        "routing-recall",
+        "rackmount"
+      ],
+      "short_description": "Software-controlled analog patchbay that saves and recalls outboard routings.",
+      "who_its_for": "Studios routing a lot of analog outboard",
+      "platforms": [],
+      "formats": [],
+      "price_type": "paid",
+      "price_note": "$3,449 list ($3,299 sale when checked)",
+      "license": "N/A (hardware)",
+      "official_url": "https://www.flockaudio.com/product-page/the-patch-system-jan-2019",
+      "affiliate_ok": false,
+      "affiliate_url": "",
+      "featured": false,
+      "paid_placement": false,
+      "scjg_owned": false,
+      "verification_status": "verified",
+      "last_checked": "2026-11-14",
+      "confidence": "high",
+      "sample": false
+    },
+    {
+      "id": "sonosaurus-paulxstretch",
+      "name": "PaulXStretch",
+      "maker": "Sonosaurus",
+      "category": "effects-plugins",
+      "subcategory": "time-stretch",
+      "tags": [
+        "time-stretch",
+        "ambient",
+        "open-source",
+        "linux",
+        "clap"
+      ],
+      "short_description": "Extreme time-stretcher that turns short sounds into long ambient textures.",
+      "who_its_for": "Ambient producers and sound designers",
+      "platforms": [
+        "macOS",
+        "Windows",
+        "Linux",
+        "iOS"
+      ],
+      "formats": [
+        "AU",
+        "VST3",
+        "AAX",
+        "CLAP",
+        "AUv3"
+      ],
+      "price_type": "free",
+      "price_note": "Free",
+      "license": "GPL-3.0",
+      "official_url": "https://sonosaurus.com/paulxstretch/",
+      "affiliate_ok": false,
+      "affiliate_url": "",
+      "featured": false,
+      "paid_placement": false,
+      "scjg_owned": false,
+      "verification_status": "verified",
+      "last_checked": "2026-11-14",
+      "confidence": "high",
       "sample": false
     },
     {
@@ -5996,6 +6916,44 @@
       "sample": false
     },
     {
+      "id": "fors-pivot",
+      "name": "Pivot",
+      "maker": "Fors",
+      "category": "virtual-instruments",
+      "subcategory": "fm-synth",
+      "tags": [
+        "fm",
+        "synth",
+        "linux",
+        "clap"
+      ],
+      "short_description": "Three-operator FM synth with free-form modulation routing; a Lite version is free.",
+      "who_its_for": "Producers wanting fast FM sound design",
+      "platforms": [
+        "macOS",
+        "Windows",
+        "Linux"
+      ],
+      "formats": [
+        "CLAP",
+        "VST3",
+        "AU"
+      ],
+      "price_type": "paid",
+      "price_note": "$39 (Pivot Lite free)",
+      "license": "Proprietary",
+      "official_url": "https://fors.fm/pivot",
+      "affiliate_ok": false,
+      "affiliate_url": "",
+      "featured": false,
+      "paid_placement": false,
+      "scjg_owned": false,
+      "verification_status": "verified",
+      "last_checked": "2026-11-14",
+      "confidence": "high",
+      "sample": false
+    },
+    {
       "id": "audiomodern-playbeat",
       "name": "Playbeat",
       "maker": "Audiomodern",
@@ -6033,6 +6991,47 @@
       "scjg_owned": false,
       "verification_status": "verified",
       "last_checked": "2026-11-06",
+      "confidence": "high",
+      "sample": false
+    },
+    {
+      "id": "plugdata",
+      "name": "plugdata",
+      "maker": "plugdata",
+      "category": "virtual-instruments",
+      "subcategory": "visual-programming",
+      "tags": [
+        "pure-data",
+        "patching",
+        "open-source",
+        "linux",
+        "clap"
+      ],
+      "short_description": "Pure Data-based visual patching environment that also runs inside a DAW as a plugin.",
+      "who_its_for": "Sound designers learning visual audio programming",
+      "platforms": [
+        "macOS",
+        "Windows",
+        "Linux",
+        "iOS"
+      ],
+      "formats": [
+        "VST3",
+        "AU",
+        "CLAP",
+        "LV2"
+      ],
+      "price_type": "free",
+      "price_note": "Free",
+      "license": "GPL-3.0",
+      "official_url": "https://plugdata.org/",
+      "affiliate_ok": false,
+      "affiliate_url": "",
+      "featured": false,
+      "paid_placement": false,
+      "scjg_owned": false,
+      "verification_status": "verified",
+      "last_checked": "2026-11-14",
       "confidence": "high",
       "sample": false
     },
@@ -6955,6 +7954,37 @@
       "sample": false
     },
     {
+      "id": "sesac",
+      "name": "SESAC",
+      "maker": "SESAC",
+      "category": "publishing-rights-metadata",
+      "subcategory": "performing-rights-org",
+      "tags": [
+        "pro",
+        "performance-royalties",
+        "us"
+      ],
+      "short_description": "US performing rights organization; songwriter membership is by invitation.",
+      "who_its_for": "Established songwriters and publishers",
+      "platforms": [
+        "Web"
+      ],
+      "formats": [],
+      "price_type": "varies",
+      "price_note": "Writer membership by invitation",
+      "license": "Proprietary",
+      "official_url": "https://www.sesac.com/",
+      "affiliate_ok": false,
+      "affiliate_url": "",
+      "featured": false,
+      "paid_placement": false,
+      "scjg_owned": false,
+      "verification_status": "verified",
+      "last_checked": "2026-11-14",
+      "confidence": "high",
+      "sample": false
+    },
+    {
       "id": "sessionwire",
       "name": "Sessionwire",
       "maker": "Sessionwire Communications",
@@ -6994,6 +8024,35 @@
       "verification_status": "unverified",
       "last_checked": "",
       "confidence": "ai-sourced",
+      "sample": false
+    },
+    {
+      "id": "black-lion-audio-seventeen",
+      "name": "Seventeen",
+      "maker": "Black Lion Audio",
+      "category": "outboard-processors",
+      "subcategory": "fet-compressor",
+      "tags": [
+        "fet-compressor",
+        "mono",
+        "rackmount"
+      ],
+      "short_description": "Single-channel FET limiting amplifier in the classic 76 style.",
+      "who_its_for": "Trackers wanting fast hardware compression on vocals and drums",
+      "platforms": [],
+      "formats": [],
+      "price_type": "paid",
+      "price_note": "$699",
+      "license": "N/A (hardware)",
+      "official_url": "https://blacklionaudio.com/en/products/seventeen",
+      "affiliate_ok": false,
+      "affiliate_url": "",
+      "featured": false,
+      "paid_placement": false,
+      "scjg_owned": false,
+      "verification_status": "verified",
+      "last_checked": "2026-11-14",
+      "confidence": "high",
       "sample": false
     },
     {
@@ -7479,6 +8538,37 @@
       "sample": false
     },
     {
+      "id": "sound-on-sound-forum",
+      "name": "SOS Forum",
+      "maker": "Sound On Sound",
+      "category": "communities-forums",
+      "subcategory": "forum",
+      "tags": [
+        "forum",
+        "recording",
+        "gear-advice"
+      ],
+      "short_description": "Forum hosted by Sound On Sound magazine for recording and gear questions.",
+      "who_its_for": "Home recordists with gear or technique questions",
+      "platforms": [
+        "Web"
+      ],
+      "formats": [],
+      "price_type": "unknown",
+      "price_note": "Registration to post · cost UNVERIFIED",
+      "license": "Proprietary",
+      "official_url": "https://www.soundonsound.com/forum",
+      "affiliate_ok": false,
+      "affiliate_url": "",
+      "featured": false,
+      "paid_placement": false,
+      "scjg_owned": false,
+      "verification_status": "unverified",
+      "last_checked": "",
+      "confidence": "medium",
+      "sample": false
+    },
+    {
       "id": "soundexchange",
       "name": "SoundExchange",
       "maker": "SoundExchange Inc.",
@@ -7586,6 +8676,39 @@
       "sample": false
     },
     {
+      "id": "soundly",
+      "name": "Soundly",
+      "maker": "Soundly",
+      "category": "sample-managers",
+      "subcategory": "sfx-library-manager",
+      "tags": [
+        "sound-effects",
+        "library",
+        "search",
+        "cloud"
+      ],
+      "short_description": "Sound-effects app that searches a cloud library and your local files together.",
+      "who_its_for": "Sound designers and video editors",
+      "platforms": [
+        "macOS",
+        "Windows"
+      ],
+      "formats": [],
+      "price_type": "freemium",
+      "price_note": "Free tier / paid plans UNVERIFIED",
+      "license": "Proprietary",
+      "official_url": "https://getsoundly.com/",
+      "affiliate_ok": false,
+      "affiliate_url": "",
+      "featured": false,
+      "paid_placement": false,
+      "scjg_owned": false,
+      "verification_status": "unverified",
+      "last_checked": "",
+      "confidence": "medium",
+      "sample": false
+    },
+    {
       "id": "soundminer",
       "name": "Soundminer",
       "maker": "Soundminer Inc.",
@@ -7655,6 +8778,39 @@
       "verification_status": "unverified",
       "last_checked": "",
       "confidence": "ai-sourced",
+      "sample": false
+    },
+    {
+      "id": "soundslice",
+      "name": "Soundslice",
+      "maker": "Soundslice",
+      "category": "notation-scoring",
+      "subcategory": "interactive-notation",
+      "tags": [
+        "tab",
+        "practice",
+        "transcription",
+        "teaching",
+        "web-app"
+      ],
+      "short_description": "Web platform that syncs notation and tab to recordings for practice and teaching.",
+      "who_its_for": "Music teachers, students and transcribers",
+      "platforms": [
+        "Web"
+      ],
+      "formats": [],
+      "price_type": "freemium",
+      "price_note": "Free / Plus $5/mo or $50/yr / Teacher $20/mo",
+      "license": "Proprietary",
+      "official_url": "https://www.soundslice.com/",
+      "affiliate_ok": false,
+      "affiliate_url": "",
+      "featured": false,
+      "paid_placement": false,
+      "scjg_owned": false,
+      "verification_status": "verified",
+      "last_checked": "2026-11-14",
+      "confidence": "high",
       "sample": false
     },
     {
@@ -8150,6 +9306,35 @@
       "verification_status": "unverified",
       "last_checked": "",
       "confidence": "ai-sourced",
+      "sample": false
+    },
+    {
+      "id": "heritage-audio-successor",
+      "name": "Successor",
+      "maker": "Heritage Audio",
+      "category": "outboard-processors",
+      "subcategory": "bus-compressor",
+      "tags": [
+        "stereo-compressor",
+        "mix-bus",
+        "rackmount"
+      ],
+      "short_description": "Stereo hardware compressor aimed at mix and drum bus duty.",
+      "who_its_for": "Hybrid mix engineers adding analog bus compression",
+      "platforms": [],
+      "formats": [],
+      "price_type": "unknown",
+      "price_note": "Dealer pricing · UNVERIFIED",
+      "license": "N/A (hardware)",
+      "official_url": "https://heritageaudio.com/successor/",
+      "affiliate_ok": false,
+      "affiliate_url": "",
+      "featured": false,
+      "paid_placement": false,
+      "scjg_owned": false,
+      "verification_status": "unverified",
+      "last_checked": "",
+      "confidence": "medium",
       "sample": false
     },
     {
@@ -8678,6 +9863,45 @@
       "sample": false
     },
     {
+      "id": "tonsturm-traveler",
+      "name": "Traveler",
+      "maker": "Tonsturm",
+      "category": "effects-plugins",
+      "subcategory": "doppler",
+      "tags": [
+        "doppler",
+        "movement",
+        "sound-design",
+        "post-production"
+      ],
+      "short_description": "Doppler plugin that moves a sound along a drawn path for pass-bys.",
+      "who_its_for": "Sound designers and post mixers",
+      "platforms": [
+        "macOS",
+        "Windows"
+      ],
+      "formats": [
+        "VST",
+        "VST3",
+        "AAX",
+        "AudioSuite",
+        "AU"
+      ],
+      "price_type": "paid",
+      "price_note": "$119 · platforms UNVERIFIED",
+      "license": "Proprietary",
+      "official_url": "https://tonsturm.com/product/traveler",
+      "affiliate_ok": false,
+      "affiliate_url": "",
+      "featured": false,
+      "paid_placement": false,
+      "scjg_owned": false,
+      "verification_status": "unverified",
+      "last_checked": "",
+      "confidence": "medium",
+      "sample": false
+    },
+    {
       "id": "tunecore",
       "name": "TuneCore",
       "maker": "Believe",
@@ -8742,6 +9966,43 @@
       "verification_status": "unverified",
       "last_checked": "",
       "confidence": "ai-sourced",
+      "sample": false
+    },
+    {
+      "id": "tuxguitar",
+      "name": "TuxGuitar",
+      "maker": "TuxGuitar",
+      "category": "notation-scoring",
+      "subcategory": "tablature-editor",
+      "tags": [
+        "tab",
+        "guitar",
+        "open-source",
+        "linux",
+        "android"
+      ],
+      "short_description": "Open-source multitrack tablature editor and player.",
+      "who_its_for": "Guitarists writing and sharing tabs",
+      "platforms": [
+        "macOS",
+        "Windows",
+        "Linux",
+        "FreeBSD",
+        "Android"
+      ],
+      "formats": [],
+      "price_type": "free",
+      "price_note": "Free",
+      "license": "LGPL",
+      "official_url": "https://www.tuxguitar.app/",
+      "affiliate_ok": false,
+      "affiliate_url": "",
+      "featured": false,
+      "paid_placement": false,
+      "scjg_owned": false,
+      "verification_status": "verified",
+      "last_checked": "2026-11-14",
+      "confidence": "high",
       "sample": false
     },
     {
@@ -9142,6 +10403,36 @@
       "price_note": "$50",
       "license": "Proprietary",
       "official_url": "https://valhalladsp.com/shop/reverb/valhalla-vintage-verb/",
+      "affiliate_ok": false,
+      "affiliate_url": "",
+      "featured": false,
+      "paid_placement": false,
+      "scjg_owned": false,
+      "verification_status": "verified",
+      "last_checked": "2026-11-14",
+      "confidence": "high",
+      "sample": false
+    },
+    {
+      "id": "manley-variable-mu",
+      "name": "Variable Mu",
+      "maker": "Manley",
+      "category": "outboard-processors",
+      "subcategory": "bus-compressor",
+      "tags": [
+        "tube-compressor",
+        "stereo",
+        "mix-bus",
+        "mastering"
+      ],
+      "short_description": "All-tube stereo compressor/limiter long used on mix and mastering buses.",
+      "who_its_for": "Mix and mastering engineers with hybrid rigs",
+      "platforms": [],
+      "formats": [],
+      "price_type": "paid",
+      "price_note": "$4,999 MSRP",
+      "license": "N/A (hardware)",
+      "official_url": "https://www.manley.com/products/pro-audio/dynamics/variable-mu",
       "affiliate_ok": false,
       "affiliate_url": "",
       "featured": false,
@@ -9595,6 +10886,70 @@
       "verification_status": "verified",
       "last_checked": "2026-11-14",
       "confidence": "high",
+      "sample": false
+    },
+    {
+      "id": "u-he-zebralette-3",
+      "name": "Zebralette 3",
+      "maker": "u-he",
+      "category": "virtual-instruments",
+      "subcategory": "synth",
+      "tags": [
+        "synth",
+        "freeware",
+        "linux"
+      ],
+      "short_description": "Free single-oscillator synth drawn from the Zebra 3 engine.",
+      "who_its_for": "Sound designers and synth programmers",
+      "platforms": [
+        "macOS",
+        "Windows",
+        "Linux"
+      ],
+      "formats": [],
+      "price_type": "free",
+      "price_note": "Free (v3.0.0) · formats UNVERIFIED",
+      "license": "Proprietary",
+      "official_url": "https://u-he.com/products/plug-ins/zebralette3/",
+      "affiliate_ok": false,
+      "affiliate_url": "",
+      "featured": false,
+      "paid_placement": false,
+      "scjg_owned": false,
+      "verification_status": "unverified",
+      "last_checked": "",
+      "confidence": "medium",
+      "sample": false
+    },
+    {
+      "id": "zl-audio-zl-equalizer-2",
+      "name": "ZL Equalizer 2",
+      "maker": "ZL Audio",
+      "category": "effects-plugins",
+      "subcategory": "dynamic-eq",
+      "tags": [
+        "dynamic-eq",
+        "open-source",
+        "analyzer"
+      ],
+      "short_description": "Free open-source dynamic EQ with per-band dynamics and a spectrum analyzer.",
+      "who_its_for": "Mix engineers wanting a free dynamic EQ",
+      "platforms": [
+        "macOS"
+      ],
+      "formats": [],
+      "price_type": "free",
+      "price_note": "Free (v1.4.1) · other platforms and formats UNVERIFIED",
+      "license": "AGPL-3.0",
+      "official_url": "https://zl-audio.github.io/plugins/zlequalizer2/",
+      "affiliate_ok": false,
+      "affiliate_url": "",
+      "featured": false,
+      "paid_placement": false,
+      "scjg_owned": false,
+      "verification_status": "unverified",
+      "last_checked": "",
+      "confidence": "medium",
       "sample": false
     }
   ]
