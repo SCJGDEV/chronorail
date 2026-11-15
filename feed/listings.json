@@ -1,7 +1,7 @@
 {
   "name": "ChronoRail listings feed",
   "schema_version": 1,
-  "generated_at": "2026-11-15T19:11:41.870Z",
+  "generated_at": "2026-11-15T19:36:49.897Z",
   "count": 294,
   "sample": false,
   "license_note": "Listing data is curated by SCJG. Descriptions are SCJG's own words. Verify details on each official_url.",
@@ -1069,44 +1069,6 @@
       "paid_placement": false,
       "scjg_owned": false,
       "verification_status": "unverified",
-      "last_checked": "",
-      "confidence": "ai-sourced",
-      "sample": false
-    },
-    {
-      "id": "audiokit-synth-one",
-      "name": "AudioKit Synth One",
-      "maker": "AudioKit Pro",
-      "category": "mobile-music-apps",
-      "subcategory": "open-source-ipad-synthesizer",
-      "tags": [
-        "synth",
-        "open-source",
-        "ios",
-        "auv3",
-        "hybrid-synth",
-        "microtuning",
-        "free"
-      ],
-      "short_description": "Free, open-source polyphonic synthesizer for iPad.",
-      "who_its_for": "iPad musicians and educators",
-      "platforms": [
-        "iOS"
-      ],
-      "formats": [
-        "AU",
-        "Standalone"
-      ],
-      "price_type": "free",
-      "price_note": "",
-      "license": "MIT",
-      "official_url": "https://audiokitpro.com/synth/",
-      "affiliate_ok": false,
-      "affiliate_url": "",
-      "featured": false,
-      "paid_placement": false,
-      "scjg_owned": false,
-      "verification_status": "needs-recheck",
       "last_checked": "",
       "confidence": "ai-sourced",
       "sample": false
@@ -3314,6 +3276,43 @@
       "price_note": "$129 · UNVERIFIED",
       "license": "Proprietary",
       "official_url": "https://www.fabfilter.com/products/saturn-2-multiband-distortion-saturation-plug-in",
+      "affiliate_ok": false,
+      "affiliate_url": "",
+      "featured": false,
+      "paid_placement": false,
+      "scjg_owned": false,
+      "verification_status": "unverified",
+      "last_checked": "",
+      "confidence": "ai-sourced",
+      "sample": false
+    },
+    {
+      "id": "fender-studio-pro",
+      "name": "Fender Studio Pro",
+      "maker": "Fender",
+      "category": "daws",
+      "subcategory": "linear-daw",
+      "tags": [
+        "daw",
+        "mastering",
+        "drag-and-drop",
+        "arranging",
+        "mixing",
+        "amp-modeling"
+      ],
+      "short_description": "Single-window DAW for tracking, mixing and mastering; Fender's new name for Studio One Pro, with Fender amp plug-ins.",
+      "who_its_for": "Producers, mastering engineers",
+      "platforms": [
+        "macOS",
+        "Windows"
+      ],
+      "formats": [
+        "Standalone"
+      ],
+      "price_type": "varies",
+      "price_note": "$199.99 perpetual / $179.99/yr Pro+ (incl. perpetual) / $19.99/mo Pro+ / $99.99 upgrade from Studio One",
+      "license": "Proprietary",
+      "official_url": "https://www.fender.com/products/fender-studio-pro",
       "affiliate_ok": false,
       "affiliate_url": "",
       "featured": false,
@@ -9237,43 +9236,6 @@
       "sample": false
     },
     {
-      "id": "presonus-studio-one-pro",
-      "name": "Studio One Pro",
-      "maker": "PreSonus",
-      "category": "daws",
-      "subcategory": "linear-daw",
-      "tags": [
-        "daw",
-        "mastering",
-        "drag-and-drop",
-        "arranging",
-        "mixing",
-        "notation"
-      ],
-      "short_description": "Single-window DAW for tracking, editing, mixing and mastering, with ARA editor integration.",
-      "who_its_for": "Producers, mastering engineers",
-      "platforms": [
-        "macOS",
-        "Windows"
-      ],
-      "formats": [
-        "Standalone"
-      ],
-      "price_type": "varies",
-      "price_note": "",
-      "license": "Proprietary",
-      "official_url": "https://www.presonus.com/en-US/studio-one-pro.html",
-      "affiliate_ok": false,
-      "affiliate_url": "",
-      "featured": false,
-      "paid_placement": false,
-      "scjg_owned": false,
-      "verification_status": "needs-recheck",
-      "last_checked": "",
-      "confidence": "ai-sourced",
-      "sample": false
-    },
-    {
       "id": "moog-subsequent-37",
       "name": "Subsequent 37",
       "maker": "Moog Music",
@@ -9564,6 +9526,43 @@
       "verification_status": "unverified",
       "last_checked": "",
       "confidence": "ai-sourced",
+      "sample": false
+    },
+    {
+      "id": "audiokit-synth-one-j6",
+      "name": "Synth One J6",
+      "maker": "AudioKit Pro",
+      "category": "mobile-music-apps",
+      "subcategory": "ipad-synthesizer",
+      "tags": [
+        "synth",
+        "ios",
+        "auv3",
+        "analog-style",
+        "machine-learning",
+        "free"
+      ],
+      "short_description": "Free analog-style synth for iPhone and iPad, modelled with machine learning on vintage oscillators.",
+      "who_its_for": "iPhone and iPad musicians",
+      "platforms": [
+        "iOS"
+      ],
+      "formats": [
+        "AU",
+        "Standalone"
+      ],
+      "price_type": "free",
+      "price_note": "Free (no ads, no in-app purchases)",
+      "license": "Not stated",
+      "official_url": "https://audiokitpro.com/synthonej6/",
+      "affiliate_ok": false,
+      "affiliate_url": "",
+      "featured": false,
+      "paid_placement": false,
+      "scjg_owned": false,
+      "verification_status": "verified",
+      "last_checked": "2026-11-15",
+      "confidence": "high",
       "sample": false
     },
     {
