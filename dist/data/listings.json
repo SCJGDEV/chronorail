@@ -459,7 +459,7 @@
         "Standalone"
       ],
       "price_type": "freemium",
-      "price_note": "Free (non-commercial) / €11/mo Standard / €33/mo Pro",
+      "price_note": "Free (non-commercial) / €11/mo Standard / €33/mo Pro (+ VAT, billed annually)",
       "license": "Proprietary",
       "official_url": "https://www.aiva.ai/",
       "affiliate_ok": false,
@@ -612,7 +612,7 @@
       "featured": false,
       "paid_placement": false,
       "scjg_owned": false,
-      "verification_status": "unverified",
+      "verification_status": "needs-recheck",
       "last_checked": "",
       "confidence": "ai-sourced",
       "sample": false
@@ -2250,7 +2250,7 @@
       "featured": false,
       "paid_placement": false,
       "scjg_owned": false,
-      "verification_status": "unverified",
+      "verification_status": "needs-recheck",
       "last_checked": "",
       "confidence": "ai-sourced",
       "sample": false
@@ -3013,7 +3013,7 @@
       ],
       "formats": [],
       "price_type": "one-time",
-      "price_note": "",
+      "price_note": "$699.99 list",
       "license": "Proprietary",
       "official_url": "https://zoomcorp.com/en/us/field-recorders/field-recorders/f6/",
       "affiliate_ok": false,
@@ -3021,7 +3021,7 @@
       "featured": false,
       "paid_placement": false,
       "scjg_owned": false,
-      "verification_status": "needs-recheck",
+      "verification_status": "unverified",
       "last_checked": "",
       "confidence": "ai-sourced",
       "sample": false
