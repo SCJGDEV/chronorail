@@ -1,0 +1,50 @@
+# Nightly ChronoRail listings check. Runs Claude Code inside this repo, checks a batch of
+# listings against the makers' own sites, and opens a PR. It never merges: Silas merges.
+# Prompt: .github/claude/listings-check.md
+name: Listings check
+
+on:
+  schedule:
+    - cron: "43 2 * * *"   # 02:43 UTC = 7:43 pm Mountain (MST). GitHub may start it a few minutes late.
+  workflow_dispatch: {}     # "Run workflow" button for a manual run
+
+permissions:
+  contents: write
+  pull-requests: write
+
+concurrency:
+  group: listings-check
+  cancel-in-progress: false
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Git identity
+        run: |
+          git config user.name "chronorail-checker[bot]"
+          git config user.email "io@scjg.cc"
+
+      - uses: anthropics/claude-code-action@v1
+        env:
+          GH_TOKEN: ${{ github.token }}
+        with:
+          # Use ONE of these. The OAuth token signs in with Silas's Claude plan
+          # (make it with `claude setup-token`); the API key bills per use.
+          claude_code_oauth_token: ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN }}
+          # anthropic_api_key: ${{ secrets.ANTHROPIC_API_KEY }}
+          prompt: |
+            REPO: ${{ github.repository }}
+            Follow the instructions in .github/claude/listings-check.md exactly.
+          claude_args: |
+            --max-turns 120
+            --allowedTools Read,Edit,Write,WebFetch,WebSearch,Bash(node:*),Bash(bash scripts/*),Bash(git:*),Bash(gh pr:*),Bash(TZ=America/Denver date:*),Bash(python3:*),Bash(jq:*)
