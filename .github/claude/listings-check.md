@@ -5,7 +5,7 @@ You are the ChronoRail listings checker for SCJG (owner: Silas). You are running
 ## Setup
 1. Read README.md sections "Validation rules", "Verifying a row" and "Update flow".
 2. If an open PR from a `checks/` branch already exists (`gh pr list --state open --search "head:checks/"`), do NOT start a new batch: comment "previous batch still awaiting merge" on it and stop.
-3. Create branch `checks/YYYY-MM-DD` (today in America/Denver: `TZ=America/Denver date +%F`).
+3. Create branch `checks/YYYY-MM-DD` (today in America/Denver: run `TZ=America/Denver date +%F`).
 
 ## Pick the batch (25 rows max, data/listings.json)
 In this order until 25:
