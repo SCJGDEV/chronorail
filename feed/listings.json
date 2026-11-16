@@ -1,7 +1,7 @@
 {
   "name": "ChronoRail listings feed",
   "schema_version": 1,
-  "generated_at": "2026-11-16T03:17:05.167Z",
+  "generated_at": "2026-11-16T10:10:11.287Z",
   "count": 294,
   "sample": false,
   "license_note": "Listing data is curated by SCJG. Descriptions are SCJG's own words. Verify details on each official_url.",
@@ -3154,7 +3154,7 @@
       ],
       "formats": [],
       "price_type": "one-time",
-      "price_note": "$599",
+      "price_note": "$599 · UNVERIFIED",
       "license": "Proprietary",
       "official_url": "https://zoomcorp.com/en/us/field-recorders/field-recorders/f6/",
       "affiliate_ok": false,
