@@ -1,7 +1,7 @@
 {
   "name": "ChronoRail listings feed",
   "schema_version": 1,
-  "generated_at": "2026-11-15T19:36:49.897Z",
+  "generated_at": "2026-11-16T03:17:05.167Z",
   "count": 294,
   "sample": false,
   "license_note": "Listing data is curated by SCJG. Descriptions are SCJG's own words. Verify details on each official_url.",
@@ -202,7 +202,7 @@
       ],
       "formats": [],
       "price_type": "freemium",
-      "price_note": "Free starter tier / $49.99/yr Premium membership · UNVERIFIED",
+      "price_note": "Free starter / $49.99/yr or $7.99/mo membership",
       "license": "Proprietary",
       "official_url": "https://untitled.stream/",
       "affiliate_ok": false,
@@ -395,7 +395,7 @@
       "platforms": [],
       "formats": [],
       "price_type": "one-time",
-      "price_note": "$799.99 each · UNVERIFIED",
+      "price_note": "$939.99 each (sold individually)",
       "license": "N/A (hardware)",
       "official_url": "https://www.adam-audio.com/en/a-series/a7v/",
       "affiliate_ok": false,
@@ -403,9 +403,9 @@
       "featured": false,
       "paid_placement": false,
       "scjg_owned": false,
-      "verification_status": "unverified",
-      "last_checked": "",
-      "confidence": "ai-sourced",
+      "verification_status": "verified",
+      "last_checked": "2026-11-15",
+      "confidence": "high",
       "sample": false
     },
     {
@@ -433,7 +433,7 @@
         "Standalone"
       ],
       "price_type": "one-time",
-      "price_note": "$79 Intro / $279 Standard / $599 Suite when checked (20% sale)",
+      "price_note": "$99 Intro / $349 Standard / $749 Suite list ($79/$279/$599 at 20% off when checked)",
       "license": "Proprietary",
       "official_url": "https://www.ableton.com/en/live/",
       "affiliate_ok": false,
@@ -441,9 +441,9 @@
       "featured": false,
       "paid_placement": false,
       "scjg_owned": false,
-      "verification_status": "unverified",
-      "last_checked": "",
-      "confidence": "ai-sourced",
+      "verification_status": "verified",
+      "last_checked": "2026-11-15",
+      "confidence": "high",
       "sample": false
     },
     {
@@ -854,7 +854,7 @@
         "Standalone"
       ],
       "price_type": "freemium",
-      "price_note": "",
+      "price_note": "Free source code; ready-to-run builds via download page (price not shown before form)",
       "license": "GPL-2.0",
       "official_url": "https://ardour.org/",
       "affiliate_ok": false,
@@ -891,7 +891,7 @@
       ],
       "formats": [],
       "price_type": "free",
-      "price_note": "$0 for writers (and $0 combined writer+publisher; $50 publisher-only) · UNVERIFIED",
+      "price_note": "$0 writers and writer+publisher / $50 publisher-only",
       "license": "Proprietary",
       "official_url": "https://www.ascap.com/",
       "affiliate_ok": false,
@@ -899,9 +899,9 @@
       "featured": false,
       "paid_placement": false,
       "scjg_owned": false,
-      "verification_status": "unverified",
-      "last_checked": "",
-      "confidence": "ai-sourced",
+      "verification_status": "verified",
+      "last_checked": "2026-11-15",
+      "confidence": "high",
       "sample": false
     },
     {
@@ -954,7 +954,7 @@
       "platforms": [],
       "formats": [],
       "price_type": "one-time",
-      "price_note": "",
+      "price_note": "$329",
       "license": "N/A (hardware)",
       "official_url": "https://www.audio-technica.com/en-us/at4040",
       "affiliate_ok": false,
@@ -962,9 +962,9 @@
       "featured": false,
       "paid_placement": false,
       "scjg_owned": false,
-      "verification_status": "unverified",
-      "last_checked": "",
-      "confidence": "ai-sourced",
+      "verification_status": "verified",
+      "last_checked": "2026-11-15",
+      "confidence": "high",
       "sample": false
     },
     {
@@ -1142,7 +1142,7 @@
     },
     {
       "id": "antares-auto-tune-pro-11",
-      "name": "Auto-Tune Pro",
+      "name": "AutoTune Pro 11",
       "maker": "Antares Audio Technologies",
       "category": "vocal-tools",
       "subcategory": "pitch-correction-and-harmony",
@@ -1166,9 +1166,9 @@
         "AAX"
       ],
       "price_type": "varies",
-      "price_note": "$459 one-time or Auto-Tune Unlimited subscription · UNVERIFIED",
+      "price_note": "$450 or $15/mo; included with AutoTune Unlimited",
       "license": "Proprietary",
-      "official_url": "https://www.antarestech.com/products/auto-tune/pro",
+      "official_url": "https://www.antarestech.com/products/pitch-correction/pro",
       "affiliate_ok": false,
       "affiliate_url": "",
       "featured": false,
@@ -1278,7 +1278,7 @@
         "Standalone"
       ],
       "price_type": "freemium",
-      "price_note": "Free core platform / optional Membership subscription · UNVERIFIED",
+      "price_note": "Free account / optional Membership (price behind sign-up)",
       "license": "Proprietary",
       "official_url": "https://www.bandlab.com/",
       "affiliate_ok": false,
@@ -1446,7 +1446,7 @@
     },
     {
       "id": "bfd-drums-bfd3",
-      "name": "BFD",
+      "name": "BFD 3.5",
       "maker": "BFD Drums",
       "category": "drum-groove-tools",
       "subcategory": "deep-acoustic-drum-sampler",
@@ -1471,9 +1471,9 @@
         "Standalone"
       ],
       "price_type": "one-time",
-      "price_note": "$199 · UNVERIFIED",
+      "price_note": "$199",
       "license": "Proprietary",
-      "official_url": "https://www.bfddrums.com/",
+      "official_url": "https://www.bfddrums.com/bfd3/",
       "affiliate_ok": false,
       "affiliate_url": "",
       "featured": false,
@@ -1510,7 +1510,7 @@
         "Standalone"
       ],
       "price_type": "one-time",
-      "price_note": "",
+      "price_note": "$99 Essentials / $199 Producer / $399 Studio",
       "license": "Proprietary",
       "official_url": "https://www.bitwig.com/",
       "affiliate_ok": false,
@@ -1518,9 +1518,9 @@
       "featured": false,
       "paid_placement": false,
       "scjg_owned": false,
-      "verification_status": "unverified",
-      "last_checked": "",
-      "confidence": "ai-sourced",
+      "verification_status": "verified",
+      "last_checked": "2026-11-15",
+      "confidence": "high",
       "sample": false
     },
     {
@@ -1770,17 +1770,17 @@
       "platforms": [],
       "formats": [],
       "price_type": "one-time",
-      "price_note": "",
+      "price_note": "$1,299 list ($1,099 sale when checked)",
       "license": "N/A (hardware)",
-      "official_url": "https://www.akg.com/microphones/condenser-microphones/C414-XLII.html",
+      "official_url": "https://www.akg.com/C414+XLII.html",
       "affiliate_ok": false,
       "affiliate_url": "",
       "featured": false,
       "paid_placement": false,
       "scjg_owned": false,
-      "verification_status": "unverified",
-      "last_checked": "",
-      "confidence": "ai-sourced",
+      "verification_status": "verified",
+      "last_checked": "2026-11-15",
+      "confidence": "high",
       "sample": false
     },
     {
@@ -1798,8 +1798,8 @@
       "who_its_for": "Solo recordists tracking vocals and guitars",
       "platforms": [],
       "formats": [],
-      "price_type": "unknown",
-      "price_note": "UNVERIFIED",
+      "price_type": "one-time",
+      "price_note": "£449 (maker UK store); USD via dealers",
       "license": "N/A (hardware)",
       "official_url": "https://www.cranborne-audio.com/camdenec1",
       "affiliate_ok": false,
@@ -1914,7 +1914,7 @@
       ],
       "formats": [],
       "price_type": "one-time",
-      "price_note": "$9.99 per single / $14.99 per album (+ 9% royalty commission) · UNVERIFIED",
+      "price_note": "$9.99 per single / $14.99 per album, one-time per release (artist keeps over 90%)",
       "license": "Proprietary",
       "official_url": "https://cdbaby.com/",
       "affiliate_ok": false,
@@ -1922,9 +1922,9 @@
       "featured": false,
       "paid_placement": false,
       "scjg_owned": false,
-      "verification_status": "unverified",
-      "last_checked": "",
-      "confidence": "ai-sourced",
+      "verification_status": "verified",
+      "last_checked": "2026-11-16",
+      "confidence": "high",
       "sample": false
     },
     {
@@ -2179,7 +2179,7 @@
         "Standalone"
       ],
       "price_type": "one-time",
-      "price_note": "",
+      "price_note": "Elements $99.99 / Artist $299.99 / Pro $599.99 (crossgrade $359.99)",
       "license": "Proprietary",
       "official_url": "https://www.steinberg.net/cubase/",
       "affiliate_ok": false,
@@ -2187,9 +2187,9 @@
       "featured": false,
       "paid_placement": false,
       "scjg_owned": false,
-      "verification_status": "unverified",
-      "last_checked": "",
-      "confidence": "ai-sourced",
+      "verification_status": "verified",
+      "last_checked": "2026-11-15",
+      "confidence": "high",
       "sample": false
     },
     {
@@ -2622,13 +2622,15 @@
         "macOS",
         "Windows",
         "iOS",
-        "Android"
+        "Android",
+        "visionOS",
+        "Meta Quest"
       ],
       "formats": [
         "Standalone"
       ],
       "price_type": "freemium",
-      "price_note": "Free tier / $6.99/mo or $49.99/yr Pro subscription · UNVERIFIED",
+      "price_note": "Free download / PRO subscription (price shown in app only)",
       "license": "Proprietary",
       "official_url": "https://www.algoriddim.com/apps",
       "affiliate_ok": false,
@@ -2668,7 +2670,7 @@
         "Standalone"
       ],
       "price_type": "freemium",
-      "price_note": "Free (Dorico SE) / $99.99 (Elements 6) / $579.99 (Pro 6) · UNVERIFIED",
+      "price_note": "Free (SE 6, iPad) / $99.99 Elements 6 / $579.99 Pro 6",
       "license": "Proprietary",
       "official_url": "https://www.steinberg.net/dorico/",
       "affiliate_ok": false,
@@ -2748,7 +2750,7 @@
         "Standalone"
       ],
       "price_type": "one-time",
-      "price_note": "$24.99 · UNVERIFIED",
+      "price_note": "$24.99 with in-app purchases (iOS App Store)",
       "license": "Proprietary",
       "official_url": "https://www.beepstreet.com/ios/drambo",
       "affiliate_ok": false,
@@ -2982,7 +2984,7 @@
     },
     {
       "id": "audialab-emergent-drums-2",
-      "name": "Emergent Drums",
+      "name": "Emergent Drums 2",
       "maker": "Audialab",
       "category": "ai-music-generation",
       "subcategory": "generative-ai-drum-plugin",
@@ -3005,9 +3007,9 @@
         "AU"
       ],
       "price_type": "one-time",
-      "price_note": "",
+      "price_note": "$79",
       "license": "Proprietary",
-      "official_url": "https://audialab.com/",
+      "official_url": "https://www.flow.page/audialab",
       "affiliate_ok": false,
       "affiliate_url": "",
       "featured": false,
@@ -3152,7 +3154,7 @@
       ],
       "formats": [],
       "price_type": "one-time",
-      "price_note": "$699.99 list",
+      "price_note": "$599",
       "license": "Proprietary",
       "official_url": "https://zoomcorp.com/en/us/field-recorders/field-recorders/f6/",
       "affiliate_ok": false,
@@ -3167,7 +3169,7 @@
     },
     {
       "id": "fabfilter-pro-c-2",
-      "name": "FabFilter Pro-C",
+      "name": "FabFilter Pro-C 3",
       "maker": "FabFilter",
       "category": "effects-plugins",
       "subcategory": "Versatile Bus & Track Compressor",
@@ -3185,28 +3187,30 @@
         "Windows"
       ],
       "formats": [
+        "VST",
         "VST3",
         "AU",
+        "CLAP",
         "AAX",
-        "CLAP"
+        "AudioSuite"
       ],
       "price_type": "one-time",
-      "price_note": "$169 · UNVERIFIED",
+      "price_note": "$199",
       "license": "Proprietary",
-      "official_url": "https://www.fabfilter.com/products/pro-c-2-compressor-plug-in",
+      "official_url": "https://www.fabfilter.com/products/pro-c-3-compressor-plug-in",
       "affiliate_ok": false,
       "affiliate_url": "",
       "featured": false,
       "paid_placement": false,
       "scjg_owned": false,
-      "verification_status": "unverified",
-      "last_checked": "",
-      "confidence": "ai-sourced",
+      "verification_status": "verified",
+      "last_checked": "2026-11-16",
+      "confidence": "high",
       "sample": false
     },
     {
       "id": "fabfilter-pro-q-4",
-      "name": "FabFilter Pro-Q",
+      "name": "FabFilter Pro-Q 4",
       "maker": "FabFilter",
       "category": "effects-plugins",
       "subcategory": "equalizer",
@@ -3233,7 +3237,7 @@
         "CLAP"
       ],
       "price_type": "one-time",
-      "price_note": "$199 · UNVERIFIED",
+      "price_note": "$199",
       "license": "Proprietary",
       "official_url": "https://www.fabfilter.com/products/pro-q-4-equalizer-plug-in",
       "affiliate_ok": false,
@@ -3241,14 +3245,14 @@
       "featured": false,
       "paid_placement": false,
       "scjg_owned": false,
-      "verification_status": "unverified",
-      "last_checked": "",
-      "confidence": "ai-sourced",
+      "verification_status": "verified",
+      "last_checked": "2026-11-16",
+      "confidence": "high",
       "sample": false
     },
     {
       "id": "fabfilter-saturn-2",
-      "name": "FabFilter Saturn",
+      "name": "FabFilter Saturn 2",
       "maker": "FabFilter",
       "category": "effects-plugins",
       "subcategory": "Multiband Distortion & Saturation",
@@ -3273,7 +3277,7 @@
         "CLAP"
       ],
       "price_type": "one-time",
-      "price_note": "$129 · UNVERIFIED",
+      "price_note": "$149",
       "license": "Proprietary",
       "official_url": "https://www.fabfilter.com/products/saturn-2-multiband-distortion-saturation-plug-in",
       "affiliate_ok": false,
@@ -3281,9 +3285,9 @@
       "featured": false,
       "paid_placement": false,
       "scjg_owned": false,
-      "verification_status": "unverified",
-      "last_checked": "",
-      "confidence": "ai-sourced",
+      "verification_status": "verified",
+      "last_checked": "2026-11-16",
+      "confidence": "high",
       "sample": false
     },
     {
@@ -3547,11 +3551,10 @@
         "iOS"
       ],
       "formats": [
-        "AU",
         "Standalone"
       ],
       "price_type": "free",
-      "price_note": "",
+      "price_note": "Free",
       "license": "Proprietary",
       "official_url": "https://www.apple.com/ios/garageband/",
       "affiliate_ok": false,
@@ -3559,9 +3562,9 @@
       "featured": false,
       "paid_placement": false,
       "scjg_owned": false,
-      "verification_status": "unverified",
-      "last_checked": "",
-      "confidence": "ai-sourced",
+      "verification_status": "verified",
+      "last_checked": "2026-11-15",
+      "confidence": "high",
       "sample": false
     },
     {
@@ -3676,7 +3679,7 @@
     },
     {
       "id": "arobas-music-guitar-pro-8",
-      "name": "Guitar Pro",
+      "name": "Guitar Pro 8",
       "maker": "Arobas Music",
       "category": "notation-scoring",
       "subcategory": "tablature-and-multitrack-score-editor",
@@ -3699,7 +3702,7 @@
         "Standalone"
       ],
       "price_type": "one-time",
-      "price_note": "$69.95 ($34.95 upgrade) · UNVERIFIED",
+      "price_note": "$69.95 new / $34.95 upgrade (lifetime licence, up to 5 computers)",
       "license": "Proprietary",
       "official_url": "https://www.guitar-pro.com/",
       "affiliate_ok": false,
@@ -3707,9 +3710,9 @@
       "featured": false,
       "paid_placement": false,
       "scjg_owned": false,
-      "verification_status": "unverified",
-      "last_checked": "",
-      "confidence": "ai-sourced",
+      "verification_status": "verified",
+      "last_checked": "2026-11-15",
+      "confidence": "high",
       "sample": false
     },
     {
@@ -3805,7 +3808,7 @@
       ],
       "formats": [],
       "price_type": "freemium",
-      "price_note": "",
+      "price_note": "Starter $0 / Indie $4.99/mo / Studio $19.99/mo (yearly option)",
       "license": "Proprietary",
       "official_url": "https://www.highnote.fm/",
       "affiliate_ok": false,
@@ -3813,9 +3816,9 @@
       "featured": false,
       "paid_placement": false,
       "scjg_owned": false,
-      "verification_status": "unverified",
-      "last_checked": "",
-      "confidence": "ai-sourced",
+      "verification_status": "verified",
+      "last_checked": "2026-11-16",
+      "confidence": "high",
       "sample": false
     },
     {
@@ -3900,8 +3903,8 @@
       "who_its_for": "Synth players into deep digital sound design",
       "platforms": [],
       "formats": [],
-      "price_type": "one-time",
-      "price_note": "$649–$1999 (by model) · UNVERIFIED",
+      "price_type": "unknown",
+      "price_note": "Dealer pricing (maker lists no price)",
       "license": "N/A (hardware)",
       "official_url": "https://www.ashunsoundmachines.com/hydrasynth-key",
       "affiliate_ok": false,
@@ -3909,9 +3912,9 @@
       "featured": false,
       "paid_placement": false,
       "scjg_owned": false,
-      "verification_status": "unverified",
-      "last_checked": "",
-      "confidence": "ai-sourced",
+      "verification_status": "verified",
+      "last_checked": "2026-11-15",
+      "confidence": "high",
       "sample": false
     },
     {
@@ -4126,7 +4129,7 @@
         "Standalone"
       ],
       "price_type": "one-time",
-      "price_note": "$399 · UNVERIFIED",
+      "price_note": "$399 (download or boxed)",
       "license": "Proprietary",
       "official_url": "https://www.spectrasonics.net/products/keyscape/",
       "affiliate_ok": false,
@@ -4235,7 +4238,7 @@
         "Standalone"
       ],
       "price_type": "one-time",
-      "price_note": "$4.99 (base mobile app) · UNVERIFIED",
+      "price_note": "Mobile app $4.99 UNVERIFIED / desktop Plugin Bundle $31.54 incl. local tax when checked",
       "license": "Proprietary",
       "official_url": "https://www.koalasampler.com/",
       "affiliate_ok": false,
@@ -5222,7 +5225,7 @@
         "Standalone"
       ],
       "price_type": "varies",
-      "price_note": "$399 (Max 9 one-time) or subscription · UNVERIFIED",
+      "price_note": "$399 permanent / $120/yr or $12.99/mo subscription",
       "license": "Proprietary",
       "official_url": "https://cycling74.com/products/max",
       "affiliate_ok": false,
@@ -5300,7 +5303,7 @@
         "Standalone"
       ],
       "price_type": "one-time",
-      "price_note": "$99 (Essential) to $849 (Studio) · UNVERIFIED",
+      "price_note": "essential $99 / assistant $299 / editor $499 / studio $849 list (sale when checked: $249/$399/$699)",
       "license": "Proprietary",
       "official_url": "https://www.celemony.com/en/melodyne/what-is-melodyne",
       "affiliate_ok": false,
@@ -5875,10 +5878,10 @@
         "Windows"
       ],
       "formats": [],
-      "price_type": "one-time",
-      "price_note": "",
+      "price_type": "unknown",
+      "price_note": "Dealer pricing (maker lists no price)",
       "license": "N/A (hardware)",
-      "official_url": "https://www.akaipro.com/mpc-live-ii",
+      "official_url": "https://www.akaipro.com/mpc-live-2/",
       "affiliate_ok": false,
       "affiliate_url": "",
       "featured": false,
@@ -5911,10 +5914,10 @@
         "iOS"
       ],
       "formats": [],
-      "price_type": "one-time",
-      "price_note": "",
+      "price_type": "unknown",
+      "price_note": "Dealer pricing (maker lists no price)",
       "license": "N/A (hardware)",
-      "official_url": "https://www.akaipro.com/mpk-mini-plus.html",
+      "official_url": "https://www.akaipro.com/mpk-mini-plus/",
       "affiliate_ok": false,
       "affiliate_url": "",
       "featured": false,
@@ -6159,22 +6162,23 @@
         "Windows"
       ],
       "formats": [
+        "VST",
         "VST3",
         "AU",
         "AAX"
       ],
       "price_type": "free",
-      "price_note": "",
+      "price_note": "Free",
       "license": "Proprietary",
-      "official_url": "https://www.stltones.com/products/stl-ignite-nadir",
+      "official_url": "https://www.igniteamps.com/#nadir",
       "affiliate_ok": false,
       "affiliate_url": "",
       "featured": false,
       "paid_placement": false,
       "scjg_owned": false,
-      "verification_status": "unverified",
-      "last_checked": "",
-      "confidence": "ai-sourced",
+      "verification_status": "verified",
+      "last_checked": "2026-11-16",
+      "confidence": "high",
       "sample": false
     },
     {
@@ -6416,7 +6420,7 @@
         "Standalone"
       ],
       "price_type": "one-time",
-      "price_note": "$699.99 · UNVERIFIED",
+      "price_note": "$999.99 (crossgrade $799.99)",
       "license": "Proprietary",
       "official_url": "https://www.steinberg.net/nuendo/",
       "affiliate_ok": false,
@@ -6709,7 +6713,7 @@
       "platforms": [],
       "formats": [],
       "price_type": "one-time",
-      "price_note": "$199 (PBR TRS); other models · UNVERIFIED",
+      "price_note": "$199 (PBR TRS); other models priced per product page",
       "license": "N/A (hardware)",
       "official_url": "https://blacklionaudio.com/en/products/pbr-trs",
       "affiliate_ok": false,
@@ -7202,7 +7206,7 @@
         "Standalone"
       ],
       "price_type": "subscription",
-      "price_note": "",
+      "price_note": "Annual: Artist $99 / Studio $299 / Ultimate $599 list ($79/$199/$399 sale when checked)",
       "license": "Proprietary",
       "official_url": "https://www.avid.com/pro-tools",
       "affiliate_ok": false,
@@ -7342,7 +7346,7 @@
         "Standalone"
       ],
       "price_type": "freemium",
-      "price_note": "Free starter tier / paid or rental Audio/Video/Lighting licenses · UNVERIFIED",
+      "price_note": "Free features $0 / one feature set $599 or $8/day / two $1,099 or $12/day / all $1,399 or $15/day",
       "license": "Proprietary",
       "official_url": "https://qlab.app/",
       "affiliate_ok": false,
@@ -7350,9 +7354,9 @@
       "featured": false,
       "paid_placement": false,
       "scjg_owned": false,
-      "verification_status": "unverified",
-      "last_checked": "",
-      "confidence": "ai-sourced",
+      "verification_status": "verified",
+      "last_checked": "2026-11-16",
+      "confidence": "high",
       "sample": false
     },
     {
@@ -7713,12 +7717,12 @@
         "Windows"
       ],
       "formats": [
+        "Standalone",
         "VST3",
-        "AU",
-        "Standalone"
+        "AudioSuite"
       ],
       "price_type": "one-time",
-      "price_note": "$99 (RipX DAW) / $198 (RipX DAW PRO) · UNVERIFIED",
+      "price_note": "$99 RipX DAW / $198 PRO list ($69/$138 sale when checked)",
       "license": "Proprietary",
       "official_url": "https://hitnmix.com/",
       "affiliate_ok": false,
@@ -7726,9 +7730,9 @@
       "featured": false,
       "paid_placement": false,
       "scjg_owned": false,
-      "verification_status": "unverified",
-      "last_checked": "",
-      "confidence": "ai-sourced",
+      "verification_status": "verified",
+      "last_checked": "2026-11-16",
+      "confidence": "high",
       "sample": false
     },
     {
@@ -8088,7 +8092,7 @@
     },
     {
       "id": "cableguys-shaperbox-3",
-      "name": "ShaperBox",
+      "name": "ShaperBox 3",
       "maker": "Cableguys",
       "category": "effects-plugins",
       "subcategory": "multi-effect-modulator",
@@ -8113,7 +8117,7 @@
         "AAX"
       ],
       "price_type": "one-time",
-      "price_note": "$99 · UNVERIFIED",
+      "price_note": "$379 list ($89 Black Friday sale when checked)",
       "license": "Proprietary",
       "official_url": "https://www.cableguys.com/shaperbox",
       "affiliate_ok": false,
@@ -8185,7 +8189,7 @@
         "Standalone"
       ],
       "price_type": "freemium",
-      "price_note": "Free (Sibelius First) / Artist and Ultimate subscription tiers · UNVERIFIED",
+      "price_note": "Artist $99/yr / Ultimate $199/yr list ($79/$159 sale when checked); Ultimate Perpetual $899; free First tier UNVERIFIED",
       "license": "Proprietary",
       "official_url": "https://www.avid.com/sibelius",
       "affiliate_ok": false,
@@ -9591,7 +9595,7 @@
         "Standalone"
       ],
       "price_type": "freemium",
-      "price_note": "Free 22-lesson demo / $129.99 full version · UNVERIFIED",
+      "price_note": "$129.99 lifetime (V1 upgrade $34.99); free demo UNVERIFIED",
       "license": "Proprietary",
       "official_url": "https://www.syntorial.com/",
       "affiliate_ok": false,
@@ -10790,18 +10794,18 @@
       "who_its_for": "Mix engineers compressing buses",
       "platforms": [],
       "formats": [],
-      "price_type": "one-time",
-      "price_note": "",
+      "price_type": "unknown",
+      "price_note": "Dealer pricing (maker lists no price)",
       "license": "N/A (hardware)",
-      "official_url": "https://www.elysia.com/19-inch/xpressor-neo-19/",
+      "official_url": "https://www.elysia.com/xpressor-neo/",
       "affiliate_ok": false,
       "affiliate_url": "",
       "featured": false,
       "paid_placement": false,
       "scjg_owned": false,
-      "verification_status": "unverified",
-      "last_checked": "",
-      "confidence": "ai-sourced",
+      "verification_status": "verified",
+      "last_checked": "2026-11-16",
+      "confidence": "high",
       "sample": false
     },
     {
