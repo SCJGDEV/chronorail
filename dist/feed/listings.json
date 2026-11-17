@@ -1,7 +1,7 @@
 {
   "name": "ChronoRail listings feed",
   "schema_version": 1,
-  "generated_at": "2026-11-16T10:10:11.287Z",
+  "generated_at": "2026-11-17T03:16:21.060Z",
   "count": 294,
   "sample": false,
   "license_note": "Listing data is curated by SCJG. Descriptions are SCJG's own words. Verify details on each official_url.",
@@ -1838,7 +1838,7 @@
         "AAX"
       ],
       "price_type": "one-time",
-      "price_note": "$99 · UNVERIFIED",
+      "price_note": "$99 list ($49 sale when checked)",
       "license": "Proprietary",
       "official_url": "https://mixedinkey.com/captain-plugins/",
       "affiliate_ok": false,
@@ -3415,7 +3415,7 @@
         "Standalone"
       ],
       "price_type": "one-time",
-      "price_note": "From $99; lifetime free updates",
+      "price_note": "Fruity $99 / Producer $179 / Signature $269 / All Plugins $449 list ($139/$199/$224 sale when checked); lifetime free updates",
       "license": "Proprietary",
       "official_url": "https://www.image-line.com/fl-studio/",
       "affiliate_ok": false,
@@ -4353,18 +4353,18 @@
         "Windows"
       ],
       "formats": [],
-      "price_type": "one-time",
-      "price_note": "",
+      "price_type": "unknown",
+      "price_note": "Dealer pricing (maker lists no price)",
       "license": "N/A (hardware)",
-      "official_url": "https://www.native-instruments.com/en/catalog/hardware/keyboards/",
+      "official_url": "https://www.native-instruments.com/products/kontrol-s49",
       "affiliate_ok": false,
       "affiliate_url": "",
       "featured": false,
       "paid_placement": false,
       "scjg_owned": false,
-      "verification_status": "unverified",
-      "last_checked": "",
-      "confidence": "ai-sourced",
+      "verification_status": "verified",
+      "last_checked": "2026-11-17",
+      "confidence": "high",
       "sample": false
     },
     {
@@ -4712,7 +4712,7 @@
       ],
       "formats": [],
       "price_type": "free",
-      "price_note": "",
+      "price_note": "Free to read; sign up to post (no paid tier shown)",
       "license": "Proprietary",
       "official_url": "https://llllllll.co/",
       "affiliate_ok": false,
@@ -4941,7 +4941,7 @@
         "Standalone"
       ],
       "price_type": "subscription",
-      "price_note": "",
+      "price_note": "Artist $10.95/mo or $109.95/yr / Studio $16.95/mo or $169.95/yr / Professional $24.95/mo or $249.95/yr; free trial",
       "license": "Proprietary",
       "official_url": "https://www.loopcloud.com/",
       "affiliate_ok": false,
@@ -5106,8 +5106,7 @@
       "platforms": [
         "macOS",
         "Windows",
-        "iOS",
-        "Linux"
+        "iOS"
       ],
       "formats": [],
       "price_type": "one-time",
@@ -5262,8 +5261,8 @@
       "formats": [
         "Standalone"
       ],
-      "price_type": "freemium",
-      "price_note": "Free daily practice minutes / paid monthly or annual subscriptions · UNVERIFIED",
+      "price_type": "subscription",
+      "price_note": "7-day free trial; Standard $10.99/mo or $131.88/yr / Premium $14.99/mo or $179.88/yr list (25% off when checked)",
       "license": "Proprietary",
       "official_url": "https://melodics.com/",
       "affiliate_ok": false,
@@ -5396,7 +5395,7 @@
     },
     {
       "id": "jam-origin-midi-guitar-2",
-      "name": "MIDI Guitar 2",
+      "name": "MIDI Guitar 3",
       "maker": "Jam Origin",
       "category": "utility-midi-plugins",
       "subcategory": "audio-to-midi-converter",
@@ -5411,8 +5410,7 @@
       "who_its_for": "Guitarists",
       "platforms": [
         "macOS",
-        "Windows",
-        "iOS"
+        "Windows"
       ],
       "formats": [
         "VST3",
@@ -5420,7 +5418,7 @@
         "Standalone"
       ],
       "price_type": "one-time",
-      "price_note": "$149.95 · UNVERIFIED",
+      "price_note": "$149.95 personal lifetime licence (also runs MIDI Guitar 2)",
       "license": "Proprietary",
       "official_url": "https://www.jamorigin.com/",
       "affiliate_ok": false,
@@ -5428,9 +5426,9 @@
       "featured": false,
       "paid_placement": false,
       "scjg_owned": false,
-      "verification_status": "unverified",
-      "last_checked": "2026-11-06",
-      "confidence": "ai-sourced",
+      "verification_status": "verified",
+      "last_checked": "2026-11-17",
+      "confidence": "high",
       "sample": false
     },
     {
@@ -5483,7 +5481,7 @@
       "platforms": [],
       "formats": [],
       "price_type": "one-time",
-      "price_note": "",
+      "price_note": "$799.99 list ($699.99 sale when checked, Korg USA shop)",
       "license": "N/A (hardware)",
       "official_url": "https://www.korg.com/us/products/synthesizers/minilogue_xd/",
       "affiliate_ok": false,
@@ -5491,9 +5489,9 @@
       "featured": false,
       "paid_placement": false,
       "scjg_owned": false,
-      "verification_status": "unverified",
-      "last_checked": "",
-      "confidence": "ai-sourced",
+      "verification_status": "verified",
+      "last_checked": "2026-11-17",
+      "confidence": "high",
       "sample": false
     },
     {
@@ -6128,7 +6126,7 @@
       ],
       "formats": [],
       "price_type": "freemium",
-      "price_note": "",
+      "price_note": "Free account; Pro $12.50/mo or $120/yr; Business (5 seats) $30/mo or $24/mo billed annually (US pricing)",
       "license": "Proprietary",
       "official_url": "https://www.muso.ai/",
       "affiliate_ok": false,
@@ -6585,7 +6583,7 @@
     },
     {
       "id": "izotope-ozone-11",
-      "name": "Ozone",
+      "name": "Ozone 12",
       "maker": "iZotope",
       "category": "mixing-mastering-software",
       "subcategory": "mastering-suite",
@@ -6609,7 +6607,7 @@
         "AAX"
       ],
       "price_type": "one-time",
-      "price_note": "Advanced $499; Elements/Standard · UNVERIFIED",
+      "price_note": "Elements $55 / Standard $219 / Advanced $499 (as shown when checked; sale vs list unclear)",
       "license": "Proprietary",
       "official_url": "https://www.izotope.com/en/products/ozone.html",
       "affiliate_ok": false,
@@ -7546,7 +7544,7 @@
     },
     {
       "id": "mastering-the-mix-reference-2",
-      "name": "REFERENCE",
+      "name": "REFERENCE 3",
       "maker": "Mastering The Mix",
       "category": "analysis-metering",
       "subcategory": "mix-referencing-plugin",
@@ -7569,9 +7567,9 @@
         "AAX"
       ],
       "price_type": "one-time",
-      "price_note": "$65 · UNVERIFIED",
+      "price_note": "$78 list ($54 sale when checked)",
       "license": "Proprietary",
-      "official_url": "https://www.masteringthemix.com/products/reference-plugin",
+      "official_url": "https://www.masteringthemix.com/products/reference",
       "affiliate_ok": false,
       "affiliate_url": "",
       "featured": false,
