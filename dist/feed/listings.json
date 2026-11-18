@@ -1,7 +1,7 @@
 {
   "name": "ChronoRail listings feed",
   "schema_version": 1,
-  "generated_at": "2026-11-17T03:16:21.060Z",
+  "generated_at": "2026-11-18T03:15:06.795Z",
   "count": 294,
   "sample": false,
   "license_note": "Listing data is curated by SCJG. Descriptions are SCJG's own words. Verify details on each official_url.",
@@ -1548,7 +1548,7 @@
         "AAX"
       ],
       "price_type": "one-time",
-      "price_note": "$219 · UNVERIFIED",
+      "price_note": "$209 (buy or rent-to-own; 20-day trial)",
       "license": "Proprietary",
       "official_url": "https://oeksound.com/plugins/bloom/",
       "affiliate_ok": false,
@@ -3734,17 +3734,17 @@
       "platforms": [],
       "formats": [],
       "price_type": "one-time",
-      "price_note": "",
+      "price_note": "$579.95",
       "license": "N/A (hardware)",
-      "official_url": "https://www.sennheiser.com/en-us/catalog/products/headphones/hd-650/hd-650-508825",
+      "official_url": "https://us.sennheiser-hearing.com/products/hd-650",
       "affiliate_ok": false,
       "affiliate_url": "",
       "featured": false,
       "paid_placement": false,
       "scjg_owned": false,
-      "verification_status": "unverified",
-      "last_checked": "",
-      "confidence": "ai-sourced",
+      "verification_status": "verified",
+      "last_checked": "2026-11-17",
+      "confidence": "high",
       "sample": false
     },
     {
@@ -5979,17 +5979,16 @@
       "who_its_for": "Composers working with non-12-TET scales",
       "platforms": [
         "macOS",
-        "Windows",
-        "Linux"
+        "Windows"
       ],
       "formats": [
+        "VST",
         "VST3",
         "AU",
-        "AAX",
-        "CLAP"
+        "AAX"
       ],
       "price_type": "freemium",
-      "price_note": "Free (MTS-ESP Mini) / Suite · UNVERIFIED",
+      "price_note": "Suite USD 105.63 (30-day demo); MTS-ESP Mini free",
       "license": "Proprietary",
       "official_url": "https://oddsound.com/",
       "affiliate_ok": false,
@@ -6352,7 +6351,7 @@
       ],
       "formats": [],
       "price_type": "freemium",
-      "price_note": "",
+      "price_note": "Basic free (up to 10 scores); Premium $7.95/mo or $49/yr; Learn (schools) from $69/yr, 10-user minimum",
       "license": "Proprietary",
       "official_url": "https://www.noteflight.com/",
       "affiliate_ok": false,
@@ -7162,12 +7161,13 @@
         "Windows"
       ],
       "formats": [
+        "VST",
         "VST3",
         "AU",
         "AAX"
       ],
       "price_type": "one-time",
-      "price_note": "$149 · UNVERIFIED",
+      "price_note": "$149 list ($75 sale when checked); also in Output One subscription ($14.99/mo)",
       "license": "Proprietary",
       "official_url": "https://output.com/products/portal",
       "affiliate_ok": false,
@@ -7175,9 +7175,9 @@
       "featured": false,
       "paid_placement": false,
       "scjg_owned": false,
-      "verification_status": "unverified",
-      "last_checked": "",
-      "confidence": "ai-sourced",
+      "verification_status": "verified",
+      "last_checked": "2026-11-17",
+      "confidence": "high",
       "sample": false
     },
     {
@@ -7268,7 +7268,7 @@
       ],
       "formats": [],
       "price_type": "subscription",
-      "price_note": "",
+      "price_note": "Lite $19/mo, Core $39/mo, Complete $49/mo list (annual upfront sale when checked: $15/$29/$34 per mo)",
       "license": "Proprietary",
       "official_url": "https://www.puremix.com/",
       "affiliate_ok": false,
@@ -7276,9 +7276,9 @@
       "featured": false,
       "paid_placement": false,
       "scjg_owned": false,
-      "verification_status": "unverified",
-      "last_checked": "",
-      "confidence": "ai-sourced",
+      "verification_status": "verified",
+      "last_checked": "2026-11-17",
+      "confidence": "high",
       "sample": false
     },
     {
@@ -7505,7 +7505,7 @@
     },
     {
       "id": "reason-studios-reason",
-      "name": "Reason",
+      "name": "Reason 14",
       "maker": "Reason Studios",
       "category": "daws",
       "subcategory": "Virtual Studio Rack & DAW",
@@ -7529,7 +7529,7 @@
         "Standalone"
       ],
       "price_type": "varies",
-      "price_note": "$499 one-time or $19.99/mo · UNVERIFIED",
+      "price_note": "Reason 14 $299 list ($199 sale when checked); Complete $799 ($399 sale); Rack 14 Plugin $199 ($133 sale); Reason+ subscription also offered",
       "license": "Proprietary",
       "official_url": "https://www.reasonstudios.com/reason",
       "affiliate_ok": false,
@@ -7822,15 +7822,16 @@
         "Windows"
       ],
       "formats": [
+        "VST",
         "VST3",
         "AU",
         "AAX",
         "Standalone"
       ],
       "price_type": "one-time",
-      "price_note": "$99 · UNVERIFIED",
+      "price_note": "$69 sale price when checked (list price not shown); Scaler 2 upgrade $29",
       "license": "Proprietary",
-      "official_url": "https://www.scalermusic.com/",
+      "official_url": "https://scalermusic.com/products/scaler-3/",
       "affiliate_ok": false,
       "affiliate_url": "",
       "featured": false,
@@ -7901,7 +7902,7 @@
         "Standalone"
       ],
       "price_type": "varies",
-      "price_note": "",
+      "price_note": "$299 to buy or $11.99/mo; DJ Suite $499 or $14.99/mo; Serato DJ Lite free",
       "license": "Proprietary",
       "official_url": "https://serato.com/dj/pro",
       "affiliate_ok": false,
@@ -7909,9 +7910,9 @@
       "featured": false,
       "paid_placement": false,
       "scjg_owned": false,
-      "verification_status": "unverified",
-      "last_checked": "",
-      "confidence": "ai-sourced",
+      "verification_status": "verified",
+      "last_checked": "2026-11-17",
+      "confidence": "high",
       "sample": false
     },
     {
@@ -8227,9 +8228,9 @@
         "Standalone"
       ],
       "price_type": "freemium",
-      "price_note": "Free (Player + SINEfactory) / paid libraries · UNVERIFIED",
+      "price_note": "SINE Player free (Orchestral Tools account required); libraries sold separately",
       "license": "Proprietary",
-      "official_url": "https://www.orchestraltools.com/sine",
+      "official_url": "https://www.orchestraltools.com/get-sine",
       "affiliate_ok": false,
       "affiliate_url": "",
       "featured": false,
@@ -8525,7 +8526,7 @@
         "AAX"
       ],
       "price_type": "one-time",
-      "price_note": "Buy, rent-to-own or upgrade · price UNVERIFIED",
+      "price_note": "$249 (buy, rent-to-own or upgrade; 20-day trial)",
       "license": "Proprietary",
       "official_url": "https://oeksound.com/plugins/soothe3/",
       "affiliate_ok": false,
@@ -8877,10 +8878,10 @@
         "iOS"
       ],
       "formats": [],
-      "price_type": "one-time",
-      "price_note": "",
+      "price_type": "unknown",
+      "price_note": "Dealer pricing (maker lists no price)",
       "license": "N/A (hardware)",
-      "official_url": "https://www.roland.com/us/products/sp-404mkii/",
+      "official_url": "https://www.roland.com/us/products/sp-404mk2/",
       "affiliate_ok": false,
       "affiliate_url": "",
       "featured": false,
@@ -8996,7 +8997,7 @@
         "AAX"
       ],
       "price_type": "one-time",
-      "price_note": "$159 · UNVERIFIED",
+      "price_note": "$159 (buy or rent-to-own; 20-day trial)",
       "license": "Proprietary",
       "official_url": "https://oeksound.com/plugins/spiff/",
       "affiliate_ok": false,
