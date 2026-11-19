@@ -7,7 +7,7 @@ node scripts/build-data.mjs --strict --site "${SITE_URL:-https://chronorail.si}"
 rm -rf dist && mkdir -p dist/assets dist/data dist/feed
 cp index.html 404.html config.js llms.txt manifest.webmanifest sw.js _headers dist/
 mkdir -p dist/assets/brand && cp assets/brand/*.svg assets/brand/*.png dist/assets/brand/
-cp assets/tokens.css assets/app.css assets/app.js assets/skin.js assets/icon.svg dist/assets/
+cp assets/tokens.css assets/app.css assets/app.js assets/legal.js assets/skin.js assets/icon.svg dist/assets/
 cp data/listings.json data/categories.json data/stacks.json dist/data/
 cp feed/listings.json dist/feed/
 # Indexed by default (Silas, 2026-11-18). Run with NOINDEX=1 to hide a build from search engines.

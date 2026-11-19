@@ -1,11 +1,27 @@
 {
-  // Cloudflare Workers static assets. The site is pre-built into ./dist by scripts/make-dist.sh.
+  // ChronoRail Worker. Static site from ./dist (built by scripts/make-dist.sh); /api/* runs src/worker.js first.
+  // Accounts stay OFF until AUTH_ENABLED is "1" and the secrets exist. Setup: docs/ACCOUNTS.md.
   "name": "chronorail",
+  "main": "src/worker.js",
   "compatibility_date": "2026-11-01",
+  "compatibility_flags": ["nodejs_compat"],
   "assets": {
     "directory": "./dist",
-    "not_found_handling": "404-page"
+    "binding": "ASSETS",
+    "not_found_handling": "404-page",
+    "run_worker_first": ["/api/*"]
   },
+  "vars": {
+    "AUTH_ENABLED": "0",
+    "BASE_URL": "https://chronorail.si"
+    // "MAIL_FROM": "signin@chronorail.si"   // only once Email Sending is on (Workers Paid) and the domain is onboarded
+  },
+  "d1_databases": [
+    // database_id: fill in after `npx wrangler d1 create chronorail-accounts` (Silas, see docs/ACCOUNTS.md step 2)
+    { "binding": "DB", "database_name": "chronorail-accounts", "database_id": "REPLACE_WITH_D1_ID", "migrations_dir": "migrations" }
+  ],
+  // "send_email": [{ "name": "EMAIL" }],   // uncomment with MAIL_FROM when Email Sending is enabled
+  // Secrets, set by Silas only (never in this file): BETTER_AUTH_SECRET, GOOGLE_CLIENT_ID, GOOGLE_CLIENT_SECRET
   // Required by `npx wrangler preview` (non-production branch builds). Empty on purpose.
   "previews": {}
 }
