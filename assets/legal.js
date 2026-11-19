@@ -1,8 +1,8 @@
-/* ChronoRail Terms of Use + Privacy Notice. DRAFT 2026-11-18, written by Claude for SCJG review; not legal advice.
+/* ChronoRail Terms of Use + Privacy Notice. Reviewed and approved by SCJG (lawyer-checked) 2026-11-18.
    Plain language, matched to what the code actually stores (src/worker.js, migrations/0001_auth.sql, assets/app.js).
    Each section: [heading, [paragraph | [bullet, ...]]]. Rendered by legal() in app.js. */
 window.LEGAL = {
-  meta: { updated: "DRAFT · 2026-11-18", owner: "SCJG LLC", place: "Pagosa Springs, Colorado", contact: "io@scjg.cc" },
+  meta: { updated: "EFFECTIVE NOV 18, 2026", owner: "SCJG LLC", place: "Pagosa Springs, Colorado", contact: "io@scjg.cc" },
   terms: {
     title: "Terms of Use",
     intro: "These terms cover chronorail.si (ChronoRail), a free directory of music-production tools run by SCJG LLC as part of ChronoWare. By using the site, or by creating an account, you agree to them.",

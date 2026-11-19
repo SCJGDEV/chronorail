@@ -17,8 +17,8 @@
     // "MAIL_FROM": "signin@chronorail.si"   // only once Email Sending is on (Workers Paid) and the domain is onboarded
   },
   "d1_databases": [
-    // database_id: fill in after `npx wrangler d1 create chronorail-accounts` (Silas, see docs/ACCOUNTS.md step 2)
-    { "binding": "DB", "database_name": "chronorail-accounts", "database_id": "REPLACE_WITH_D1_ID", "migrations_dir": "migrations" }
+    // D1 chronorail-accounts, created 2026-11-18; schema applied from migrations/0001_auth.sql via the dashboard console
+    { "binding": "DB", "database_name": "chronorail-accounts", "database_id": "44bbb4a5-4973-4ead-b7f5-bad52d540e39", "migrations_dir": "migrations" }
   ],
   // "send_email": [{ "name": "EMAIL" }],   // uncomment with MAIL_FROM when Email Sending is enabled
   // Secrets, set by Silas only (never in this file): BETTER_AUTH_SECRET, GOOGLE_CLIENT_ID, GOOGLE_CLIENT_SECRET
