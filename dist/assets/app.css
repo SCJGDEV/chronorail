@@ -262,3 +262,35 @@ textarea{resize:vertical;min-height:80px;line-height:1.4}
 [data-skin="NEU"] .pill{box-shadow:inset 0 0 0 1px var(--pill-edge),var(--plq-hi)}
 [data-skin="NEU"] .well .led.off,[data-skin="NEU"] .mid .led.off{--c:var(--led-off-glass)}
 @media (max-width:720px){[data-skin="NEU"] .key{padding:0 14px 0 28px}}
+
+/* ===== Brand (2026-11-18): Chrono logo lockups, sheen, credits — pattern from chronoscene.si =====
+   Ink lockup on light skins, Metal on dark. Light = NEU L, PRO L, CORE L (CRL). Dark = NEU D, PRO D, CORE D. */
+.vh{position:absolute!important;width:1px;height:1px;margin:-1px;padding:0;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;border:0}
+.logo-metal{display:none}
+:is([data-skin="NEU"][data-tone="d"],[data-skin="PRO"]:not([data-glass="l"])) .logo-ink{display:none}
+:is([data-skin="NEU"][data-tone="d"],[data-skin="PRO"]:not([data-glass="l"])) .logo-metal{display:block}
+.wm{align-items:center}
+.logo-frame{position:relative;display:inline-flex;line-height:0}
+.logo-frame img{height:30px;width:auto}
+.sheen{position:absolute;inset:0;pointer-events:none;
+  background-image:linear-gradient(100deg,transparent 38%,var(--logo-sheen) 50%,transparent 62%);
+  background-size:260% 100%;background-position:160% 0;background-repeat:no-repeat;
+  -webkit-mask:url(brand/ChronoRail_Ink_NoTag.svg) center/100% 100% no-repeat;mask:url(brand/ChronoRail_Ink_NoTag.svg) center/100% 100% no-repeat;
+  animation:logo-sweep 9s cubic-bezier(.45,0,.25,1) 1.2s infinite}
+:is([data-skin="NEU"][data-tone="d"],[data-skin="PRO"]:not([data-glass="l"])) .sheen{-webkit-mask-image:url(brand/ChronoRail_Metal_NoTag.svg);mask-image:url(brand/ChronoRail_Metal_NoTag.svg)}
+@keyframes logo-sweep{0%{background-position:160% 0}38%{background-position:-60% 0}100%{background-position:-60% 0}}
+@media (prefers-reduced-motion:reduce){.sheen{animation:none;display:none}}
+[data-hc="1"] .sheen{display:none}
+.hero h1.hero-logo{margin:8px 0 14px;line-height:0;letter-spacing:0}
+.hero-logo img{width:100%;max-width:520px;height:auto}
+@media (max-width:720px){.logo-frame img{height:24px}}
+/* footer credits: built on ChronoWare · built by SCJG · UI credit (scjg.cc wording) */
+.hallmark{gap:4px;flex-wrap:wrap}
+.hm-dot{color:var(--legend-dim)}
+.builton .cw-logo{display:inline-flex;line-height:0}
+.builton .cw-logo img{height:16px;width:auto;opacity:.8;transition:opacity .15s}
+.builton:hover .cw-logo img{opacity:1}
+.ui-credit{justify-content:center;font:500 9.5px/1.2 var(--font-mono);letter-spacing:.1em;text-transform:uppercase;color:var(--legend-dim);padding-top:0}
+/* brand lamp: primary actions carry the amber lamp (ChronoWare rule: lamp amber, strokes cyan) */
+[data-skin="NEU"] .key.prim::before{background:var(--lamp-brand);box-shadow:var(--lamp-brand-glow)}
+.key.prim::before{background:var(--lamp-brand);box-shadow:var(--lamp-brand-glow)}

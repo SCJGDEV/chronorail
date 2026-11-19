@@ -4,7 +4,7 @@
   "description": "Curated, AI-readable directory of music-production tools.",
   "start_url": "./",
   "display": "standalone",
-  "background_color": "#D4D3CF",
-  "theme_color": "#E6E5E1",
+  "background_color": "#E9E4DC",
+  "theme_color": "#E9E4DC",
   "icons": [{ "src": "assets/icon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any" }]
 }

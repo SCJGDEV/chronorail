@@ -1,6 +1,6 @@
 /* ChronoRail offline cache. Shell: cache-first. Data: network-first, falls back to cache. */
-const V = "cr-v7";
-const SHELL = ["./", "index.html", "config.js", "assets/tokens.css", "assets/app.css", "assets/app.js", "assets/skin.js", "assets/icon.svg", "404.html"];
+const V = "cr-v8";
+const SHELL = ["./", "index.html", "config.js", "assets/tokens.css", "assets/app.css", "assets/app.js", "assets/skin.js", "assets/icon.svg", "assets/brand/ChronoRail_Ink_NoTag.svg", "assets/brand/ChronoRail_Metal_NoTag.svg", "404.html"];
 const DATA = ["data/listings.json", "data/categories.json", "data/stacks.json"];
 self.addEventListener("install", e => e.waitUntil(caches.open(V).then(c => c.addAll(SHELL.concat(DATA))).then(() => self.skipWaiting())));
 self.addEventListener("activate", e => e.waitUntil(caches.keys().then(ks => Promise.all(ks.filter(k => k !== V).map(k => caches.delete(k)))).then(() => self.clients.claim())));
