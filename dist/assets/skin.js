@@ -1,6 +1,6 @@
 /* ChronoRail · PRO skin controller + live circuit board.
    Load in <head> (sync) so the saved skin applies before first paint.
-   Skins: NEU L (default) · NEU D · PRO D · PRO L · CORE D · CORE L, plus HC on any base. TRACES 0–10.
+   Skins: NEU L / NEU D (default follows system) · PRO D · PRO L · CORE D · CORE L, plus HC on any base. TRACES 0–10.
    Board: traces drawn once per size/skin/trace change; packets ≤30 fps, paused when hidden,
    off under prefers-reduced-motion and in HC. Colours come from --bd-* tokens. */
 (function () {
@@ -12,7 +12,9 @@
   /* ---- 1. apply saved state immediately (before CSS paints) ---- */
   var saved = load("cr.skin");
   if (!saved && load("cr.theme") === "graphite") saved = "PRO|";   // v1 Graphite users land on CORE D
-  var s = (saved || "NEU|l").split("|");
+  var DQ = window.matchMedia ? matchMedia("(prefers-color-scheme: dark)") : null;   // no saved pick → follow system, like chronoscene.si
+  function sysTone() { return DQ && DQ.matches ? "d" : "l"; }
+  var s = (saved || "NEU|" + sysTone()).split("|");
   H.dataset.skin = s[0] === "CRL" || s[0] === "NEU" ? s[0] : "PRO";
   if (H.dataset.skin === "NEU") { H.dataset.glass = ""; H.dataset.tone = s[1] === "d" ? "d" : "l"; }
   else { H.dataset.glass = H.dataset.skin === "CRL" ? "" : (s[1] === "d" || s[1] === "l" ? s[1] : ""); delete H.dataset.tone; }
@@ -80,8 +82,8 @@
 
   /* ---- 3. controls in the footer dock ---- */
   function meta() {
-    var m = document.querySelector('meta[name="theme-color"]');
-    if (m) m.setAttribute("content", tok("--bd-bg0") || "#04070a");
+    var c = tok("--bd-bg0") || "#04070a";
+    document.querySelectorAll('meta[name="theme-color"]').forEach(function (m) { m.setAttribute("content", c); });
   }
   function sync() {
     document.querySelectorAll("[data-sk]").forEach(function (b) {
@@ -136,6 +138,10 @@
     if (window.matchMedia) {
       ["(prefers-contrast: more)", "(prefers-reduced-transparency: reduce)", "(prefers-color-scheme: dark)"].forEach(function (q) {
         var m = matchMedia(q); if (m.addEventListener) m.addEventListener("change", build);
+      });
+      if (DQ && DQ.addEventListener) DQ.addEventListener("change", function () {
+        if (load("cr.skin") || H.dataset.skin !== "NEU") return;   // a manual pick wins
+        H.dataset.tone = sysTone(); sync(); build();
       });
     }
   }
