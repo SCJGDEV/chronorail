@@ -3,9 +3,9 @@
 > A free, curated, AI-readable directory of music-production tools: DAWs, plugins, sample packs, hardware, AI music tools, learning, distribution and related services. Part of ChronoMedia, made by SCJG (Pagosa Springs, Colorado).
 
 ## Data
-- [Listings feed (JSON)](/feed/listings.json): every listing with all fields. 294 listings, generated 2026-11-19.
-- [Categories](/data/categories.json): 29 category slugs with module codes.
-- [Stacks](/data/stacks.json): curated lists of listing IDs.
+- [Listings feed (JSON)](https://chronorail.si/feed/listings.json): every listing with all fields. 294 listings, generated 2026-11-19.
+- [Categories](https://chronorail.si/data/categories.json): 29 category slugs with module codes.
+- [Stacks](https://chronorail.si/data/stacks.json): curated lists of listing IDs.
 
 ## Fields
 id, name, maker, category, subcategory, tags[], short_description, who_its_for, platforms[], formats[], price_type (free | freemium | paid | one-time | subscription | varies | unknown), price_note, license, official_url, affiliate_ok, affiliate_url, featured, paid_placement, scjg_owned, verification_status (unverified | verified | needs-recheck | rejected), last_checked (YYYY-MM-DD), confidence.
@@ -17,9 +17,9 @@ id, name, maker, category, subcategory, tags[], short_description, who_its_for, 
 - scjg_owned = true marks products made by SCJG (ChronoStudio, ChronoRack, Lava Lava).
 
 ## Pages
-- Listing: /#l-{id} (includes schema.org JSON-LD)
-- Category: /#c-{category}
-- About and verification: /#about
+- Listing: https://chronorail.si/#l-{id} (includes schema.org JSON-LD)
+- Category: https://chronorail.si/#c-{category}
+- About and verification: https://chronorail.si/#about
 
 ## Categories with listings
 - DW DAWs (daws): 12
