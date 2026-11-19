@@ -402,3 +402,11 @@ textarea{resize:vertical;min-height:80px;line-height:1.4}
 .filters>summary{margin-bottom:6px}
 .filters>.frow+.frow{margin-top:14px}
 @media (max-width:720px){.filters>.frow+.frow{margin-top:12px}}
+/* key letter glow: a hint only */
+:is(.key,.pill){--k-on-glow:0 0 3px rgba(95,214,234,.16) !important;--k-prim-glow:0 0 3px rgba(255,179,0,.14) !important}
+[data-skin="NEU"][data-tone="l"] :is(.key,.pill){--k-on-glow:0 0 2px rgba(15,169,192,.12) !important;--k-prim-glow:0 0 2px rgba(214,140,20,.12) !important}
+.builtby:active,.builtby:active svg.wm-scjg,.hallmark .builtby:active svg.wm-scjg{filter:none}
+/* Sort row: the note and Clear filters sit on the same centre line as the sort keys */
+.frow[aria-label="Sort"]{align-items:center}
+.frow[aria-label="Sort"]>.lab{margin-top:0}
+.frow[aria-label="Sort"]>:is(.sortnote,.key,select){align-self:center;margin-top:0}

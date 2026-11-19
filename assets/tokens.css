@@ -288,3 +288,20 @@
   --unit-edge:inset 0 0 0 1.5px #000;--seam:rgba(0,0,0,.55);--hdr-ink:#000;--hdr-edge:#000;--pill-ink:#000;--chrome-edge:#000;--glass:#000;--glass-hot:#000}
 [data-hc="1"][data-skin="NEU"][data-tone="d"]{--page-bg:#000;--bd-bg0:#000;--legend:#fff;--legend-dim:#fff;--kink:#fff;--plq-ink:#fff;
   --unit-edge:inset 0 0 0 1.5px #fff;--seam:rgba(255,255,255,.45);--hdr-ink:#fff;--hdr-edge:#fff;--pill-ink:#fff;--chrome-edge:#fff;--glass:#000;--glass-hot:#000}
+
+/* ===== Glow cut (Silas, 2026-11-19): glows down to almost nothing, everywhere, every skin.
+   !important on custom properties so this wins over every skin block above. */
+:root{
+  --glow-cyan:0 0 3px rgba(95,214,234,.10) !important;
+  --glow-cyan-hero:0 0 3px rgba(95,214,234,.14) !important;
+  --glow-green:0 0 2px rgba(0,230,118,.10) !important;
+  --glow-amber:0 0 2px rgba(255,179,0,.10) !important;
+  --glow-red:0 0 2px rgba(255,59,48,.10) !important;
+  --pipe-cyan:0 0 2px rgba(95,227,245,.18) !important;
+  --lamp-on-glow:0 0 2px rgba(95,227,245,.18) !important;
+  --lamp-brand-glow:0 0 2px rgba(255,179,0,.18) !important;
+  --led-glow:1px !important;
+}
+[data-skin="PRO"][data-glass="d"]{--unit-halo:0 0 calc(var(--u)*4) rgba(95,214,234,.03) !important}
+[data-skin="PRO"][data-glass="l"]{--unit-halo:0 0 calc(var(--u)*4) rgba(40,170,200,.04) !important}
+[data-hc="1"]{--glow-cyan:none !important;--glow-cyan-hero:none !important;--glow-green:none !important;--glow-amber:none !important;--glow-red:none !important;--pipe-cyan:none !important;--lamp-on-glow:none !important;--lamp-brand-glow:none !important;--led-glow:0px !important}
