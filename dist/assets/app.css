@@ -294,3 +294,29 @@ textarea{resize:vertical;min-height:80px;line-height:1.4}
 /* brand lamp: primary actions carry the amber lamp (ChronoWare rule: lamp amber, strokes cyan) */
 [data-skin="NEU"] .key.prim::before{background:var(--lamp-brand);box-shadow:var(--lamp-brand-glow)}
 .key.prim::before{background:var(--lamp-brand);box-shadow:var(--lamp-brand-glow)}
+/* glyph chip: the Rail glyph sits in the dark-glass ID chip (Metal glyph reads on glass in every skin) */
+.glyph-chip{display:inline-flex;align-items:center;justify-content:center;padding:3px 5px}
+.glyph-chip img{width:16px;height:16px;display:block}
+.rail h2.fam{display:flex;align-items:center;gap:.55em}
+.cw-inline{display:inline-flex;align-items:center;line-height:0;vertical-align:middle}
+.cw-inline img{height:13px;width:auto}
+.partof .cw-inline img{height:14px}
+.serial{display:flex;align-items:center;justify-content:flex-end;gap:7px}
+.serial img{height:14px;width:auto}
+.err-body{display:grid;justify-items:start;gap:10px}
+.err-sym{width:72px;height:auto}
+/* My Rack */
+.nav-rack{position:relative;display:inline-flex;align-items:center;gap:6px}
+.rack-n{font:700 9px/1 var(--font-mono);min-width:16px;padding:3px 4px;border-radius:8px;background:var(--lamp-brand);color:#14161a;text-align:center;letter-spacing:0}
+.plate-foot .rack-btn{margin-left:auto}
+.plate-foot{align-items:center;flex-wrap:wrap;gap:6px 10px}
+.rack-tools{display:grid;gap:8px;padding:10px 0 0}
+.rack-note{width:100%;resize:vertical;min-height:44px;font:400 13px/1.4 var(--font-ui);color:var(--legend);background:transparent;border:1px solid var(--pill-edge);border-radius:10px;padding:8px 10px}
+.rack-note:focus-visible{outline:none;box-shadow:var(--focus)}
+.empty-rack{display:grid;justify-items:center;text-align:center;gap:6px;padding:28px 18px 30px}
+.empty-rack p{margin:0}
+.sym-art{display:inline-flex;line-height:0;margin-bottom:6px}
+.rack-intro .wl-msg{font-size:12px;color:var(--legend-dim);align-self:center}
+@media (max-width:720px){.rackgrid .rack-tools{grid-column:2/-1;padding:8px 0 4px}.rack-stat .key.sm{min-height:var(--touch)}}
+.rack-note::placeholder{color:var(--legend-dim);opacity:1}
+.rack-note{background:var(--cell-hover)}

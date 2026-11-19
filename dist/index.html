@@ -8,6 +8,13 @@
 <meta name="theme-color" content="#e8e4dc" media="(prefers-color-scheme: light)"><meta name="theme-color" content="#262a2f" media="(prefers-color-scheme: dark)">
 <link rel="icon" href="assets/icon.svg" type="image/svg+xml">
 <link rel="manifest" href="manifest.webmanifest">
+<link rel="apple-touch-icon" href="assets/brand/apple-touch-icon.png">
+<meta property="og:type" content="website"><meta property="og:site_name" content="ChronoRail">
+<meta property="og:title" content="ChronoRail · Temporal Tool Directory">
+<meta property="og:description" content="A free, curated, AI-readable directory of music-production tools. Built on ChronoWare by SCJG.">
+<meta property="og:url" content="https://chronorail.si/"><meta property="og:image" content="https://chronorail.si/assets/brand/og-image.png">
+<meta property="og:image:width" content="1200"><meta property="og:image:height" content="630"><meta property="og:image:alt" content="ChronoRail · Temporal Tool Directory">
+<meta name="twitter:card" content="summary_large_image"><meta name="twitter:image" content="https://chronorail.si/assets/brand/og-image.png">
 <link rel="alternate" type="application/json" href="feed/listings.json" title="ChronoRail listings feed">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -27,6 +34,7 @@
       <a href="#search" data-nav="search">Search</a>
       <a href="#about" data-nav="about">About</a>
       <a href="#submit" data-nav="submit">Submit</a>
+      <a href="#rack" data-nav="rack" class="nav-rack">Rack<span class="rack-n" data-rack-n hidden></span></a>
       <button class="key sm" type="button" data-discover>Discover</button>
     </nav>
   </div>
@@ -51,10 +59,10 @@
     <div class="lad wrap"><span class="cl">TRACES</span>
       <div class="lad"><div class="bars" id="trc" role="slider" tabindex="0" aria-label="Board traces" aria-valuemin="0" aria-valuemax="10" aria-valuenow="5"></div>
       <div class="sc" aria-hidden="true"><span>0</span><span>5</span><span>10</span></div></div></div>
-    <div class="serial" aria-hidden="true">⬡ CHRONORAIL · S/N CL-0001</div>
+    <div class="serial" aria-hidden="true"><img class="logo-ink" src="assets/brand/ChronoRail_Ink_Symbol.svg" alt="" height="14"><img class="logo-metal" src="assets/brand/ChronoRail_Metal_Symbol.svg" alt="" height="14"> CHRONORAIL · CW-02</div>
   </div>
   <div class="foot-row">
-    <span><span data-brand-plain>ChronoRail</span> is part of <span data-family>ChronoMedia</span>. Working name, not trademark-cleared.</span>
+    <span class="partof"><span data-brand-plain>ChronoRail</span> is part of <a class="cw-inline" href="https://chronoware.si" rel="noopener"><img class="logo-ink" src="assets/brand/ChronoWare_Ink_NoTag.svg" alt="ChronoWare" height="14"><img class="logo-metal" src="assets/brand/ChronoWare_Metal_NoTag.svg" alt="ChronoWare" height="14"></a>. Working name, not trademark-cleared.</span>
     <a href="feed/listings.json">JSON feed</a>
     <a href="llms.txt">llms.txt</a>
   </div>

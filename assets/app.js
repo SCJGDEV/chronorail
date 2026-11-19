@@ -21,6 +21,10 @@ function h(tag, attrs, ...kids) {
   }
   return e;
 }
+/* brand marks: Ink on light skins, Metal on dark (CSS swaps them) */
+function cwLogo(hgt) { const st = "height:" + (hgt || 13) + "px;width:auto"; return h("span", { class: "cw-inline" }, h("span", { class: "vh" }, "ChronoWare"),
+  h("img", { class: "logo-ink", src: "assets/brand/ChronoWare_Ink_NoTag.svg", alt: "", style: st }), h("img", { class: "logo-metal", src: "assets/brand/ChronoWare_Metal_NoTag.svg", alt: "", style: st })); }
+function glyphChip() { return h("span", { class: "mid glyph-chip", "aria-hidden": "true" }, h("img", { src: "assets/brand/ChronoRail_Metal_Glyph.svg", alt: "" })); }
 const arr = v => Array.isArray(v) ? v.map(x => String(x).trim()).filter(Boolean)
   : String(v || "").split(/[;|,]/).map(s => s.trim()).filter(Boolean);
 const bool = v => v === true || /^(true|yes|y|1)$/i.test(String(v == null ? "" : v).trim());
@@ -134,7 +138,7 @@ function plate(l) {
     l.who_its_for ? h("p", { class: "who" }, "For: " + l.who_its_for) : null,
     h("div", { class: "plate-foot" },
       h("span", null, h("span", { class: "led " + verLed(l), "aria-hidden": "true" }), l.verification_status.toUpperCase()),
-      h("span", null, checked(l))));
+      h("span", null, checked(l)), rackBtn(l, true)));
   return el;
 }
 function rack(list) {
@@ -147,6 +151,104 @@ function unit(title, opts, ...body) {
   return h("section", { class: "unit", "aria-label": opts.label || title },
     h("div", { class: "rail" }, opts.code ? h("span", { class: "mid" }, opts.code) : null, h(Tag, null, title), opts.cnt != null ? h("span", { class: "cnt" }, opts.cnt) : null),
     body);
+}
+
+
+/* ---------- My Rack: saved in this browser (localStorage "cr.rack"); accounts will sync this same shape ---------- */
+const RACK = (() => {
+  const K = "cr.rack";
+  let d = { v: 1, items: {} };
+  try { const x = JSON.parse(localStorage.getItem(K) || "null"); if (x && x.items) d = x; } catch (_) {}
+  const subs = [];
+  const save = () => { d.updated = new Date().toISOString(); try { localStorage.setItem(K, JSON.stringify(d)); } catch (_) {} subs.forEach(f => f()); };
+  return {
+    ids: () => Object.keys(d.items).filter(id => byId[id]).sort((a, b) => (d.items[b].t || "").localeCompare(d.items[a].t || "")),
+    has: id => !!d.items[id],
+    get: id => d.items[id],
+    add: id => { if (!d.items[id]) { d.items[id] = { s: "", n: "", t: new Date().toISOString() }; save(); } },
+    remove: id => { delete d.items[id]; save(); },
+    toggle: id => RACK.has(id) ? RACK.remove(id) : RACK.add(id),
+    set: (id, patch) => { if (d.items[id]) { Object.assign(d.items[id], patch); save(); } },
+    clear: () => { d.items = {}; save(); },
+    dump: () => JSON.parse(JSON.stringify(d)),
+    on: f => subs.push(f)
+  };
+})();
+const RSTAT = { own: "Own", want: "Want", tried: "Tried" };
+function rackBtn(l, small) {
+  const b = h("button", { class: "key rack-btn" + (small ? " sm" : ""), type: "button", "aria-pressed": RACK.has(l.id) ? "true" : "false", "aria-label": (RACK.has(l.id) ? "Remove " : "Add ") + l.name + (RACK.has(l.id) ? " from" : " to") + " my rack" },
+    RACK.has(l.id) ? "In rack" : "+ Rack");
+  b.addEventListener("click", () => {
+    RACK.toggle(l.id); const on = RACK.has(l.id);
+    b.setAttribute("aria-pressed", on ? "true" : "false"); b.textContent = on ? "In rack" : "+ Rack";
+    b.setAttribute("aria-label", (on ? "Remove " : "Add ") + l.name + (on ? " from" : " to") + " my rack");
+  });
+  return b;
+}
+function rackCount() { document.querySelectorAll("[data-rack-n]").forEach(e => { const n = RACK.ids().length; e.textContent = n ? String(n) : ""; e.hidden = !n; }); }
+const b64u = { enc: s => btoa(unescape(encodeURIComponent(s))).replace(/\+/g, "-").replace(/\//g, "_").replace(/=+$/, ""),
+  dec: s => decodeURIComponent(escape(atob(s.replace(/-/g, "+").replace(/_/g, "/")))) };
+function symbolArt(size) { return h("span", { class: "sym-art", "aria-hidden": "true" },
+  h("img", { class: "logo-ink", src: "assets/brand/ChronoRail_Ink_Symbol.svg", alt: "", style: "width:" + size + "px;height:auto" }),
+  h("img", { class: "logo-metal", src: "assets/brand/ChronoRail_Metal_Symbol.svg", alt: "", style: "width:" + size + "px;height:auto" })); }
+function myRack() {
+  setTitle("My rack"); navCurrent("rack");
+  const f = filters.rack || (filters.rack = { s: "" });
+  const all = RACK.ids().map(id => byId[id]);
+  const list = f.s ? all.filter(l => (RACK.get(l.id).s || "") === f.s) : all;
+  const seg = h("div", { class: "chips", role: "group", "aria-label": "Filter by status" },
+    [["", "All"], ["own", "Own"], ["want", "Want"], ["tried", "Tried"]].map(([k, t]) => {
+      const n = k ? all.filter(l => RACK.get(l.id).s === k).length : all.length;
+      return h("button", { class: "key sm", type: "button", "aria-pressed": f.s === k ? "true" : "false", onclick: () => { f.s = k; myRack(); } }, t + " " + n);
+    }));
+  const msg = h("span", { class: "wl-msg", "aria-live": "polite" });
+  const share = () => {
+    const url = location.origin + location.pathname + "#shared-" + b64u.enc(all.map(l => l.id).join(","));
+    (navigator.clipboard ? navigator.clipboard.writeText(url) : Promise.reject()).then(() => msg.textContent = "Share link copied. It lists tool names only, no notes.",
+      () => { msg.textContent = url; });
+  };
+  const exp = () => {
+    const blob = new Blob([JSON.stringify(RACK.dump(), null, 2)], { type: "application/json" });
+    const a = h("a", { href: URL.createObjectURL(blob), download: "chronorail-rack.json" }); document.body.append(a); a.click(); a.remove();
+  };
+  const card = l => {
+    const it = RACK.get(l.id);
+    const st = h("div", { class: "chips rack-stat", role: "group", "aria-label": "Status for " + l.name },
+      Object.entries(RSTAT).map(([k, t]) => h("button", { class: "key sm", type: "button", "aria-pressed": it.s === k ? "true" : "false",
+        onclick: () => { RACK.set(l.id, { s: it.s === k ? "" : k }); myRack(); } }, t)));
+    const note = h("textarea", { class: "rack-note", rows: "2", maxlength: "500", placeholder: "Private note (stays in this browser)", "aria-label": "Note for " + l.name });
+    note.value = it.n || "";
+    note.addEventListener("change", () => RACK.set(l.id, { n: note.value.slice(0, 500) }));
+    const el = plate(l); el.append(h("div", { class: "rack-tools" }, st, note));
+    return el;
+  };
+  render(
+    h("section", { class: "unit", "aria-label": "My rack" },
+      h("div", { class: "rail" }, glyphChip(), h("h1", null, "My rack"), h("span", { class: "cnt" }, all.length + " MODULES")),
+      h("div", { class: "body rack-intro" },
+        h("p", { style: "margin:0" }, "Tools you save live here, in this browser only. Sign-in to sync across devices is coming."),
+        all.length ? h("div", { class: "acts", style: "margin:10px 0 0" }, seg) : null,
+        all.length ? h("div", { class: "acts", style: "margin:6px 0 0" },
+          h("button", { class: "key sm", type: "button", onclick: share }, "Copy share link"),
+          h("button", { class: "key sm", type: "button", onclick: exp }, "Export JSON"),
+          h("button", { class: "key sm", type: "button", onclick: () => { if (msg.dataset.arm) { RACK.clear(); myRack(); } else { msg.dataset.arm = "1"; msg.textContent = "Press Clear rack again to remove everything."; } } }, "Clear rack"),
+          msg) : null),
+      all.length ? (list.length ? h("div", { class: "rackgrid" }, list.map(card)) : h("div", { class: "msg" }, "Nothing marked " + RSTAT[f.s] + " yet."))
+        : h("div", { class: "empty-rack" }, symbolArt(84), h("p", null, "Your rack is empty."), h("p", { class: "who" }, "Press + Rack on any listing to save it here."),
+            h("div", { class: "acts" }, h("button", { class: "key prim", type: "button", onclick: discover }, "Discover a tool"), h("a", { class: "key", href: "#categories" }, "Browse categories")))));
+}
+function sharedRack(code) {
+  let ids = [];
+  try { ids = b64u.dec(code).split(",").filter(id => byId[id]); } catch (_) {}
+  setTitle("Shared rack"); navCurrent("");
+  if (!ids.length) return notFound();
+  const items = ids.map(id => byId[id]);
+  const msg = h("span", { class: "wl-msg", "aria-live": "polite" });
+  render(h("section", { class: "unit", "aria-label": "Shared rack" },
+    h("div", { class: "rail" }, glyphChip(), h("h1", null, "Shared rack"), h("span", { class: "cnt" }, items.length + " MODULES")),
+    h("div", { class: "body" }, h("p", { style: "margin:0" }, "Someone shared these tools with you. Nothing about them is stored here."),
+      h("div", { class: "acts", style: "margin:10px 0 0" }, h("button", { class: "key prim", type: "button", onclick: () => { ids.forEach(RACK.add); msg.textContent = "Added " + ids.length + " to your rack."; } }, "Save all to my rack"), msg)),
+    rack(items)));
 }
 
 /* ---------- filter panel ---------- */
@@ -230,7 +332,7 @@ function home() {
   const counts = {}; L.forEach(l => counts[l.category] = (counts[l.category] || 0) + 1);
   render(
     h("section", { class: "unit", "aria-label": "Introduction" },
-      h("div", { class: "rail" }, h("span", { class: "mid" }, "CR-0"), h("h2", null, "Directory · " + (SITE.family || "ChronoMedia")), h("span", { class: "cnt" }, SAMPLE ? "SAMPLE DATA" : (UNCHECKED ? "UNVERIFIED SEED" : "LIVE DATA"))),
+      h("div", { class: "rail" }, glyphChip(), h("h2", { class: "fam" }, "Directory · ", cwLogo()), h("span", { class: "cnt" }, SAMPLE ? "SAMPLE DATA" : (UNCHECKED ? "UNVERIFIED SEED" : "LIVE DATA"))),
       h("div", { class: "hero" },
         h("div", null,
           h("span", { class: "lab" }, "Free · curated · AI-readable"),
@@ -311,6 +413,7 @@ function listing(id) {
           h("div", { class: "acts" },
             h("a", { class: "key prim", href: l.official_url, target: "_blank", rel: "noopener noreferrer" }, "Official site ↗"),
             l.affiliate_url ? h("a", { class: "key", href: l.affiliate_url, target: "_blank", rel: "noopener noreferrer sponsored" }, "Affiliate link ↗") : null,
+            rackBtn(l),
             h("button", { class: "key", type: "button", onclick: discover }, "Discover another")),
           h("p", { class: "who", style: "margin:10px 0 0;font-size:12px" }, "Official site opens in a new tab: " + l.official_url.replace(/^https:\/\//, "")),
           l.affiliate_url ? h("p", { class: "who", style: "margin:4px 0 0;font-size:12px" }, "Affiliate disclosure: SCJG may earn a commission from the affiliate link. It does not affect order or placement.") : null),
@@ -391,7 +494,7 @@ function about() {
     h("div", { class: "prose" },
       h("span", { class: "draft" }, h("span", { class: "led warn", "aria-hidden": "true" }), "DRAFT · pending SCJG review"),
       h("h2", null, "What this is"),
-      P(BRAND + " is a free directory of music-production tools: DAWs, plugins, sample packs, hardware, AI music tools, learning, distribution and related services. It is built and curated by " + (SITE.maker || "SCJG") + " as part of " + (SITE.family || "ChronoMedia") + "."),
+      P(BRAND + " is a free directory of music-production tools: DAWs, plugins, sample packs, hardware, AI music tools, learning, distribution and related services. It is built and curated by " + (SITE.maker || "SCJG") + " as part of " + (SITE.family || "ChronoWare") + "."),
       h("h2", null, "How a listing gets in"),
       h("ul", null,
         h("li", null, "Anyone can suggest a tool through the submit form. Suggestions start as unverified."),
@@ -539,6 +642,8 @@ function route() {
   else if ((m = k.match(/^c-([a-z0-9-]+)$/)) && bySlug[m[1]]) category(m[1]);
   else if ((m = k.match(/^l-([a-z0-9-]+)$/)) && byId[m[1]]) listing(m[1]);
   else if ((m = k.match(/^s-([a-z0-9-]+)$/)) && byStack[m[1]]) stack(m[1]);
+  else if (k === "rack") myRack();
+  else if ((m = k.match(/^shared-([A-Za-z0-9_-]+)$/))) sharedRack(m[1]);
   else if (k === "search") search();
   else if (k === "about") about();
   else if (k === "submit") submit();
@@ -554,7 +659,7 @@ function route() {
 function shell() {
   document.querySelectorAll("[data-brand]").forEach(e => e.textContent = BRAND.toUpperCase());
   document.querySelectorAll("[data-brand-plain]").forEach(e => e.textContent = BRAND);
-  document.querySelectorAll("[data-family]").forEach(e => e.textContent = SITE.family || "ChronoMedia");
+  
   document.querySelectorAll("[data-maker]").forEach(e => e.textContent = SITE.maker || "SCJG");
   document.querySelectorAll("[data-discover]").forEach(b => b.addEventListener("click", discover));
   /* skins (CORE L default, PRO D / PRO L / CORE D, HC, TRACES) live in assets/skin.js */
@@ -568,6 +673,8 @@ load().then(() => {
   strip.hidden = !(SAMPLE || UNCHECKED);
   if (!SAMPLE && UNCHECKED) strip.lastChild.textContent = "UNVERIFIED SEED · " + UNCHECKED + " of " + L.length + " listings come from an AI-assisted research pass and have not been checked yet. Prices and specs may be wrong.";
   window.addEventListener("hashchange", route);
+  RACK.on(rackCount); rackCount();
+  window.addEventListener("storage", e => { if (e.key === "cr.rack") rackCount(); });
   route();
 }).catch(err => {
   console.error(err);

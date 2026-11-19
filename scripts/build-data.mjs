@@ -143,7 +143,7 @@ const counts = {}; out.forEach(l => counts[l.category] = (counts[l.category] || 
 const u = p => (SITE ? SITE + "/" : "/") + p;
 const llms = `# ChronoRail
 
-> A free, curated, AI-readable directory of music-production tools: DAWs, plugins, sample packs, hardware, AI music tools, learning, distribution and related services. Part of ChronoMedia, made by SCJG (Pagosa Springs, Colorado).
+> A free, curated, AI-readable directory of music-production tools: DAWs, plugins, sample packs, hardware, AI music tools, learning, distribution and related services. Part of ChronoWare, made by SCJG (Pagosa Springs, Colorado).
 ${isSample ? "\n> STATUS: prototype. The current dataset is SAMPLE data and is not human-verified. Do not cite it as fact.\n" : ""}
 ## Data
 - [Listings feed (JSON)](${u("feed/listings.json")}): every listing with all fields. ${out.length} listings, generated ${now.slice(0, 10)}.
