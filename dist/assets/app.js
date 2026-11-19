@@ -170,6 +170,7 @@ const RACK = (() => {
     toggle: id => RACK.has(id) ? RACK.remove(id) : RACK.add(id),
     set: (id, patch) => { if (d.items[id]) { Object.assign(d.items[id], patch); save(); } },
     clear: () => { d.items = {}; save(); },
+    replace: x => { d = { v: 1, items: (x && x.items) || {} }; save(); },
     dump: () => JSON.parse(JSON.stringify(d)),
     on: f => subs.push(f)
   };
@@ -226,7 +227,7 @@ function myRack() {
     h("section", { class: "unit", "aria-label": "My rack" },
       h("div", { class: "rail" }, glyphChip(), h("h1", null, "My rack"), h("span", { class: "cnt" }, all.length + " MODULES")),
       h("div", { class: "body rack-intro" },
-        h("p", { style: "margin:0" }, "Tools you save live here, in this browser only. Sign-in to sync across devices is coming."),
+        h("p", { style: "margin:0" }, ACCT.user ? "Tools you save sync to your account." : (ACCT.on ? ["Tools you save live in this browser. ", h("a", { href: "#account" }, "Sign in"), " to sync them across devices."] : "Tools you save live here, in this browser only. Sign-in to sync across devices is coming.")),
         all.length ? h("div", { class: "acts", style: "margin:10px 0 0" }, seg) : null,
         all.length ? h("div", { class: "acts", style: "margin:6px 0 0" },
           h("button", { class: "key sm", type: "button", onclick: share }, "Copy share link"),
@@ -249,6 +250,101 @@ function sharedRack(code) {
     h("div", { class: "body" }, h("p", { style: "margin:0" }, "Someone shared these tools with you. Nothing about them is stored here."),
       h("div", { class: "acts", style: "margin:10px 0 0" }, h("button", { class: "key prim", type: "button", onclick: () => { ids.forEach(RACK.add); msg.textContent = "Added " + ids.length + " to your rack."; } }, "Save all to my rack"), msg)),
     rack(items)));
+}
+
+
+/* ---------- Accounts (ChronoWare ID): shown only when /api/status says accounts are live ---------- */
+const ACCT = { on: false, google: false, email: false, user: null, syncing: false };
+async function api(path, opts) {
+  const r = await fetch(path, Object.assign({ credentials: "same-origin", headers: { "content-type": "application/json" } }, opts || {}));
+  let body = null; try { body = await r.json(); } catch (_) {}
+  return { ok: r.ok, status: r.status, body };
+}
+function mergeRacks(a, b) {   // per-tool newest wins; union of both
+  const out = { v: 1, items: Object.assign({}, a.items || {}) };
+  for (const [id, it] of Object.entries((b && b.items) || {})) if (!out.items[id] || (it.t || "") > (out.items[id].t || "")) out.items[id] = it;
+  return out;
+}
+let pushT = 0;
+function pushRack() { if (!ACCT.user || ACCT.syncing) return; clearTimeout(pushT);
+  pushT = setTimeout(() => api("/api/rack", { method: "PUT", body: JSON.stringify(RACK.dump()) }), 800); }
+async function syncRack() {
+  ACCT.syncing = true;
+  const r = await api("/api/rack");
+  if (r.ok) { const m = mergeRacks(RACK.dump(), r.body); RACK.replace(m); await api("/api/rack", { method: "PUT", body: JSON.stringify(m) }); }
+  ACCT.syncing = false;
+}
+function acctNav() {
+  const nav = document.querySelector(".nav"); if (!nav || !ACCT.on) return;
+  let a = nav.querySelector("[data-nav=account]");
+  if (!a) { a = h("a", { href: "#account", "data-nav": "account" }); nav.insertBefore(a, nav.querySelector("[data-discover]")); }
+  a.textContent = ACCT.user ? "Account" : "Sign in";
+}
+async function initAccounts() {
+  const st = await api("/api/status").catch(() => null);
+  if (!st || !st.ok || !st.body || !st.body.accounts) return;
+  Object.assign(ACCT, { on: true, google: !!st.body.google, email: !!st.body.email });
+  const s = await api("/api/auth/get-session");
+  ACCT.user = s.ok && s.body && s.body.user ? s.body.user : null;
+  acctNav();
+  if (ACCT.user) { await syncRack(); RACK.on(pushRack); }
+  if (/^#(account|rack)$/.test(location.hash)) route();
+}
+function account() {
+  setTitle(ACCT.user ? "Account" : "Sign in"); navCurrent("account");
+  if (!ACCT.on) return render(unit("Accounts", { h1: true, cnt: "SOON" }, h("div", { class: "body" }, h("p", { style: "margin:0" }, "Accounts aren't live yet. Your rack is saved in this browser."))));
+  const msg = h("p", { class: "wl-msg", "aria-live": "polite", style: "margin:8px 0 0" });
+  if (ACCT.user) {
+    const del = h("button", { class: "key sm", type: "button" }, "Delete account");
+    del.addEventListener("click", async () => {
+      if (!del.dataset.arm) { del.dataset.arm = "1"; del.textContent = "Press again to delete"; msg.textContent = "This deletes your account and synced rack. The copy in this browser stays."; return; }
+      const r = await api("/api/auth/delete-user", { method: "POST", body: "{}" });
+      if (r.ok) { ACCT.user = null; acctNav(); msg.textContent = "Account deleted."; go("rack"); } else msg.textContent = "Couldn't delete the account. Try again.";
+    });
+    return render(unit("Account", { h1: true, cnt: "SIGNED IN" }, h("div", { class: "body" },
+      h("p", { style: "margin:0" }, "Signed in as ", h("strong", null, ACCT.user.email), "."),
+      h("p", { class: "who", style: "margin:6px 0 0" }, "Your rack syncs to this account. ", RACK.ids().length + (RACK.ids().length === 1 ? " tool" : " tools") + " saved."),
+      h("div", { class: "acts" },
+        h("a", { class: "key prim", href: "#rack" }, "Open my rack"),
+        h("button", { class: "key sm", type: "button", onclick: async () => { await api("/api/auth/sign-out", { method: "POST", body: "{}" }); ACCT.user = null; acctNav(); go("rack"); } }, "Sign out"),
+        del),
+      msg, h("p", { class: "who", style: "margin:12px 0 0" }, h("a", { href: "#privacy" }, "Privacy"), " · ", h("a", { href: "#terms" }, "Terms")))));
+  }
+  const cb = location.origin + "/#rack";
+  const google = ACCT.google ? h("button", { class: "key prim", type: "button", onclick: async () => {
+    const r = await api("/api/auth/sign-in/social", { method: "POST", body: JSON.stringify({ provider: "google", callbackURL: cb }) });
+    if (r.ok && r.body && r.body.url) location.href = r.body.url; else msg.textContent = "Google sign-in didn't start. Try again.";
+  } }, "Continue with Google") : null;
+  let email = null;
+  if (ACCT.email) {
+    const inp = h("input", { id: "siEmail", type: "email", autocomplete: "email", required: true, placeholder: "you@example.com" });
+    email = h("form", { class: "frow signin-mail", novalidate: true },
+      h("label", { class: "lab", for: "siEmail" }, "Email me a sign-in link"), inp, h("button", { class: "key", type: "submit" }, "Send link"));
+    email.addEventListener("submit", async e => {
+      e.preventDefault();
+      if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(inp.value.trim())) { msg.textContent = "Enter a valid email address."; inp.focus(); return; }
+      const r = await api("/api/auth/sign-in/magic-link", { method: "POST", body: JSON.stringify({ email: inp.value.trim(), callbackURL: cb }) });
+      msg.textContent = r.ok ? "Check your inbox. The link works once and expires in 10 minutes." : (r.status === 429 ? "Too many requests. Wait a few minutes and try again." : "Couldn't send the link. Try again.");
+    });
+  }
+  render(unit("Sign in", { h1: true, cnt: "CHRONOWARE ID" }, h("div", { class: "body signin" },
+    h("p", { style: "margin:0" }, "Sign in to sync your rack across devices. One ChronoWare account, no password."),
+    h("div", { class: "acts" }, google), email, msg,
+    h("p", { class: "who", style: "margin:12px 0 0" }, "By signing in you agree to the ", h("a", { href: "#terms" }, "Terms"), " and ", h("a", { href: "#privacy" }, "Privacy notice"), "."))));
+}
+
+
+/* ---------- Terms + Privacy (content in assets/legal.js) ---------- */
+function legal(kind) {
+  const L = window.LEGAL, doc = L && L[kind];
+  if (!doc) return notFound();
+  setTitle(doc.title); navCurrent("");
+  render(unit(doc.title, { h1: true, cnt: L.meta.updated }, h("div", { class: "body legal" },
+    h("p", { class: "lead" }, doc.intro),
+    doc.sections.map(([hd, parts]) => h("section", null, h("h2", null, hd),
+      parts.map(x => Array.isArray(x) ? h("ul", null, x.map(li => h("li", null, li))) : h("p", null, x)))),
+    h("p", { class: "who" }, L.meta.owner + " · " + L.meta.place + " · ", h("a", { href: "mailto:" + L.meta.contact }, L.meta.contact)),
+    h("p", { class: "who" }, h("a", { href: kind === "terms" ? "#privacy" : "#terms" }, kind === "terms" ? "Privacy notice" : "Terms of use")))));
 }
 
 /* ---------- filter panel ---------- */
@@ -643,6 +739,9 @@ function route() {
   else if ((m = k.match(/^l-([a-z0-9-]+)$/)) && byId[m[1]]) listing(m[1]);
   else if ((m = k.match(/^s-([a-z0-9-]+)$/)) && byStack[m[1]]) stack(m[1]);
   else if (k === "rack") myRack();
+  else if (k === "account") account();
+  else if (k === "terms") legal("terms");
+  else if (k === "privacy") legal("privacy");
   else if ((m = k.match(/^shared-([A-Za-z0-9_-]+)$/))) sharedRack(m[1]);
   else if (k === "search") search();
   else if (k === "about") about();
@@ -674,6 +773,7 @@ load().then(() => {
   if (!SAMPLE && UNCHECKED) strip.lastChild.textContent = "UNVERIFIED SEED · " + UNCHECKED + " of " + L.length + " listings come from an AI-assisted research pass and have not been checked yet. Prices and specs may be wrong.";
   window.addEventListener("hashchange", route);
   RACK.on(rackCount); rackCount();
+  initAccounts();
   window.addEventListener("storage", e => { if (e.key === "cr.rack") rackCount(); });
   route();
 }).catch(err => {

@@ -1,0 +1,18 @@
+{
+  "name": "chronorail",
+  "private": true,
+  "type": "module",
+  "description": "ChronoRail · Temporal Tool Directory. Static site + Cloudflare Worker for accounts.",
+  "scripts": {
+    "build": "bash scripts/make-dist.sh",
+    "dev": "npx wrangler dev",
+    "db:migrate:local": "npx wrangler d1 migrations apply chronorail-accounts --local",
+    "db:migrate:remote": "npx wrangler d1 migrations apply chronorail-accounts --remote"
+  },
+  "dependencies": {
+    "better-auth": "1.7.26"
+  },
+  "devDependencies": {
+    "wrangler": "^4"
+  }
+}
