@@ -20,8 +20,10 @@
     // D1 chronorail-accounts, created 2026-11-18; schema applied from migrations/0001_auth.sql via the dashboard console
     { "binding": "DB", "database_name": "chronorail-accounts", "database_id": "44bbb4a5-4973-4ead-b7f5-bad52d540e39", "migrations_dir": "migrations" }
   ],
+  // Nightly stats → Notion "ChronoRail Stats" at 10:23 UTC (3:23 am MT). Needs secret NOTION_TOKEN.
+  "triggers": { "crons": ["23 10 * * *"] },
   // "send_email": [{ "name": "EMAIL" }],   // uncomment with MAIL_FROM when Email Sending is enabled
-  // Secrets, set by Silas only (never in this file): BETTER_AUTH_SECRET, GOOGLE_CLIENT_ID, GOOGLE_CLIENT_SECRET
+  // Secrets, set by Silas only (never in this file): BETTER_AUTH_SECRET, GOOGLE_CLIENT_ID, GOOGLE_CLIENT_SECRET, FEEDBACK_AGENT_TOKEN, NOTION_TOKEN
   // Required by `npx wrangler preview` (non-production branch builds). Empty on purpose.
   "previews": {}
 }

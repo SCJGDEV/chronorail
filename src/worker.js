@@ -150,7 +150,58 @@ async function feedbackApi(req, env, url) {
   return json({ error: "method_not_allowed" }, 405);
 }
 
+// ---- Nightly stats → Notion (option A: counts only; no emails, names or notes leave Cloudflare) ----
+const NOTION_STATS_DS = "41e1fa25-b7de-81bc-88cd-000b145490c3";   // Notion "ChronoRail Stats" data source
+async function collectStats(env) {
+  const now = new Date(), since = new Date(now.getTime() - 864e5).toISOString(), nowIso = now.toISOString();
+  const one = async (sql, ...b) => { try { const r = await env.DB.prepare(sql).bind(...b).first(); return Number(r && r.n) || 0; } catch { return null; } };
+  const s = {
+    users: await one('select count(*) n from "user"'),
+    newUsers: await one('select count(*) n from "user" where "createdAt" >= ?', since),
+    sessions: await one('select count(*) n from "session" where "expiresAt" > ?', nowIso),
+    racks: await one('select count(*) n from "rack"'),
+    rackItems: await one(`select coalesce(sum((select count(*) from json_each("data", '$.items'))),0) n from "rack" where json_valid("data")`),
+    fbNew: await one(`select count(*) n from "feedback" where "status" = 'new'`),
+    fbTotal: await one('select count(*) n from "feedback" where "status" != \'spam\''),
+    listings: null, verified: null,
+  };
+  try {
+    const r = await env.ASSETS.fetch(new Request((env.BASE_URL || "https://chronorail.si") + "/feed/listings.json"));
+    const d = await r.json(), L = Array.isArray(d) ? d : (d.listings || d.items || []);
+    s.listings = L.length; s.verified = L.filter(l => l.verification_status === "verified").length;
+  } catch {}
+  return s;
+}
+async function pushStatsToNotion(env) {
+  if (!env.DB || !env.NOTION_TOKEN) return { skipped: true };
+  const s = await collectStats(env), day = new Date().toISOString().slice(0, 10);
+  const num = v => ({ number: v === null ? null : v });
+  const properties = {
+    "Day": { title: [{ text: { content: day } }] }, "Date": { date: { start: day } },
+    "Users": num(s.users), "New users (24h)": num(s.newUsers), "Active sessions": num(s.sessions),
+    "Racks saved": num(s.racks), "Rack items": num(s.rackItems),
+    "Feedback new": num(s.fbNew), "Feedback total": num(s.fbTotal),
+    "Listings": num(s.listings), "Verified listings": num(s.verified),
+  };
+  const ds = env.NOTION_STATS_DS || NOTION_STATS_DS;
+  const post = (ver, parent) => fetch("https://api.notion.com/v1/pages", {
+    method: "POST",
+    headers: { "Authorization": "Bearer " + env.NOTION_TOKEN, "Notion-Version": ver, "Content-Type": "application/json" },
+    body: JSON.stringify({ parent, properties }),
+  });
+  console.log("stats", JSON.stringify(s));
+  let r;
+  try {
+  r = await post("2025-09-03", { type: "data_source_id", data_source_id: ds });
+  if (!r.ok) r = await post("2022-06-28", { database_id: env.NOTION_STATS_DB || "41e1fa25b7de81479ab8d090a49e23ad" });   // fallback for older API
+  } catch (e) { console.log("notion stats error", String(e).slice(0, 200)); return { ok: false, stats: s }; }
+  const ok = r.ok; if (!ok) console.log("notion stats failed", r.status, (await r.text()).slice(0, 300));
+  else console.log("notion stats ok", day);
+  return { ok, stats: s };
+}
+
 export default {
+  async scheduled(_ev, env, ctx) { ctx.waitUntil(pushStatsToNotion(env)); },
   async fetch(req, env) {
     const url = new URL(req.url);
     if (!url.pathname.startsWith("/api/")) return env.ASSETS.fetch(req);

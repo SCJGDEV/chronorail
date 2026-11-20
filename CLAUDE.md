@@ -26,7 +26,7 @@ You are the project lead for **ChronoRail**, the free, curated, AI-readable dire
 | Data | `data/listings.json` (294 listings, 125 verified), `data/categories.json`, `data/stacks.json`, `data/listings.template.csv` |
 | Public feeds | `/llms.txt`, `/feed/listings.json`, JSON-LD on listing pages |
 | Database | D1 `chronorail-accounts` (binding `DB`). Migrations in `migrations/`, applied via the dashboard console |
-| Runtime secrets (names only) | `GOOGLE_CLIENT_ID`, `GOOGLE_CLIENT_SECRET`, `BETTER_AUTH_SECRET`, `FEEDBACK_AGENT_TOKEN` |
+| Runtime secrets (names only) | `GOOGLE_CLIENT_ID`, `GOOGLE_CLIENT_SECRET`, `BETTER_AUTH_SECRET`, `FEEDBACK_AGENT_TOKEN`, `NOTION_TOKEN` |
 | Vars | `AUTH_ENABLED="1"`, `BASE_URL=https://chronorail.si` |
 | Service worker | cache `cr-v11` — bump on every asset change |
 
@@ -64,6 +64,7 @@ You are the project lead for **ChronoRail**, the free, curated, AI-readable dire
 |---|---|---|---|
 | Listings check | `.github/workflows/listings-check.yml` + `.github/claude/listings-check.md` | Nightly 02:43 UTC | Opens `checks/` PRs. Never merges |
 | Feedback triage | `.github/workflows/feedback-triage.yml` + `.github/claude/feedback-triage.md` | Daily 14:17 UTC (7:17 am MT) + manual | Skips if no new items. Labels each item; opens one "Feedback digest YYYY-MM-DD" issue (label `feedback`) and at most one `feedback/fixes-YYYY-MM-DD` PR. Never merges |
+| Notion stats | `src/worker.js` `scheduled()` + `triggers.crons` in `wrangler.jsonc` | Nightly 10:23 UTC (3:23 am MT) | Writes one counts-only row to Notion "ChronoRail Stats" (users, new users, sessions, racks, rack items, feedback, listings). No emails, names or notes |
 | Discovery inbox | Drive "ChronoRail Inbox" (`discovery-<agent>-YYYY-MM-DD.csv`) | Weekly, Saturdays ~9:39 am MT | Rows get verified against maker sites before merge |
 
 Actions use `anthropics/claude-code-action@v1` with secret `CLAUDE_CODE_OAUTH_TOKEN`. Use REST `gh api` (GraphQL is blocked).
@@ -89,13 +90,13 @@ Raw feedback stays in D1. Only summaries reach GitHub. Personal details are stri
 ## Open items (Waiting on Silas)
 
 - ~~Test Google sign-in~~ — done 2026-11-20 (Silas signed in OK). Rack sync across devices still worth one check.
-- Notion stats mirror (option A, stats only): Silas creates a Notion integration and adds its token as a Runtime secret; then build the nightly Worker cron.
 - Brand images: A (keep initial tiles) or B + C (press-kit images with per-image license record + maker uploads on Submit, lawyer OK first).
 - Magic-link email: needs Workers Paid + Email Sending onboarding on chronorail.si (chronoware.si DMARC is `p=reject`).
 - Later: Submit-form endpoint; bump Actions off Node 20; re-point the browser checker task; SCJG monogram asset.
 
 ## Not yet verified
 
+- First live Notion stats row (local test passed; outbound Notion call untested until the first nightly run).
 - Feedback agent's digest-issue and fix-PR paths (only the "mark spam" path has run).
 - Safari and non-NEU skins after the slim-keys change.
 
