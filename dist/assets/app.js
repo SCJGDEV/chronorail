@@ -107,7 +107,7 @@ function tile(l, big, quiet) {
   // per-listing "data serial": 5 of 9 dots from a hash of the id, so every tile reads slightly different
   let hsh = 2166136261; for (const ch of String(l.id || l.name)) hsh = Math.imul(hsh ^ ch.charCodeAt(0), 16777619) >>> 0;
   const dots = []; for (let i = 0; i < 9; i++) dots.push(h("i", { class: (hsh >>> i) & 1 ? "on" : null }));
-  const el = h("div", { class: "tile well tile-fx" + (big ? " big" : ""), "aria-hidden": "true", "data-i": initials, style: "--d:" + (hsh % 7) * 0.9 + "s" },
+  const el = h("div", { class: "tile well tile-fx" + (big ? " big" : ""), "aria-hidden": "true", title: quiet || big ? null : "Drag to your rack", "data-i": initials, style: "--d:" + (hsh % 7) * 0.9 + "s" },
     h("span", { class: "tl" }, initials),
     h("span", { class: "tscan" }), h("span", { class: "tcorn" }), h("span", { class: "tdots" }, dots));
   if (!quiet) TILEFX.watch(el);
@@ -153,7 +153,7 @@ const platText = (l, sep) => l.platforms.length ? l.platforms.join(sep || " · "
 function plate(l) {
   const p = priceOf(l), c = bySlug[l.category];
   const lab = labels(l);
-  const el = h("article", { class: "plate", draggable: "true", "data-id": l.id, style: "--tick:var(--led-" + ({ good: "good", warn: "warn" }[p.led] || "off") + ")" },
+  const el = h("article", { class: "plate", "data-id": l.id, style: "--tick:var(--led-" + ({ good: "good", warn: "warn" }[p.led] || "off") + ")" },
     h("div", { class: "plate-top" },
       tile(l),
       h("div", { class: "np" },
@@ -347,21 +347,44 @@ const DOCK = (() => {
     root = h("aside", { class: "dock", "aria-label": "Rack drawer" }, panel, tab, live);
     document.body.append(root); document.body.classList.add("has-dock");
     document.addEventListener("keydown", e => { if (e.key === "Escape" && st.open && !e.defaultPrevented) { setOpen(false); if (root.contains(document.activeElement) || document.activeElement === document.body) tab.focus(); } });
-    // drag and drop
-    document.addEventListener("dragstart", e => {
-      const card = e.target.closest && e.target.closest(".plate[data-id]"); if (!card) return;
-      e.dataTransfer.setData("text/x-cr-id", card.dataset.id); e.dataTransfer.setData("text/plain", byId[card.dataset.id] ? byId[card.dataset.id].name : "");
-      e.dataTransfer.effectAllowed = "copy"; dragging = true; root.classList.add("drag");
+    // drag from the tile (the gripper): pointer-based, so mouse, pen and touch all work
+    let drag = null;
+    const overDock = (x, y) => { const r1 = panel.getBoundingClientRect(), r2 = tab.getBoundingClientRect();
+      const inR = r => r.width && x >= r.left - 12 && x <= r.right + 12 && y >= r.top - 12 && y <= r.bottom + 12;
+      return (st.open && inR(r1)) || inR(r2); };
+    document.addEventListener("pointerdown", e => {
+      const t = e.target.closest && e.target.closest(".plate[data-id] .tile-fx");
+      if (!t || (e.pointerType === "mouse" && e.button !== 0)) return;
+      drag = { id: t.closest(".plate").dataset.id, t, x: e.clientX, y: e.clientY, on: false, pid: e.pointerId, g: null };
+      e.preventDefault();
     });
-    document.addEventListener("dragend", () => { dragging = false; root.classList.remove("drag", "over"); });
-    root.addEventListener("dragover", e => { if (!dragging) return; e.preventDefault(); e.dataTransfer.dropEffect = "copy"; root.classList.add("over"); });
-    root.addEventListener("dragleave", e => { if (!root.contains(e.relatedTarget)) root.classList.remove("over"); });
-    root.addEventListener("drop", e => {
-      e.preventDefault(); root.classList.remove("over", "drag"); dragging = false;
-      const id = e.dataTransfer.getData("text/x-cr-id"); if (!id) return;
-      if (!st.open) { st.open = true; keep(); }
-      add(id);
+    document.addEventListener("pointermove", e => {
+      if (!drag || e.pointerId !== drag.pid) return;
+      if (!drag.on) {
+        if (Math.hypot(e.clientX - drag.x, e.clientY - drag.y) < 6) return;
+        drag.on = true; root.classList.add("drag"); document.body.classList.add("dk-dragging");
+        const r = drag.t.getBoundingClientRect();
+        drag.g = h("div", { class: "dk-fly dk-ghost", "aria-hidden": "true" }, drag.t.dataset.i || "");
+        drag.ox = e.clientX - r.left - r.width / 2; drag.oy = e.clientY - r.top - r.height / 2;
+        document.body.append(drag.g);
+      }
+      drag.g.style.left = e.clientX - 18 + "px"; drag.g.style.top = e.clientY - 18 + "px";
+      root.classList.toggle("over", overDock(e.clientX, e.clientY));
     });
+    const end = e => {
+      if (!drag || e.pointerId !== drag.pid) return;
+      const d = drag; drag = null;
+      root.classList.remove("drag"); document.body.classList.remove("dk-dragging");
+      if (!d.on) { if (e.type === "pointerup") location.hash = "l-" + d.id; return; }
+      const hit = e.type === "pointerup" && overDock(e.clientX, e.clientY);
+      root.classList.remove("over");
+      if (hit) { d.g.remove(); if (!st.open) { st.open = true; keep(); } add(d.id); }
+      else if (d.g.animate) { const r = d.t.getBoundingClientRect();
+        d.g.animate([{ left: d.g.style.left, top: d.g.style.top, opacity: 1 }, { left: r.left + r.width / 2 - 18 + "px", top: r.top + r.height / 2 - 18 + "px", opacity: 0 }], { duration: 220 }).onfinish = () => d.g.remove(); }
+      else d.g.remove();
+    };
+    document.addEventListener("pointerup", end);
+    document.addEventListener("pointercancel", end);
     RACK.on(draw); draw();
   }
   function fly(fromEl, l) {

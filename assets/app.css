@@ -507,8 +507,6 @@ a.dk-sync{color:var(--accent-ink)}
 @keyframes dkPulse{0%{transform:scale(1)}40%{transform:scale(1.08)}100%{transform:scale(1)}}
 .dk-fly{position:fixed;z-index:70;width:36px;height:36px;display:grid;place-items:center;border-radius:9px;pointer-events:none;
   background:var(--glass);color:var(--ink);font:700 13px/1 var(--font-id);box-shadow:var(--inset)}
-.plate[draggable="true"]{cursor:grab}
-.plate[draggable="true"]:active{cursor:grabbing}
 @media (pointer:coarse){.dk-tab{height:42px}.dk-s{padding:8px}.dk-x,.dk-close{width:40px;height:40px}.dk-row{grid-template-columns:30px minmax(0,1fr) 40px;grid-template-areas:"t n x" "s s s"}.dk-row .tile{grid-area:t}.dk-nm{grid-area:n}.dk-st{grid-area:s;padding-left:40px}.dk-x{grid-area:x}}
 @media (max-width:560px){.dock{bottom:6px}.dk-panel{max-height:70vh}}
 @media (prefers-reduced-motion:reduce){.dock.open .dk-panel,.dk-row.landed,.dock.pulse .dk-tab{animation:none}}
@@ -526,3 +524,12 @@ a.dk-sync{color:var(--accent-ink)}
 [data-hc="1"][data-skin="NEU"][data-tone="l"]{--dock-bg:#fff}
 [data-hc="1"][data-skin="NEU"][data-tone="d"]{--dock-bg:#000}
 @supports not ((backdrop-filter:blur(1px)) or (-webkit-backdrop-filter:blur(1px))){:root{--dock-bg:rgb(236,232,225)}[data-skin="NEU"][data-tone="d"],[data-skin="PRO"]:not([data-glass="l"]){--dock-bg:rgb(38,42,47)}}
+
+/* tile = gripper: grab cursor, all 9 dots light up on hover/press as the grip cue */
+.plate[data-id] .tile-fx{position:relative;z-index:3;cursor:grab;touch-action:none;-webkit-user-select:none;user-select:none;transition:transform .15s}
+.plate[data-id] .tile-fx:hover .tdots i,.plate[data-id] .tile-fx:active .tdots i{opacity:1}
+.plate[data-id] .tile-fx:hover{transform:translateY(-1px)}
+.plate[data-id] .tile-fx:active{cursor:grabbing;transform:scale(.96)}
+@media (pointer:coarse){.plate[data-id] .tile-fx .tdots i{opacity:.55}}
+.dk-ghost{transform:scale(1.05) rotate(-4deg);box-shadow:var(--inset),0 8px 18px rgba(0,0,0,.28)}
+body.dk-dragging,body.dk-dragging *{cursor:grabbing!important;-webkit-user-select:none;user-select:none}
