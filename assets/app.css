@@ -533,3 +533,9 @@ a.dk-sync{color:var(--accent-ink)}
 @media (pointer:coarse){.plate[data-id] .tile-fx .tdots i{opacity:.55}}
 .dk-ghost{transform:scale(1.05) rotate(-4deg);box-shadow:var(--inset),0 8px 18px rgba(0,0,0,.28)}
 body.dk-dragging,body.dk-dragging *{cursor:grabbing!important;-webkit-user-select:none;user-select:none}
+/* rack notes: sit inside the module, recessed */
+.rack-tools{padding:10px 12px 12px;margin-top:auto;border-top:1px solid var(--seam)}
+.rack-note{box-sizing:border-box;display:block;width:100%;max-width:100%;resize:vertical;border:1px solid var(--seam);background:rgba(0,0,0,.06);
+  box-shadow:inset 0 1px 3px rgba(0,0,0,.18),inset 0 0 0 1px rgba(0,0,0,.04)}
+[data-skin="NEU"][data-tone="d"] .rack-note,[data-skin="PRO"]:not([data-glass="l"]) .rack-note{background:rgba(0,0,0,.22);box-shadow:inset 0 1px 3px rgba(0,0,0,.45)}
+@media (max-width:720px){.rackgrid .rack-tools{padding:8px 0 4px;border-top:0;margin-top:0}}

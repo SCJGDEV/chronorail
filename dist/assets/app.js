@@ -259,7 +259,7 @@ function myRack() {
     const st = h("div", { class: "chips rack-stat", role: "group", "aria-label": "Status for " + l.name },
       Object.entries(RSTAT).map(([k, t]) => h("button", { class: "key sm", type: "button", "aria-pressed": it.s === k ? "true" : "false",
         onclick: () => { RACK.set(l.id, { s: it.s === k ? "" : k }); myRack(); } }, t)));
-    const note = h("textarea", { class: "rack-note", rows: "2", maxlength: "500", placeholder: "Private note (stays in this browser)", "aria-label": "Note for " + l.name });
+    const note = h("textarea", { class: "rack-note", rows: "2", maxlength: "500", placeholder: ACCT.user ? "Private note (only you can see it)" : "Private note (stays in this browser)", "aria-label": "Note for " + l.name });
     note.value = it.n || "";
     note.addEventListener("change", () => RACK.set(l.id, { n: note.value.slice(0, 500) }));
     const el = plate(l); el.append(h("div", { class: "rack-tools" }, st, note));
