@@ -410,3 +410,8 @@ textarea{resize:vertical;min-height:80px;line-height:1.4}
 .frow[aria-label="Sort"]{align-items:center}
 .frow[aria-label="Sort"]>.lab{margin-top:0}
 .frow[aria-label="Sort"]>:is(.sortnote,.key,select){align-self:center;margin-top:0}
+/* feedback form */
+.fb-form{display:grid;gap:8px;max-width:72ch}
+.fb-form .lab-line{margin:8px 0 0;font:700 9.5px/1 var(--font-ui);letter-spacing:.18em;text-transform:uppercase;color:var(--legend-dim)}
+.fb-msg{min-height:140px}
+.hp{position:absolute!important;left:-9999px;width:1px;height:1px;opacity:0}

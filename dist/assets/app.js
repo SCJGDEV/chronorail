@@ -334,6 +334,46 @@ function account() {
 }
 
 
+
+/* ---------- Feedback: bug / idea / suggestion, stored privately for the team and its agents ---------- */
+let fbFrom = "";
+function feedbackPage() {
+  setTitle("Feedback"); navCurrent("feedback");
+  const f = { kind: "bug" };
+  const msg = h("p", { class: "wl-msg", "aria-live": "polite", style: "margin:8px 0 0" });
+  const kinds = h("div", { class: "chips", role: "radiogroup", "aria-label": "Feedback type" },
+    [["bug", "Bug"], ["idea", "Idea"], ["suggestion", "Suggestion"]].map(([k, t]) => {
+      const b = h("button", { class: "key", type: "button", role: "radio", "aria-checked": k === f.kind ? "true" : "false", "aria-pressed": k === f.kind ? "true" : "false" }, t);
+      b.addEventListener("click", () => { f.kind = k; kinds.querySelectorAll("button").forEach(x => { const on = x === b; x.setAttribute("aria-checked", on); x.setAttribute("aria-pressed", on); }); });
+      return b;
+    }));
+  const ta = h("textarea", { id: "fbMsg", class: "rack-note fb-msg", rows: "6", maxlength: "2000", required: true,
+    placeholder: "What happened, or what would make ChronoRail better? For bugs: what you pressed, what you expected, what you saw." });
+  const hp = h("input", { type: "text", name: "website", tabindex: "-1", autocomplete: "off", "aria-hidden": "true", class: "hp" });
+  const send = h("button", { class: "key prim", type: "submit" }, "Send feedback");
+  const form = h("form", { class: "fb-form", novalidate: true },
+    h("p", { class: "lab-line" }, "Type"), kinds,
+    h("label", { class: "lab-line", for: "fbMsg" }, "Message"), ta, hp,
+    h("p", { class: "who", style: "margin:6px 0 0" }, "Please don't include personal information. We save your message, the page you came from (",
+      h("code", null, fbFrom || "#"), ") and your display skin. Nothing else. See ", h("a", { href: "#privacy" }, "Privacy"), "."),
+    h("div", { class: "acts" }, send, fbFrom ? h("a", { class: "key", href: fbFrom }, "Back") : null), msg);
+  form.addEventListener("submit", async e => {
+    e.preventDefault();
+    const text = ta.value.trim();
+    if (text.length < 5) { msg.textContent = "Add a few words so we know what to look at."; ta.focus(); return; }
+    send.disabled = true; msg.textContent = "Sending…";
+    try {
+      const r = await fetch("/api/feedback", { method: "POST", headers: { "content-type": "application/json" },
+        body: JSON.stringify({ kind: f.kind, message: text, page: fbFrom || "#", skin: (document.documentElement.dataset.skin || "") + "|" + (document.documentElement.dataset.tone || document.documentElement.dataset.glass || ""), website: hp.value }) });
+      if (r.ok) { ta.value = ""; msg.textContent = "Thanks. It's in the queue; the team reviews new feedback daily."; }
+      else msg.textContent = r.status === 429 ? "That's a lot of feedback in an hour. Try again later." : "Couldn't send it. Try again, or email io@scjg.cc.";
+    } catch (_) { msg.textContent = "Couldn't send it. Check your connection and try again."; }
+    send.disabled = false;
+  });
+  render(unit("Feedback", { h1: true, cnt: "BUG · IDEA · SUGGESTION" }, h("div", { class: "body" },
+    h("p", { style: "margin:0 0 12px" }, "Found a bug, or have an idea for ChronoRail? Tell us here. Every message is read and triaged."), form)));
+}
+
 /* ---------- Terms + Privacy (content in assets/legal.js) ---------- */
 function legal(kind) {
   const L = window.LEGAL, doc = L && L[kind];
@@ -732,6 +772,7 @@ function go(hash) { if (location.hash.slice(1) === hash) route(); else location.
 function route() {
   const k = decodeURIComponent(location.hash.slice(1));
   let m;
+  if (k !== "feedback") fbFrom = location.hash || "#";   // remember where feedback was opened from
   clearLD();
   if (!k) home();
   else if (k === "categories") categories();
@@ -739,6 +780,7 @@ function route() {
   else if ((m = k.match(/^l-([a-z0-9-]+)$/)) && byId[m[1]]) listing(m[1]);
   else if ((m = k.match(/^s-([a-z0-9-]+)$/)) && byStack[m[1]]) stack(m[1]);
   else if (k === "rack") myRack();
+  else if (k === "feedback") feedbackPage();
   else if (k === "account") account();
   else if (k === "terms") legal("terms");
   else if (k === "privacy") legal("privacy");
