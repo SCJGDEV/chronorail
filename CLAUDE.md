@@ -28,11 +28,12 @@ You are the project lead for **ChronoRail**, the free, curated, AI-readable dire
 | Database | D1 `chronorail-accounts` (binding `DB`). Migrations in `migrations/`, applied via the dashboard console |
 | Runtime secrets (names only) | `GOOGLE_CLIENT_ID`, `GOOGLE_CLIENT_SECRET`, `BETTER_AUTH_SECRET`, `FEEDBACK_AGENT_TOKEN`, `NOTION_TOKEN` |
 | Vars | `AUTH_ENABLED="1"`, `BASE_URL=https://chronorail.si` |
-| Service worker | cache `cr-v12` — bump on every asset change |
+| Service worker | cache `cr-v13` — bump on every asset change |
 
 ## Features
 
 - **Directory:** home (search, category bay, Discover, stacks), category, listing detail, stack, search, About/verification, Submit (form + JSON preview, no endpoint yet), Feedback, Privacy, Terms, 404.
+- **Rack drawer (dock):** footer tab "RACK · n tools" opens a drawer for everyone (signed in or not). Drag a card in or press + Rack (tile flies to the dock); tools file into their category groups automatically. Open/collapsed state in localStorage `cr.dock`. Escape closes. On phones the compact list shows + Rack.
 - **My Rack:** Own / Want / Tried status + notes per tool. Stored in localStorage `cr.rack`; share link `#shared-<ids>`; JSON export. Syncs to `/api/rack` when signed in (newest per tool wins).
 - **Accounts:** Better Auth 1.7.26 on the Worker + D1, `/api/auth`, **Google sign-in only**. Google Cloud project `chronoware-id` under io@scjg.cc, consent screen **In production**. Magic-link email is built but off (needs Workers Paid $5/mo + Email Sending onboarding). Delete-account enabled; rack rows cascade.
 - **Feedback line:** `/#feedback` form → `POST /api/feedback` (same-origin, honeypot, ≤2000 chars, 5/hr per salted IP hash). Stored in D1 `feedback`. Agents read/update with `scripts/feedback.sh` using `FEEDBACK_AGENT_TOKEN`.
@@ -93,8 +94,14 @@ Raw feedback stays in D1. Only summaries reach GitHub. Personal details are stri
 - Magic-link email: needs Workers Paid + Email Sending onboarding on chronorail.si (chronoware.si DMARC is `p=reject`).
 - Later: Submit-form endpoint; bump Actions off Node 20; re-point the browser checker task; SCJG monogram asset.
 
+## Planned next (approved 2026-11-20)
+
+- Signed-in only: multiple racks (signed-out keeps one), and in-app change alerts on saved tools (price/free tier/format/platform changes from the nightly check). Needs a small D1 migration.
+- After that: public rack pages `/r/<name>` (needs profanity filter + report button).
+
 ## Not yet verified
 
+- Rack drawer on Safari, real phones, PRO/glass skins.
 - First live Notion stats row (local test passed; outbound Notion call untested until the first nightly run).
 - Feedback agent's digest-issue and fix-PR paths (only the "mark spam" path has run).
 - Safari and non-NEU skins after the slim-keys change.

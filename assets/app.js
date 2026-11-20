@@ -102,7 +102,7 @@ function sortBy(list, mode) {
 }
 
 /* ---------- components ---------- */
-function tile(l, big) {
+function tile(l, big, quiet) {
   const initials = l.name.replace(/[^A-Za-z0-9 ]/g, " ").split(/\s+/).filter(Boolean).slice(0, 2).map(w => w[0]).join("").toUpperCase() || "?";
   // per-listing "data serial": 5 of 9 dots from a hash of the id, so every tile reads slightly different
   let hsh = 2166136261; for (const ch of String(l.id || l.name)) hsh = Math.imul(hsh ^ ch.charCodeAt(0), 16777619) >>> 0;
@@ -110,7 +110,7 @@ function tile(l, big) {
   const el = h("div", { class: "tile well tile-fx" + (big ? " big" : ""), "aria-hidden": "true", "data-i": initials, style: "--d:" + (hsh % 7) * 0.9 + "s" },
     h("span", { class: "tl" }, initials),
     h("span", { class: "tscan" }), h("span", { class: "tcorn" }), h("span", { class: "tdots" }, dots));
-  TILEFX.watch(el);
+  if (!quiet) TILEFX.watch(el);
   return el;
 }
 // Tile boot animation: letters decode once when the tile scrolls into view; card hover replays it.
@@ -153,7 +153,7 @@ const platText = (l, sep) => l.platforms.length ? l.platforms.join(sep || " · "
 function plate(l) {
   const p = priceOf(l), c = bySlug[l.category];
   const lab = labels(l);
-  const el = h("article", { class: "plate", style: "--tick:var(--led-" + ({ good: "good", warn: "warn" }[p.led] || "off") + ")" },
+  const el = h("article", { class: "plate", draggable: "true", "data-id": l.id, style: "--tick:var(--led-" + ({ good: "good", warn: "warn" }[p.led] || "off") + ")" },
     h("div", { class: "plate-top" },
       tile(l),
       h("div", { class: "np" },
@@ -209,14 +209,24 @@ const RACK = (() => {
 })();
 const RSTAT = { own: "Own", want: "Want", tried: "Tried" };
 function rackBtn(l, small) {
-  const b = h("button", { class: "key rack-btn" + (small ? " sm" : ""), type: "button", "aria-pressed": RACK.has(l.id) ? "true" : "false", "aria-label": (RACK.has(l.id) ? "Remove " : "Add ") + l.name + (RACK.has(l.id) ? " from" : " to") + " my rack" },
+  const b = h("button", { class: "key rack-btn" + (small ? " sm" : ""), type: "button", "data-rid": l.id, "aria-pressed": RACK.has(l.id) ? "true" : "false", "aria-label": (RACK.has(l.id) ? "Remove " : "Add ") + l.name + (RACK.has(l.id) ? " from" : " to") + " my rack" },
     RACK.has(l.id) ? "In rack" : "+ Rack");
   b.addEventListener("click", () => {
+    if (!RACK.has(l.id)) DOCK.mark(l.id);
     RACK.toggle(l.id); const on = RACK.has(l.id);
+    if (on) DOCK.fly(b, l);
     b.setAttribute("aria-pressed", on ? "true" : "false"); b.textContent = on ? "In rack" : "+ Rack";
     b.setAttribute("aria-label", (on ? "Remove " : "Add ") + l.name + (on ? " from" : " to") + " my rack");
   });
   return b;
+}
+function rackBtnSync() {
+  document.querySelectorAll(".rack-btn[data-rid]").forEach(b => {
+    const l = byId[b.dataset.rid]; if (!l) return; const on = RACK.has(l.id);
+    if ((b.getAttribute("aria-pressed") === "true") === on) return;
+    b.setAttribute("aria-pressed", on ? "true" : "false"); b.textContent = on ? "In rack" : "+ Rack";
+    b.setAttribute("aria-label", (on ? "Remove " : "Add ") + l.name + (on ? " from" : " to") + " my rack");
+  });
 }
 function rackCount() { document.querySelectorAll("[data-rack-n]").forEach(e => { const n = RACK.ids().length; e.textContent = n ? String(n) : ""; e.hidden = !n; }); }
 const b64u = { enc: s => btoa(unescape(encodeURIComponent(s))).replace(/\+/g, "-").replace(/\//g, "_").replace(/=+$/, ""),
@@ -270,6 +280,107 @@ function myRack() {
         : h("div", { class: "empty-rack" }, symbolArt(84), h("p", null, "Your rack is empty."), h("p", { class: "who" }, "Press + Rack on any listing to save it here."),
             h("div", { class: "acts" }, h("button", { class: "key prim", type: "button", onclick: discover }, "Discover a tool"), h("a", { class: "key", href: "#categories" }, "Browse categories")))));
 }
+/* ---------- Rack dock: footer drawer. Drag cards in (or press + Rack); tools file into their categories. ---------- */
+const DOCK = (() => {
+  const K = "cr.dock", RM = window.matchMedia && matchMedia("(prefers-reduced-motion: reduce)").matches;
+  let st = { open: false, shut: [] };
+  try { const x = JSON.parse(localStorage.getItem(K) || "null"); if (x) st = Object.assign(st, x); } catch (_) {}
+  const keep = () => { try { localStorage.setItem(K, JSON.stringify(st)); } catch (_) {} };
+  let root, tab, panel, body, live, lastAdded = null, dragging = false;
+  const catName = l => (bySlug[l.category] || {}).name || "Other";
+  function groups() {
+    const g = {};
+    RACK.ids().forEach(id => { const l = byId[id]; (g[l.category] = g[l.category] || []).push(l); });
+    const order = Object.keys(bySlug);
+    return Object.keys(g).sort((a, b) => (order.indexOf(a) + 1 || 999) - (order.indexOf(b) + 1 || 999)).map(k => [k, g[k].sort((x, y) => x.name.localeCompare(y.name))]);
+  }
+  function row(l) {
+    const it = RACK.get(l.id) || {};
+    const r = h("li", { class: "dk-row" + (lastAdded === l.id ? " landed" : ""), "data-id": l.id },
+      tile(l, false, true),
+      h("a", { class: "dk-nm", href: "#l-" + l.id }, l.name),
+      h("div", { class: "dk-st", role: "group", "aria-label": "Status for " + l.name },
+        Object.entries(RSTAT).map(([k, t]) => h("button", { class: "dk-s", type: "button", "aria-pressed": it.s === k ? "true" : "false",
+          onclick: () => RACK.set(l.id, { s: it.s === k ? "" : k }) }, t))),
+      h("button", { class: "dk-x", type: "button", "aria-label": "Remove " + l.name + " from my rack", onclick: () => { RACK.remove(l.id); say("Removed " + l.name + "."); } }, "×"));
+    return r;
+  }
+  function draw() {
+    if (!root) return;
+    const ids = RACK.ids(), gs = groups();
+    tab.querySelector(".dk-n").textContent = ids.length ? ids.length + (ids.length === 1 ? " tool" : " tools") : "empty";
+    tab.setAttribute("aria-expanded", st.open ? "true" : "false");
+    root.classList.toggle("open", !!st.open);
+    body.replaceChildren(
+      ids.length ? h("div", { class: "dk-groups" }, gs.map(([slug, ls]) => {
+        const d = h("details", { class: "dk-g", open: !st.shut.includes(slug) },
+          h("summary", null, h("span", { class: "dk-gn" }, (bySlug[slug] || {}).name || "Other"), h("span", { class: "dk-gc" }, String(ls.length))),
+          h("ul", { class: "dk-list" }, ls.map(row)));
+        d.addEventListener("toggle", () => { st.shut = st.shut.filter(x => x !== slug); if (!d.open) st.shut.push(slug); keep(); });
+        return d;
+      })) : h("div", { class: "dk-empty" }, h("p", null, "Drag any tool card here, or press + Rack."), h("p", { class: "who" }, "Tools file into their category automatically.")),
+      h("div", { class: "dk-foot" },
+        h("a", { class: "key sm", href: "#rack" }, "Open full rack"),
+        ACCT.user ? h("span", { class: "dk-sync" }, "Synced to your account") : (ACCT.on ? h("a", { class: "dk-sync", href: "#account" }, "Sign in to sync across devices") : null)));
+    lastAdded = null;
+  }
+  function say(t) { if (live) { live.textContent = ""; setTimeout(() => live.textContent = t, 30); } }
+  function setOpen(v) { st.open = v; keep(); draw(); if (v) panel.focus({ preventScroll: true }); }
+  function add(id) {
+    const l = byId[id]; if (!l) return;
+    const had = RACK.has(id);
+    if (st.shut.includes(l.category)) { st.shut = st.shut.filter(x => x !== l.category); keep(); }
+    lastAdded = id;
+    if (!had) RACK.add(id); else draw();
+    say(had ? l.name + " is already in your rack." : "Saved " + l.name + " to " + catName(l) + ".");
+    root.classList.remove("pulse"); void root.offsetWidth; root.classList.add("pulse");
+  }
+  function mount() {
+    live = h("span", { class: "sr-only", "aria-live": "polite" });
+    tab = h("button", { class: "dk-tab", type: "button", "aria-controls": "rackDock", onclick: () => setOpen(!st.open) },
+      glyphChip(), h("span", { class: "dk-t" }, "RACK"), h("span", { class: "dk-n" }), h("span", { class: "dk-car", "aria-hidden": "true" }, "▴"));
+    body = h("div", { class: "dk-body" });
+    panel = h("div", { class: "dk-panel", id: "rackDock", role: "region", "aria-label": "My rack drawer", tabindex: "-1" },
+      h("div", { class: "dk-head" }, h("span", { class: "dk-h" }, "My rack"), h("span", { class: "dk-hint" }, "Drop tools here"),
+        h("button", { class: "dk-close", type: "button", "aria-label": "Close rack drawer", onclick: () => { setOpen(false); tab.focus(); } }, "×")),
+      body);
+    root = h("aside", { class: "dock", "aria-label": "Rack drawer" }, panel, tab, live);
+    document.body.append(root); document.body.classList.add("has-dock");
+    document.addEventListener("keydown", e => { if (e.key === "Escape" && st.open && !e.defaultPrevented) { setOpen(false); if (root.contains(document.activeElement) || document.activeElement === document.body) tab.focus(); } });
+    // drag and drop
+    document.addEventListener("dragstart", e => {
+      const card = e.target.closest && e.target.closest(".plate[data-id]"); if (!card) return;
+      e.dataTransfer.setData("text/x-cr-id", card.dataset.id); e.dataTransfer.setData("text/plain", byId[card.dataset.id] ? byId[card.dataset.id].name : "");
+      e.dataTransfer.effectAllowed = "copy"; dragging = true; root.classList.add("drag");
+    });
+    document.addEventListener("dragend", () => { dragging = false; root.classList.remove("drag", "over"); });
+    root.addEventListener("dragover", e => { if (!dragging) return; e.preventDefault(); e.dataTransfer.dropEffect = "copy"; root.classList.add("over"); });
+    root.addEventListener("dragleave", e => { if (!root.contains(e.relatedTarget)) root.classList.remove("over"); });
+    root.addEventListener("drop", e => {
+      e.preventDefault(); root.classList.remove("over", "drag"); dragging = false;
+      const id = e.dataTransfer.getData("text/x-cr-id"); if (!id) return;
+      if (!st.open) { st.open = true; keep(); }
+      add(id);
+    });
+    RACK.on(draw); draw();
+  }
+  function fly(fromEl, l) {
+    if (!root) return;
+    if (st.shut.includes(l.category)) { st.shut = st.shut.filter(x => x !== l.category); keep(); draw(); }
+    say("Saved " + l.name + " to " + catName(l) + ".");
+    root.classList.remove("pulse"); void root.offsetWidth; root.classList.add("pulse");
+    if (RM) return;
+    const a = fromEl.getBoundingClientRect(), b = tab.getBoundingClientRect();
+    const g = h("div", { class: "dk-fly", "aria-hidden": "true" }, l.name.slice(0, 2).toUpperCase());
+    g.style.left = a.left + a.width / 2 - 18 + "px"; g.style.top = a.top + a.height / 2 - 18 + "px";
+    document.body.append(g);
+    const dx = b.left + b.width / 2 - (a.left + a.width / 2), dy = b.top + b.height / 2 - (a.top + a.height / 2);
+    g.animate([{ transform: "translate(0,0) scale(1)", opacity: 1 }, { transform: `translate(${dx * .6}px,${dy * .6 - 40}px) scale(.8)`, opacity: 1, offset: .55 },
+      { transform: `translate(${dx}px,${dy}px) scale(.35)`, opacity: .2 }], { duration: 520, easing: "cubic-bezier(.4,0,.2,1)" }).onfinish = () => g.remove();
+  }
+  return { mount, fly, add, draw, mark: id => { lastAdded = id; } };
+})();
+
 function sharedRack(code) {
   let ids = [];
   try { ids = b64u.dec(code).split(",").filter(id => byId[id]); } catch (_) {}
@@ -307,6 +418,7 @@ async function syncRack() {
   ACCT.syncing = false;
 }
 function acctNav() {
+  if (typeof DOCK !== "undefined") DOCK.draw();
   const nav = document.querySelector(".nav"); if (!nav || !ACCT.on) return;
   let a = nav.querySelector("[data-nav=account]");
   if (!a) { a = h("a", { href: "#account", "data-nav": "account" }); nav.insertBefore(a, nav.querySelector("[data-discover]")); }
@@ -846,9 +958,10 @@ load().then(() => {
   strip.hidden = !(SAMPLE || UNCHECKED);
   if (!SAMPLE && UNCHECKED) strip.lastChild.textContent = "UNVERIFIED SEED · " + UNCHECKED + " of " + L.length + " listings come from an AI-assisted research pass and have not been checked yet. Prices and specs may be wrong.";
   window.addEventListener("hashchange", route);
-  RACK.on(rackCount); rackCount();
+  RACK.on(rackCount); RACK.on(rackBtnSync); rackCount();
+  DOCK.mount();
   initAccounts();
-  window.addEventListener("storage", e => { if (e.key === "cr.rack") rackCount(); });
+  window.addEventListener("storage", e => { if (e.key === "cr.rack") { rackCount(); DOCK.draw(); } });
   route();
 }).catch(err => {
   console.error(err);
