@@ -1,10 +1,15 @@
 {
   "name": "ChronoRail",
   "short_name": "ChronoRail",
-  "description": "Curated, AI-readable directory of music-production tools.",
+  "description": "Temporal Tool Directory: a curated, AI-readable directory of music-production tools. Built on ChronoWare.",
   "start_url": "./",
   "display": "standalone",
-  "background_color": "#D4D3CF",
-  "theme_color": "#E6E5E1",
-  "icons": [{ "src": "assets/icon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any" }]
+  "background_color": "#E9E4DC",
+  "theme_color": "#E9E4DC",
+  "icons": [
+    { "src": "assets/icon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any" },
+    { "src": "assets/brand/icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any" },
+    { "src": "assets/brand/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any" },
+    { "src": "assets/brand/icon-maskable-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" }
+  ]
 }

@@ -157,6 +157,8 @@
   --ink-warn:#ffd27a;                      /* UNVERIFIED text inside displays */
   --warn-ink:#ffcc66; --err-ink:#ff8a80;   /* status text on the glass sheet */
   --accent-ink:#5fe3f5;                    /* focus ring, small accent marks */
+  --lamp-brand:#ffb300; --lamp-brand-glow:0 0 6px rgba(255,179,0,.6);   /* ChronoWare lamp (amber) */
+  --logo-sheen:rgba(158,240,251,.9);
   --cell-hover:rgba(150,235,250,.05);
   --plq-hi:inset 0 1px 0 rgba(255,255,255,.6);
   /* header marquee: dark glass in every glass skin */
@@ -230,18 +232,18 @@
 }
 /* ---- NEU L · cream (SCJG variation) ---- */
 [data-skin="NEU"][data-tone="l"]{color-scheme:light;
-  --bd-bg0:#e8e4dc; --bd-bg1:#d6d1c7;
+  --bd-bg0:#e9e4dc; --bd-bg1:#d6d0c5;
   /* 5-stop radial in the plate's own proportions: stops 0 / .354 / .5 / .707 / 1 of the diagonal */
-  --page-bg:radial-gradient(farthest-corner at 0 0,#f8f5ef 0%,#f0ece5 35.4%,#e9e5dd 50%,#e3dfd6 70.7%,#d7d2c8 100%) fixed;
-  --legend:#2b2a27; --legend-dim:#57534b;
+  --page-bg:radial-gradient(farthest-corner at 0 0,#f7f4ee 0%,#efebe4 35.4%,#e9e4dc 50%,#e2dcd2 70.7%,#d5cec3 100%) fixed;
+  --legend:#2a2622; --legend-dim:#5b544c;
   --relief-hi:rgba(255,255,255,.78); --relief-sh:rgba(74,62,40,.24);
   /* sections: an engraved channel (shade line + light catch below-right) */
   --unit-edge:inset 0 0 0 1.5px rgba(74,62,40,.17),inset 1.5px 1.5px 0 rgba(255,255,255,.55);
   --title-rule:inset 0 -1px 0 rgba(74,62,40,.10);
   --seam:rgba(74,62,40,.12); --cell-hover:rgba(255,255,255,.4);
-  --hdr-ink:#2b2a27; --hdr-dim:#57534b; --hdr-edge:rgba(74,62,40,.17); --chrome-shadow:1.5px 1.5px 0 rgba(255,255,255,.55);
+  --hdr-ink:#2a2622; --hdr-dim:#5b544c; --hdr-edge:rgba(74,62,40,.17); --chrome-shadow:1.5px 1.5px 0 rgba(255,255,255,.55);
   --chrome-edge:rgba(74,62,40,.17);
-  --steel-text:linear-gradient(180deg,#4b4840 0%,#2b2a27 100%); --tag-ink:#085a66;
+  --steel-text:linear-gradient(180deg,#4b4840 0%,#2b2a27 100%); --tag-ink:#075e6b;
   /* displays: dark glass sunk into the cream plate */
   --glass:#0b0d0e; --glass-hot:#161a1c; --ink:#7ff3ff; --ink-dim:rgba(127,243,255,.6);
   --ink-label:rgba(127,243,255,.66); --ink-warn:#ffd27a; --disp-rule:rgba(127,243,255,.12);
@@ -254,18 +256,19 @@
   --led-off:rgba(43,42,39,.22); --led-ring:rgba(74,62,40,.25);
   --plq:transparent; --plq-ink:#3f3c36; --plq-edge:rgba(74,62,40,.22); --plq-hi:inset 1px 1px 0 rgba(255,255,255,.8);
   --pill-edge:rgba(74,62,40,.28); --pill-ink:#3a3833; --pill-on:rgba(10,107,122,.10); --pill-on-ink:#064f5c;
-  --warn-ink:#6e4c00; --err-ink:#9a1d14; --accent-ink:#085a66;
+  --warn-ink:#6e4c00; --err-ink:#9a1d14; --accent-ink:#075e6b;
+  --lamp-brand:#935700; --lamp-brand-glow:0 0 4px rgba(147,87,0,.45); --logo-sheen:rgba(15,169,192,.95);
 }
-/* ---- NEU D · Tyler's dark (RECIPE.md palette) ---- */
+/* ---- NEU D · cool charcoal, matched to chronoscene.si dark (base #262A2F, ink #EEE9E2) ---- */
 [data-skin="NEU"][data-tone="d"]{color-scheme:dark;
-  --bd-bg0:#2b292b; --bd-bg1:#201f21;
-  --page-bg:radial-gradient(farthest-corner at 0 0,#514d4f 0%,#383537 35.4%,#2b292b 50%,#262426 70.7%,#201f21 100%) fixed;
-  --legend:#e2e2df; --legend-dim:#c9c2c5;
+  --bd-bg0:#2b2f35; --bd-bg1:#1f2227;
+  --page-bg:radial-gradient(farthest-corner at 0 0,#4f545a 0%,#363a40 35.4%,#2b2f35 50%,#262a2f 70.7%,#1f2227 100%) fixed;
+  --legend:#eee9e2; --legend-dim:#cfcac3;
   --relief-hi:rgba(255,255,255,.10); --relief-sh:rgba(0,0,0,.6);
   --unit-edge:inset 0 0 0 2px rgba(0,0,0,.46),inset 1.5px 1.5px 0 rgba(255,255,255,.07);
   --title-rule:inset 0 -1px 0 rgba(0,0,0,.30);
   --seam:rgba(0,0,0,.34); --cell-hover:rgba(255,255,255,.04);
-  --hdr-ink:#e2e2df; --hdr-dim:#c9c2c5; --hdr-edge:rgba(0,0,0,.46); --chrome-shadow:1.5px 1.5px 0 rgba(255,255,255,.07);
+  --hdr-ink:#eee9e2; --hdr-dim:#cfcac3; --hdr-edge:rgba(0,0,0,.46); --chrome-shadow:1.5px 1.5px 0 rgba(255,255,255,.07);
   --chrome-edge:rgba(0,0,0,.46);
   --steel-text:linear-gradient(180deg,#eeedeb 0%,#aca8aa 100%); --tag-ink:#7ff3ff;
   --glass:#0d0d0e; --glass-hot:#18191b; --ink:#7ff3ff; --ink-dim:rgba(127,243,255,.6);
@@ -277,9 +280,9 @@
   --kdrop:0 2px 6px rgba(0,0,0,.45);
   --kpress:inset 2px 3px 7px rgba(0,0,0,.55),inset 0 0 4px rgba(0,0,0,.36);
   --led-off:rgba(217,217,214,.22); --led-ring:rgba(0,0,0,.5);
-  --plq:transparent; --plq-ink:#c9c4c6; --plq-edge:rgba(0,0,0,.5); --plq-hi:inset 1px 1px 0 rgba(255,255,255,.07);
-  --pill-edge:rgba(217,217,214,.22); --pill-ink:#c9c4c6; --pill-on:rgba(95,227,245,.12); --pill-on-ink:#bdf6ff;
-  --warn-ink:#ffcc66; --err-ink:#ffb3ab; --accent-ink:#5fe3f5;
+  --plq:transparent; --plq-ink:#d0ccce; --plq-edge:rgba(0,0,0,.5); --plq-hi:inset 1px 1px 0 rgba(255,255,255,.07);
+  --pill-edge:rgba(217,217,214,.22); --pill-ink:#d0ccce; --pill-on:rgba(95,227,245,.12); --pill-on-ink:#bdf6ff;
+  --warn-ink:#ffcc66; --err-ink:#ffbdb6; --accent-ink:#5fe3f5;
 }
 [data-hc="1"][data-skin="NEU"][data-tone="l"]{--page-bg:#fff;--bd-bg0:#fff;--legend:#000;--legend-dim:#000;--kink:#000;--plq-ink:#000;
   --unit-edge:inset 0 0 0 1.5px #000;--seam:rgba(0,0,0,.55);--hdr-ink:#000;--hdr-edge:#000;--pill-ink:#000;--chrome-edge:#000;--glass:#000;--glass-hot:#000}

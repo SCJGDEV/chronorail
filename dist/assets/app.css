@@ -262,3 +262,70 @@ textarea{resize:vertical;min-height:80px;line-height:1.4}
 [data-skin="NEU"] .pill{box-shadow:inset 0 0 0 1px var(--pill-edge),var(--plq-hi)}
 [data-skin="NEU"] .well .led.off,[data-skin="NEU"] .mid .led.off{--c:var(--led-off-glass)}
 @media (max-width:720px){[data-skin="NEU"] .key{padding:0 14px 0 28px}}
+
+/* ===== Brand (2026-11-18): Chrono logo lockups, sheen, credits — pattern from chronoscene.si =====
+   Ink lockup on light skins, Metal on dark. Light = NEU L, PRO L, CORE L (CRL). Dark = NEU D, PRO D, CORE D. */
+.vh{position:absolute!important;width:1px;height:1px;margin:-1px;padding:0;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;border:0}
+.logo-metal{display:none}
+:is([data-skin="NEU"][data-tone="d"],[data-skin="PRO"]:not([data-glass="l"])) .logo-ink{display:none}
+:is([data-skin="NEU"][data-tone="d"],[data-skin="PRO"]:not([data-glass="l"])) .logo-metal{display:block}
+.wm{align-items:center}
+.logo-frame{position:relative;display:inline-flex;line-height:0}
+.logo-frame img{height:30px;width:auto}
+.sheen{position:absolute;inset:0;pointer-events:none;
+  background-image:linear-gradient(100deg,transparent 38%,var(--logo-sheen) 50%,transparent 62%);
+  background-size:260% 100%;background-position:160% 0;background-repeat:no-repeat;
+  -webkit-mask:url(brand/ChronoRail_Ink_NoTag.svg) center/100% 100% no-repeat;mask:url(brand/ChronoRail_Ink_NoTag.svg) center/100% 100% no-repeat;
+  animation:logo-sweep 9s cubic-bezier(.45,0,.25,1) 1.2s infinite}
+:is([data-skin="NEU"][data-tone="d"],[data-skin="PRO"]:not([data-glass="l"])) .sheen{-webkit-mask-image:url(brand/ChronoRail_Metal_NoTag.svg);mask-image:url(brand/ChronoRail_Metal_NoTag.svg)}
+@keyframes logo-sweep{0%{background-position:160% 0}38%{background-position:-60% 0}100%{background-position:-60% 0}}
+@media (prefers-reduced-motion:reduce){.sheen{animation:none;display:none}}
+[data-hc="1"] .sheen{display:none}
+.hero h1.hero-logo{margin:8px 0 14px;line-height:0;letter-spacing:0}
+.hero-logo img{width:100%;max-width:520px;height:auto}
+@media (max-width:720px){.logo-frame img{height:24px}}
+/* footer credits: built on ChronoWare · built by SCJG · UI credit (scjg.cc wording) */
+.hallmark{gap:4px;flex-wrap:wrap}
+.hm-dot{color:var(--legend-dim)}
+.builton .cw-logo{display:inline-flex;line-height:0}
+.builton .cw-logo img{height:16px;width:auto;opacity:.8;transition:opacity .15s}
+.builton:hover .cw-logo img{opacity:1}
+.ui-credit{justify-content:center;font:500 9.5px/1.2 var(--font-mono);letter-spacing:.1em;text-transform:uppercase;color:var(--legend-dim);padding-top:0}
+/* brand lamp: primary actions carry the amber lamp (ChronoWare rule: lamp amber, strokes cyan) */
+[data-skin="NEU"] .key.prim::before{background:var(--lamp-brand);box-shadow:var(--lamp-brand-glow)}
+.key.prim::before{background:var(--lamp-brand);box-shadow:var(--lamp-brand-glow)}
+/* glyph chip: the Rail glyph sits in the dark-glass ID chip (Metal glyph reads on glass in every skin) */
+.glyph-chip{display:inline-flex;align-items:center;justify-content:center;padding:3px 5px}
+.glyph-chip img{width:16px;height:16px;display:block}
+.rail h2.fam{display:flex;align-items:center;gap:.55em}
+.cw-inline{display:inline-flex;align-items:center;line-height:0;vertical-align:middle}
+.cw-inline img{height:13px;width:auto}
+.partof .cw-inline img{height:14px}
+.serial{display:flex;align-items:center;justify-content:flex-end;gap:7px}
+.serial img{height:14px;width:auto}
+.err-body{display:grid;justify-items:start;gap:10px}
+.err-sym{width:72px;height:auto}
+/* My Rack */
+.nav-rack{position:relative;display:inline-flex;align-items:center;gap:6px}
+.rack-n{font:700 9px/1 var(--font-mono);min-width:16px;padding:3px 4px;border-radius:8px;background:var(--lamp-brand);color:#14161a;text-align:center;letter-spacing:0}
+.plate-foot .rack-btn{margin-left:auto}
+.plate-foot{align-items:center;flex-wrap:wrap;gap:6px 10px}
+.rack-tools{display:grid;gap:8px;padding:10px 0 0}
+.rack-note{width:100%;resize:vertical;min-height:44px;font:400 13px/1.4 var(--font-ui);color:var(--legend);background:transparent;border:1px solid var(--pill-edge);border-radius:10px;padding:8px 10px}
+.rack-note:focus-visible{outline:none;box-shadow:var(--focus)}
+.empty-rack{display:grid;justify-items:center;text-align:center;gap:6px;padding:28px 18px 30px}
+.empty-rack p{margin:0}
+.sym-art{display:inline-flex;line-height:0;margin-bottom:6px}
+.rack-intro .wl-msg{font-size:12px;color:var(--legend-dim);align-self:center}
+@media (max-width:720px){.rackgrid .rack-tools{grid-column:2/-1;padding:8px 0 4px}.rack-stat .key.sm{min-height:var(--touch)}}
+.rack-note::placeholder{color:var(--legend-dim);opacity:1}
+.rack-note{background:var(--cell-hover)}
+/* legal pages + sign-in */
+.legal{max-width:72ch}
+.legal .lead{margin:0 0 6px;font-size:15px}
+.legal h2{font:600 12px/1.3 var(--font-ui);letter-spacing:.14em;text-transform:uppercase;margin:22px 0 6px;color:var(--legend)}
+.legal p,.legal li{line-height:1.55}
+.legal ul{margin:6px 0;padding-left:1.2em}
+.signin .acts{margin-top:14px}
+.signin-mail{margin-top:12px;align-items:center;gap:10px;flex-wrap:wrap}
+.signin-mail input{min-height:var(--touch);min-width:min(320px,100%)}
