@@ -28,7 +28,7 @@ You are the project lead for **ChronoRail**, the free, curated, AI-readable dire
 | Database | D1 `chronorail-accounts` (binding `DB`). Migrations in `migrations/`, applied via the dashboard console |
 | Runtime secrets (names only) | `GOOGLE_CLIENT_ID`, `GOOGLE_CLIENT_SECRET`, `BETTER_AUTH_SECRET`, `FEEDBACK_AGENT_TOKEN`, `NOTION_TOKEN` |
 | Vars | `AUTH_ENABLED="1"`, `BASE_URL=https://chronorail.si` |
-| Service worker | cache `cr-v11` — bump on every asset change |
+| Service worker | cache `cr-v12` — bump on every asset change |
 
 ## Features
 
@@ -54,7 +54,7 @@ You are the project lead for **ChronoRail**, the free, curated, AI-readable dire
 - Official URL required. `verification_status` starts `unverified` until a human or verified agent check.
 - Featured / Paid / Affiliate placement never changes organic rank or default sort. Label it clearly (FTC).
 - Label SCJG products (ChronoStudio/ChronoAudio, ChronoRack, Lava Lava, Magmatics) as SCJG-owned.
-- No vendor logos or screenshots without permission. Fallback: initial/glyph tile. Brand-image decision is open (see below).
+- No vendor logos or screenshots without permission. Listings use animated initial tiles (decision A, 2026-11-20): letters decode on scroll-in and card hover, scan sweep, corner ticks, per-listing dot serial. No glow; off for reduced motion and high contrast.
 - Show last_checked, license, platforms/formats and who-it's-for on every listing.
 - New category only with ≥5 real entries, flagged as proposed.
 
@@ -90,7 +90,6 @@ Raw feedback stays in D1. Only summaries reach GitHub. Personal details are stri
 ## Open items (Waiting on Silas)
 
 - ~~Test Google sign-in~~ — done 2026-11-20 (Silas signed in OK). Rack sync across devices still worth one check.
-- Brand images: A (keep initial tiles) or B + C (press-kit images with per-image license record + maker uploads on Submit, lawyer OK first).
 - Magic-link email: needs Workers Paid + Email Sending onboarding on chronorail.si (chronoware.si DMARC is `p=reject`).
 - Later: Submit-form endpoint; bump Actions off Node 20; re-point the browser checker task; SCJG monogram asset.
 

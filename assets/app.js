@@ -104,8 +104,40 @@ function sortBy(list, mode) {
 /* ---------- components ---------- */
 function tile(l, big) {
   const initials = l.name.replace(/[^A-Za-z0-9 ]/g, " ").split(/\s+/).filter(Boolean).slice(0, 2).map(w => w[0]).join("").toUpperCase() || "?";
-  return h("div", { class: "tile well", "aria-hidden": "true" }, big ? initials : initials.slice(0, 2));
+  // per-listing "data serial": 5 of 9 dots from a hash of the id, so every tile reads slightly different
+  let hsh = 2166136261; for (const ch of String(l.id || l.name)) hsh = Math.imul(hsh ^ ch.charCodeAt(0), 16777619) >>> 0;
+  const dots = []; for (let i = 0; i < 9; i++) dots.push(h("i", { class: (hsh >>> i) & 1 ? "on" : null }));
+  const el = h("div", { class: "tile well tile-fx" + (big ? " big" : ""), "aria-hidden": "true", "data-i": initials, style: "--d:" + (hsh % 7) * 0.9 + "s" },
+    h("span", { class: "tl" }, initials),
+    h("span", { class: "tscan" }), h("span", { class: "tcorn" }), h("span", { class: "tdots" }, dots));
+  TILEFX.watch(el);
+  return el;
 }
+// Tile boot animation: letters decode once when the tile scrolls into view; card hover replays it.
+const TILEFX = (() => {
+  const RM = window.matchMedia && matchMedia("(prefers-reduced-motion: reduce)").matches;
+  const G = "0123456789ABCDEF#/<>=+";
+  function decode(el) {
+    const t = el.querySelector(".tl"), fin = el.dataset.i; if (!t || el._busy) return;
+    el._busy = true; el.classList.remove("boot"); void el.offsetWidth; el.classList.add("boot");
+    let n = 0; const steps = 9;
+    const tick = () => {
+      n++;
+      t.textContent = n >= steps ? fin : [...fin].map((c, i) => n > steps - 3 + i ? c : G[(Math.random() * G.length) | 0]).join("");
+      if (n < steps) setTimeout(tick, 45); else el._busy = false;
+    };
+    tick();
+  }
+  const io = !RM && "IntersectionObserver" in window ? new IntersectionObserver(es => es.forEach(e => {
+    if (e.isIntersecting) { io.unobserve(e.target); decode(e.target); }
+  }), { rootMargin: "0px 0px -10% 0px" }) : null;
+  if (!RM) document.addEventListener("pointerover", e => {
+    const card = e.target.closest && e.target.closest(".plate");
+    if (!card || card.contains(e.relatedTarget)) return;
+    const t = card.querySelector(".tile-fx"); if (t) decode(t);
+  });
+  return { watch: el => { if (io) io.observe(el); } };
+})();
 function labels(l) {
   const t = [];
   if (l.scjg_owned) t.push(h("span", { class: "tag own" }, "SCJG-owned"));
