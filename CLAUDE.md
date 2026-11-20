@@ -28,7 +28,7 @@ You are the project lead for **ChronoRail**, the free, curated, AI-readable dire
 | Database | D1 `chronorail-accounts` (binding `DB`). Migrations in `migrations/`, applied via the dashboard console |
 | Runtime secrets (names only) | `GOOGLE_CLIENT_ID`, `GOOGLE_CLIENT_SECRET`, `BETTER_AUTH_SECRET`, `FEEDBACK_AGENT_TOKEN`, `NOTION_TOKEN` |
 | Vars | `AUTH_ENABLED="1"`, `BASE_URL=https://chronorail.si` |
-| Service worker | cache `cr-v13` — bump on every asset change |
+| Service worker | cache `cr-v14` — bump on every asset change |
 
 ## Features
 

@@ -457,14 +457,14 @@ body.has-dock{padding-bottom:56px}
 .dock{position:fixed;left:50%;bottom:10px;transform:translateX(-50%);z-index:60;width:min(560px,calc(100vw - 20px));display:flex;flex-direction:column;align-items:stretch;pointer-events:none}
 .dock>*{pointer-events:auto}
 .dk-tab{align-self:center;display:inline-flex;align-items:center;gap:8px;height:36px;padding:0 14px 0 6px;border:0;cursor:pointer;
-  background:var(--page-bg);box-shadow:var(--unit-edge),var(--unit-halo);border-radius:999px;color:var(--legend);font:600 11px/1 var(--font-ui);letter-spacing:.14em}
+  background:var(--dock-bg);-webkit-backdrop-filter:blur(16px) saturate(1.3);backdrop-filter:blur(16px) saturate(1.3);box-shadow:var(--unit-edge),var(--unit-halo);border-radius:999px;color:var(--legend);font:600 11px/1 var(--font-ui);letter-spacing:.14em}
 .dk-tab .glyph-chip{transform:scale(.8)}
 .dk-n{color:var(--legend-dim);letter-spacing:.08em;font-weight:500}
 .dk-car{color:var(--legend-dim);transition:transform .25s}
 .dock.open .dk-car{transform:rotate(180deg)}
 .dk-tab:hover .dk-t,.dock.open .dk-t{color:var(--accent-ink)}
 .dk-tab:focus-visible{outline:none;box-shadow:var(--unit-edge),var(--focus)}
-.dk-panel{display:none;flex-direction:column;max-height:min(62vh,520px);margin-bottom:8px;background:var(--page-bg);box-shadow:var(--unit-edge),var(--unit-halo);border-radius:var(--r-plate);overflow:hidden;outline:none}
+.dk-panel{display:none;flex-direction:column;max-height:min(62vh,520px);margin-bottom:8px;background:var(--dock-bg);-webkit-backdrop-filter:blur(18px) saturate(1.3);backdrop-filter:blur(18px) saturate(1.3);box-shadow:var(--unit-edge),var(--unit-halo);border-radius:var(--r-plate);overflow:hidden;outline:none}
 .dock.open .dk-panel{display:flex;animation:dkUp .22s cubic-bezier(.2,.7,.2,1)}
 @keyframes dkUp{from{transform:translateY(14px);opacity:0}to{transform:none;opacity:1}}
 .dk-head{display:flex;align-items:center;gap:10px;padding:10px 12px 8px 16px;border-bottom:1px solid var(--seam)}
@@ -519,3 +519,10 @@ a.dk-sync{color:var(--accent-ink)}
   .rackgrid .plate-foot .rack-btn{grid-column:4;grid-row:1/3;margin:0}
   .rackgrid .rack-tools{grid-column:2/5}
 }
+/* dock frosted glass (iOS ignores fixed page gradients, so the dock carries its own tint) */
+:root{--dock-bg:rgba(236,232,225,.82)}
+[data-skin="NEU"][data-tone="d"],[data-skin="PRO"]:not([data-glass="l"]){--dock-bg:rgba(38,42,47,.82)}
+[data-skin="PRO"][data-glass="l"]{--dock-bg:rgba(236,236,233,.84)}
+[data-hc="1"][data-skin="NEU"][data-tone="l"]{--dock-bg:#fff}
+[data-hc="1"][data-skin="NEU"][data-tone="d"]{--dock-bg:#000}
+@supports not ((backdrop-filter:blur(1px)) or (-webkit-backdrop-filter:blur(1px))){:root{--dock-bg:rgb(236,232,225)}[data-skin="NEU"][data-tone="d"],[data-skin="PRO"]:not([data-glass="l"]){--dock-bg:rgb(38,42,47)}}
