@@ -20,8 +20,11 @@
     // D1 chronorail-accounts, created 2026-11-18; schema applied from migrations/0001_auth.sql via the dashboard console
     { "binding": "DB", "database_name": "chronorail-accounts", "database_id": "44bbb4a5-4973-4ead-b7f5-bad52d540e39", "migrations_dir": "migrations" }
   ],
-  // Nightly stats → Notion "ChronoRail Stats" at 10:23 UTC (3:23 am MT). Needs secret NOTION_TOKEN.
-  "triggers": { "crons": ["23 10 * * *"] },
+  // No cron here: the account is at the Workers Free limit of 5 cron triggers. Nightly Notion stats run from
+  // .github/workflows/notion-stats.yml, which POSTs /api/stats/run with FEEDBACK_AGENT_TOKEN.
+  // Keep workers.dev and preview URLs off (wrangler deploy re-enables them when unset).
+  "workers_dev": false,
+  "preview_urls": false,
   // "send_email": [{ "name": "EMAIL" }],   // uncomment with MAIL_FROM when Email Sending is enabled
   // Secrets, set by Silas only (never in this file): BETTER_AUTH_SECRET, GOOGLE_CLIENT_ID, GOOGLE_CLIENT_SECRET, FEEDBACK_AGENT_TOKEN, NOTION_TOKEN
   // Required by `npx wrangler preview` (non-production branch builds). Empty on purpose.

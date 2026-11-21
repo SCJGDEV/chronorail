@@ -211,6 +211,12 @@ export default {
       return json({ accounts: on, google: on && !!env.GOOGLE_CLIENT_ID, email: on && ((!!env.EMAIL && !!env.MAIL_FROM) || devEcho) });
     }
     if (url.pathname === "/api/feedback" || url.pathname.startsWith("/api/feedback/")) return feedbackApi(req, env, url);
+    if (url.pathname === "/api/stats/run") {   // nightly Notion stats, called by GitHub Actions (Free plan's 5-cron limit is used up)
+      if (req.method !== "POST") return json({ error: "method" }, 405);
+      if (!agentOk(req, env)) return json({ error: "unauthorized" }, 401);
+      const r = await pushStatsToNotion(env);
+      return json({ ok: !!r.ok, skipped: !!r.skipped }, r.ok || r.skipped ? 200 : 502);
+    }
     if (env.AUTH_ENABLED !== "1" || !env.BETTER_AUTH_SECRET || !env.DB) return json({ error: "accounts_not_live" }, 503);
     // Same-origin only for state-changing calls (Better Auth checks Origin on its own routes too).
     if (req.method !== "GET" && req.method !== "HEAD") {

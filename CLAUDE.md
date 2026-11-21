@@ -65,8 +65,10 @@ You are the project lead for **ChronoRail**, the free, curated, AI-readable dire
 |---|---|---|---|
 | Listings check | `.github/workflows/listings-check.yml` + `.github/claude/listings-check.md` | Nightly 02:43 UTC | Opens `checks/` PRs. Never merges |
 | Feedback triage | `.github/workflows/feedback-triage.yml` + `.github/claude/feedback-triage.md` | Daily 14:17 UTC (7:17 am MT) + manual | Skips if no new items. Labels each item; opens one "Feedback digest YYYY-MM-DD" issue (label `feedback`) and at most one `feedback/fixes-YYYY-MM-DD` PR. Never merges |
-| Notion stats | `src/worker.js` `scheduled()` + `triggers.crons` in `wrangler.jsonc` | Nightly 10:23 UTC (3:23 am MT) | Writes one counts-only row to Notion "ChronoRail Stats" (users, new users, sessions, racks, rack items, feedback, listings). No emails, names or notes |
+| Notion stats | `.github/workflows/notion-stats.yml` → `POST /api/stats/run` (Bearer `FEEDBACK_AGENT_TOKEN`) → `pushStatsToNotion()` in `src/worker.js` | Nightly 10:23 UTC (3:23 am MT) + manual | Writes one counts-only row to Notion "ChronoRail Stats" (users, new users, sessions, racks, rack items, feedback, listings). No emails, names or notes |
 | Discovery inbox | Drive "ChronoRail Inbox" (`discovery-<agent>-YYYY-MM-DD.csv`) | Weekly, Saturdays ~9:39 am MT | Rows get verified against maker sites before merge |
+
+No Worker cron triggers: the Cloudflare account is at the Workers Free limit of 5 crons (a cron in `wrangler.jsonc` fails the build). `wrangler.jsonc` sets `workers_dev:false` and `preview_urls:false`; keep them, or every deploy turns workers.dev back on.
 
 Actions use `anthropics/claude-code-action@v1` with secret `CLAUDE_CODE_OAUTH_TOKEN`. Use REST `gh api` (GraphQL is blocked).
 
@@ -102,7 +104,7 @@ Raw feedback stays in D1. Only summaries reach GitHub. Personal details are stri
 ## Not yet verified
 
 - Rack drawer on Safari, real phones, PRO/glass skins.
-- First live Notion stats row (local test passed; outbound Notion call untested until the first nightly run).
+- First live Notion stats row (the Worker-cron version never ran: builds failed on the 5-cron limit; moved to GitHub Actions 2026-11-21).
 - Feedback agent's digest-issue and fix-PR paths (only the "mark spam" path has run).
 - Safari and non-NEU skins after the slim-keys change.
 
