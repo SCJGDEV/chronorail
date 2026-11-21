@@ -3,7 +3,7 @@
 > A free, curated, AI-readable directory of music-production tools: DAWs, plugins, sample packs, hardware, AI music tools, learning, distribution and related services. Part of ChronoWare, made by SCJG (Pagosa Springs, Colorado).
 
 ## Data
-- [Listings feed (JSON)](https://chronorail.si/feed/listings.json): every listing with all fields. 294 listings, generated 2026-11-20.
+- [Listings feed (JSON)](https://chronorail.si/feed/listings.json): every listing with all fields. 294 listings, generated 2026-11-21.
 - [Categories](https://chronorail.si/data/categories.json): 29 category slugs with module codes.
 - [Stacks](https://chronorail.si/data/stacks.json): curated lists of listing IDs.
 
