@@ -792,7 +792,7 @@
     },
     {
       "id": "algonaut-atlas-2",
-      "name": "Atlas",
+      "name": "Atlas 2",
       "maker": "Algonaut",
       "category": "sample-managers",
       "subcategory": "ai-drum-map-and-sequencer",
@@ -816,7 +816,7 @@
         "Standalone"
       ],
       "price_type": "one-time",
-      "price_note": "$99 ($19 upgrade)",
+      "price_note": "$99 list ($49 sale when checked); $19 upgrade · UNVERIFIED",
       "license": "Proprietary",
       "official_url": "https://algonaut.audio/",
       "affiliate_ok": false,
@@ -1294,7 +1294,7 @@
         "Standalone"
       ],
       "price_type": "one-time",
-      "price_note": "$199",
+      "price_note": "$199 · UNVERIFIED",
       "license": "Proprietary",
       "official_url": "https://www.bfddrums.com/bfd3/",
       "affiliate_ok": false,
@@ -6618,7 +6618,7 @@
         "AAX"
       ],
       "price_type": "one-time",
-      "price_note": "Elements $55 / Standard $219 / Advanced $499 (as shown when checked; sale vs list unclear)",
+      "price_note": "Advanced $499 list ($369 sale when checked); Standard/Elements prices not shown · UNVERIFIED",
       "license": "Proprietary",
       "official_url": "https://www.izotope.com/en/products/ozone.html",
       "affiliate_ok": false,
@@ -7579,7 +7579,7 @@
         "AAX"
       ],
       "price_type": "one-time",
-      "price_note": "$78 list ($54 sale when checked)",
+      "price_note": "£59 list (£40.80 sale when checked; page showed GBP) · UNVERIFIED",
       "license": "Proprietary",
       "official_url": "https://www.masteringthemix.com/products/reference",
       "affiliate_ok": false,
