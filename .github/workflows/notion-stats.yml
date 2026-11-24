@@ -1,0 +1,21 @@
+name: Notion stats
+# Nightly counts-only stats row to Notion "ChronoRail Stats". Runs here because the
+# Cloudflare account is at the Workers Free limit of 5 cron triggers.
+on:
+  schedule:
+    - cron: "23 10 * * *"   # 3:23 am MT
+  workflow_dispatch:
+permissions: {}
+jobs:
+  push:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - name: Ask the Worker to write today's stats row
+        env:
+          TOKEN: ${{ secrets.FEEDBACK_AGENT_TOKEN }}
+        run: |
+          code=$(curl -sS -o out.json -w "%{http_code}" -X POST \
+            -H "Authorization: Bearer $TOKEN" https://chronorail.si/api/stats/run)
+          cat out.json; echo
+          test "$code" = "200"

@@ -1,0 +1,61 @@
+# Daily ChronoRail feedback triage. Reads new site feedback (bug / idea / suggestion) from the
+# private queue on chronorail.si, opens a fix PR for small safe bugs and a digest issue for the rest,
+# then marks each item. It never merges and never contacts anyone. Prompt: .github/claude/feedback-triage.md
+name: Feedback triage
+
+on:
+  schedule:
+    - cron: "17 14 * * *"   # 14:17 UTC = 7:17 am Mountain (MST)
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+  pull-requests: write
+  issues: write
+  id-token: write
+
+concurrency:
+  group: feedback-triage
+  cancel-in-progress: false
+
+jobs:
+  triage:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Anything new?
+        id: peek
+        env:
+          FEEDBACK_AGENT_TOKEN: ${{ secrets.FEEDBACK_AGENT_TOKEN }}
+        run: |
+          n=$(bash scripts/feedback.sh list new 1 | python3 -c 'import json,sys; print(json.load(sys.stdin)["count"])')
+          echo "count=$n" >> "$GITHUB_OUTPUT"
+          echo "New feedback items: $n"
+
+      - name: Git identity
+        if: steps.peek.outputs.count != '0'
+        run: |
+          git config user.name "chronorail-feedback[bot]"
+          git config user.email "io@scjg.cc"
+
+      - uses: anthropics/claude-code-action@v1
+        if: steps.peek.outputs.count != '0'
+        env:
+          GH_TOKEN: ${{ github.token }}
+          FEEDBACK_AGENT_TOKEN: ${{ secrets.FEEDBACK_AGENT_TOKEN }}
+        with:
+          claude_code_oauth_token: ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN }}
+          prompt: |
+            REPO: ${{ github.repository }}
+            Follow the instructions in .github/claude/feedback-triage.md exactly.
+          claude_args: |
+            --max-turns 120
+            --allowedTools "Read,Edit,Write,Grep,Glob,Bash(bash scripts/feedback.sh:*),Bash(bash scripts/make-dist.sh:*),Bash(node:*),Bash(git:*),Bash(gh:*),Bash(date:*),Bash(python3:*),Bash(jq:*)"
