@@ -3,7 +3,7 @@
 > A free, curated, AI-readable directory of music-production tools: DAWs, plugins, sample packs, hardware, AI music tools, learning, distribution and related services. Part of ChronoWare, made by SCJG (Pagosa Springs, Colorado).
 
 ## Data
-- [Listings feed (JSON)](https://chronorail.si/feed/listings.json): every listing with all fields. 294 listings, generated 2026-11-21.
+- [Listings feed (JSON)](https://chronorail.si/feed/listings.json): every listing with all fields. 303 listings, generated 2026-11-24.
 - [Categories](https://chronorail.si/data/categories.json): 29 category slugs with module codes.
 - [Stacks](https://chronorail.si/data/stacks.json): curated lists of listing IDs.
 
@@ -33,7 +33,7 @@ id, name, maker, category, subcategory, tags[], short_description, who_its_for, 
 - MN Monitors & headphones (monitors-headphones): 10
 - MC Microphones (microphones): 9
 - HS Hardware synths & drum machines (hardware-synths-drum-machines): 9
-- OB Outboard processors (outboard-processors): 18
+- OB Outboard processors (outboard-processors): 20
 - AG AI music generation (ai-music-generation): 8
 - AS AI stems, mix & master (ai-stems-mix-master): 8
 - MX Mixing & mastering software (mixing-mastering-software): 8
@@ -42,11 +42,11 @@ id, name, maker, category, subcategory, tags[], short_description, who_its_for, 
 - DS Distribution & aggregators (distribution-aggregators): 8
 - MK Marketplaces (marketplaces): 8
 - CO Collaboration & feedback (collaboration-feedback): 8
-- NT Notation & scoring (notation-scoring): 12
+- NT Notation & scoring (notation-scoring): 14
 - DJ Live & DJ performance (live-dj-performance): 8
 - MB Mobile music apps (mobile-music-apps): 8
-- FR Field recording & sound design (field-recording-sound-design): 9
-- PR Publishing, rights & metadata (publishing-rights-metadata): 15
+- FR Field recording & sound design (field-recording-sound-design): 11
+- PR Publishing, rights & metadata (publishing-rights-metadata): 18
 - CM Communities & forums (communities-forums): 11
 - GT Guitar & amp tools (guitar-amp-tools): 8
 - VX Vocal tools (vocal-tools): 8

@@ -2549,6 +2549,35 @@
       "sample": false
     },
     {
+      "id": "tascam-dr-05xp",
+      "name": "DR-05XP",
+      "maker": "TASCAM",
+      "category": "field-recording-sound-design",
+      "subcategory": "handheld-recorder",
+      "tags": [
+        "field-recorder",
+        "32-bit-float",
+        "hardware"
+      ],
+      "short_description": "Pocket stereo recorder with built-in mics, 32-bit float mode and USB-C interface use.",
+      "who_its_for": "Beginners collecting field sounds and song ideas",
+      "platforms": [],
+      "formats": [],
+      "price_type": "unknown",
+      "price_note": "Price not on maker page · UNVERIFIED",
+      "license": "N/A (hardware)",
+      "official_url": "https://tascam.com/us/product/dr-05xp/top",
+      "affiliate_ok": false,
+      "affiliate_url": "",
+      "featured": false,
+      "paid_placement": false,
+      "scjg_owned": false,
+      "verification_status": "unverified",
+      "last_checked": "",
+      "confidence": "medium",
+      "sample": false
+    },
+    {
       "id": "beepstreet-drambo",
       "name": "Drambo",
       "maker": "BeepStreet",
@@ -2734,6 +2763,37 @@
       "verification_status": "verified",
       "last_checked": "2026-11-14",
       "confidence": "high",
+      "sample": false
+    },
+    {
+      "id": "us-copyright-office-eco",
+      "name": "Electronic Copyright Office (eCO)",
+      "maker": "U.S. Copyright Office",
+      "category": "publishing-rights-metadata",
+      "subcategory": "copyright-registration",
+      "tags": [
+        "copyright",
+        "registration",
+        "us"
+      ],
+      "short_description": "Official U.S. portal for registering copyrights in songs and sound recordings.",
+      "who_its_for": "US songwriters and artists protecting their catalog",
+      "platforms": [
+        "Web"
+      ],
+      "formats": [],
+      "price_type": "unknown",
+      "price_note": "Fee not on registration page (Office says fees change Jan 5, 2027) · UNVERIFIED",
+      "license": "N/A (service)",
+      "official_url": "https://www.copyright.gov/registration/",
+      "affiliate_ok": false,
+      "affiliate_url": "",
+      "featured": false,
+      "paid_placement": false,
+      "scjg_owned": false,
+      "verification_status": "unverified",
+      "last_checked": "",
+      "confidence": "medium",
       "sample": false
     },
     {
@@ -3323,6 +3383,40 @@
       "sample": false
     },
     {
+      "id": "forscore-forscore",
+      "name": "forScore",
+      "maker": "forScore",
+      "category": "notation-scoring",
+      "subcategory": "sheet-music-reader",
+      "tags": [
+        "sheet-music",
+        "pdf-scores",
+        "page-turning"
+      ],
+      "short_description": "Sheet-music reader for organizing, annotating and page-turning PDF scores.",
+      "who_its_for": "Performing musicians who read from PDFs",
+      "platforms": [
+        "iOS",
+        "iPadOS",
+        "macOS",
+        "visionOS"
+      ],
+      "formats": [],
+      "price_type": "unknown",
+      "price_note": "Price not on maker page · UNVERIFIED",
+      "license": "UNVERIFIED",
+      "official_url": "https://forscore.co/",
+      "affiliate_ok": false,
+      "affiliate_url": "",
+      "featured": false,
+      "paid_placement": false,
+      "scjg_owned": false,
+      "verification_status": "unverified",
+      "last_checked": "",
+      "confidence": "medium",
+      "sample": false
+    },
+    {
       "id": "frescobaldi",
       "name": "Frescobaldi",
       "maker": "Frescobaldi",
@@ -3539,6 +3633,35 @@
       "verification_status": "verified",
       "last_checked": "2026-11-15",
       "confidence": "high",
+      "sample": false
+    },
+    {
+      "id": "zoom-h6essential",
+      "name": "H6essential",
+      "maker": "Zoom",
+      "category": "field-recording-sound-design",
+      "subcategory": "handheld-recorder",
+      "tags": [
+        "field-recorder",
+        "32-bit-float",
+        "hardware"
+      ],
+      "short_description": "Six-track handheld recorder with 32-bit float, four XLR/TRS inputs and an X/Y mic.",
+      "who_its_for": "Field recordists and musicians recording small groups",
+      "platforms": [],
+      "formats": [],
+      "price_type": "unknown",
+      "price_note": "Price not on maker page · UNVERIFIED",
+      "license": "N/A (hardware)",
+      "official_url": "https://zoomcorp.com/en/us/handheld-recorders/handheld-recorders/h6essential/",
+      "affiliate_ok": false,
+      "affiliate_url": "",
+      "featured": false,
+      "paid_placement": false,
+      "scjg_owned": false,
+      "verification_status": "unverified",
+      "last_checked": "",
+      "confidence": "medium",
       "sample": false
     },
     {
@@ -3891,6 +4014,35 @@
       "verification_status": "unverified",
       "last_checked": "",
       "confidence": "ai-sourced",
+      "sample": false
+    },
+    {
+      "id": "warm-audio-jude-mp",
+      "name": "JUDE-MP",
+      "maker": "Warm Audio",
+      "category": "outboard-processors",
+      "subcategory": "mic-preamp",
+      "tags": [
+        "outboard",
+        "mic-preamp",
+        "hardware"
+      ],
+      "short_description": "Single-channel mic preamp based on a 1960s Sound Techniques console circuit, with impedance control.",
+      "who_its_for": "Recordists upgrading from interface preamps",
+      "platforms": [],
+      "formats": [],
+      "price_type": "one-time",
+      "price_note": "MSRP $749",
+      "license": "N/A (hardware)",
+      "official_url": "https://warmaudio.com/sound-techniques-jude-preamp",
+      "affiliate_ok": false,
+      "affiliate_url": "",
+      "featured": false,
+      "paid_placement": false,
+      "scjg_owned": false,
+      "verification_status": "verified",
+      "last_checked": "2026-11-23",
+      "confidence": "medium",
       "sample": false
     },
     {
@@ -6159,6 +6311,40 @@
       "sample": false
     },
     {
+      "id": "newzik-newzik",
+      "name": "Newzik",
+      "maker": "Newzik",
+      "category": "notation-scoring",
+      "subcategory": "score-library",
+      "tags": [
+        "sheet-music",
+        "score-library",
+        "musicxml"
+      ],
+      "short_description": "Score library app that turns PDF parts into playable scores and exports MusicXML or MIDI.",
+      "who_its_for": "Ensemble players, teachers and students",
+      "platforms": [
+        "iOS",
+        "iPadOS",
+        "macOS",
+        "Web"
+      ],
+      "formats": [],
+      "price_type": "freemium",
+      "price_note": "Free (3 scores); Essentials €29.99 lifetime; Premium €9.99/mo, €49.99/yr or €199 lifetime (maker FR page) · UNVERIFIED",
+      "license": "UNVERIFIED",
+      "official_url": "https://newzik.com/",
+      "affiliate_ok": false,
+      "affiliate_url": "",
+      "featured": false,
+      "paid_placement": false,
+      "scjg_owned": false,
+      "verification_status": "unverified",
+      "last_checked": "",
+      "confidence": "medium",
+      "sample": false
+    },
+    {
       "id": "noteflight",
       "name": "Noteflight",
       "maker": "Hal Leonard",
@@ -8211,6 +8397,37 @@
       "sample": false
     },
     {
+      "id": "harry-fox-agency-songfile",
+      "name": "Songfile",
+      "maker": "The Harry Fox Agency",
+      "category": "publishing-rights-metadata",
+      "subcategory": "mechanical-licensing",
+      "tags": [
+        "mechanical-license",
+        "cover-songs",
+        "us"
+      ],
+      "short_description": "Online service for buying U.S. mechanical licenses to release cover songs.",
+      "who_its_for": "Artists releasing cover versions",
+      "platforms": [
+        "Web"
+      ],
+      "formats": [],
+      "price_type": "unknown",
+      "price_note": "Fee not on home page · UNVERIFIED",
+      "license": "N/A (service)",
+      "official_url": "https://songfile.com/",
+      "affiliate_ok": false,
+      "affiliate_url": "",
+      "featured": false,
+      "paid_placement": false,
+      "scjg_owned": false,
+      "verification_status": "unverified",
+      "last_checked": "",
+      "confidence": "medium",
+      "sample": false
+    },
+    {
       "id": "songtrust",
       "name": "Songtrust",
       "maker": "Downtown Music Holdings",
@@ -9089,18 +9306,18 @@
         "Windows"
       ],
       "formats": [],
-      "price_type": "one-time",
-      "price_note": "$1900+ · UNVERIFIED",
+      "price_type": "unknown",
+      "price_note": "Dealer pricing (maker lists no price)",
       "license": "N/A (hardware)",
-      "official_url": "https://www.moogmusic.com/products/subsequent-37",
+      "official_url": "https://www.moogmusic.com/synthesizers/subsequent-37/",
       "affiliate_ok": false,
       "affiliate_url": "",
       "featured": false,
       "paid_placement": false,
       "scjg_owned": false,
-      "verification_status": "unverified",
-      "last_checked": "",
-      "confidence": "ai-sourced",
+      "verification_status": "verified",
+      "last_checked": "2026-11-23",
+      "confidence": "high",
       "sample": false
     },
     {
@@ -10059,6 +10276,37 @@
       "sample": false
     },
     {
+      "id": "us-isrc-agency",
+      "name": "US ISRC Agency",
+      "maker": "US ISRC Agency",
+      "category": "publishing-rights-metadata",
+      "subcategory": "isrc-registration",
+      "tags": [
+        "isrc",
+        "metadata",
+        "us"
+      ],
+      "short_description": "U.S. agency that issues the prefix you need to assign your own ISRC codes.",
+      "who_its_for": "Self-releasing artists and small labels in the US",
+      "platforms": [
+        "Web"
+      ],
+      "formats": [],
+      "price_type": "one-time",
+      "price_note": "$95 one-time Rights Owner Prefix fee",
+      "license": "N/A (service)",
+      "official_url": "https://usisrc.org/",
+      "affiliate_ok": false,
+      "affiliate_url": "",
+      "featured": false,
+      "paid_placement": false,
+      "scjg_owned": false,
+      "verification_status": "verified",
+      "last_checked": "2026-11-23",
+      "confidence": "medium",
+      "sample": false
+    },
+    {
       "id": "lom-usi-pro",
       "name": "Usi Pro",
       "maker": "LOM",
@@ -10531,6 +10779,35 @@
       "verification_status": "unverified",
       "last_checked": "",
       "confidence": "ai-sourced",
+      "sample": false
+    },
+    {
+      "id": "warm-audio-wa76-a",
+      "name": "WA76-A",
+      "maker": "Warm Audio",
+      "category": "outboard-processors",
+      "subcategory": "fet-compressor",
+      "tags": [
+        "outboard",
+        "fet-compressor",
+        "hardware"
+      ],
+      "short_description": "Single-channel FET compressor with a mix knob and sidechain high-pass filter.",
+      "who_its_for": "Home studios adding hardware FET compression",
+      "platforms": [],
+      "formats": [],
+      "price_type": "one-time",
+      "price_note": "MSRP $799",
+      "license": "N/A (hardware)",
+      "official_url": "https://warmaudio.com/wa76-a",
+      "affiliate_ok": false,
+      "affiliate_url": "",
+      "featured": false,
+      "paid_placement": false,
+      "scjg_owned": false,
+      "verification_status": "verified",
+      "last_checked": "2026-11-23",
+      "confidence": "medium",
       "sample": false
     },
     {
