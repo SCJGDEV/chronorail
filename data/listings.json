@@ -691,6 +691,38 @@
       "sample": false
     },
     {
+      "id": "ardour-forums",
+      "name": "Ardour Forums",
+      "maker": "Ardour",
+      "category": "communities-forums",
+      "subcategory": "vendor-user-forum",
+      "tags": [
+        "forum",
+        "ardour",
+        "linux-audio",
+        "open-source"
+      ],
+      "short_description": "Official Ardour community board for the DAW, Linux audio setup and plugins.",
+      "who_its_for": "Ardour users and Linux-based producers",
+      "platforms": [
+        "Web"
+      ],
+      "formats": [],
+      "price_type": "free",
+      "price_note": "Free · UNVERIFIED",
+      "license": "N/A (service)",
+      "official_url": "https://discourse.ardour.org/",
+      "affiliate_ok": false,
+      "affiliate_url": "",
+      "featured": false,
+      "paid_placement": false,
+      "scjg_owned": false,
+      "verification_status": "unverified",
+      "last_checked": "",
+      "confidence": "medium",
+      "sample": false
+    },
+    {
       "id": "ascap",
       "name": "ASCAP",
       "maker": "ASCAP",
@@ -827,6 +859,42 @@
       "verification_status": "unverified",
       "last_checked": "",
       "confidence": "ai-sourced",
+      "sample": false
+    },
+    {
+      "id": "audacity-team-audacity",
+      "name": "Audacity",
+      "maker": "Audacity Team (Muse Group)",
+      "category": "daws",
+      "subcategory": "audio-editor",
+      "tags": [
+        "audio-editor",
+        "open-source",
+        "recording",
+        "free"
+      ],
+      "short_description": "Free open-source audio editor and recorder for cleanup, edits and format conversion.",
+      "who_its_for": "Beginners and anyone editing or converting audio",
+      "platforms": [
+        "macOS",
+        "Windows",
+        "Linux"
+      ],
+      "formats": [
+        "Standalone"
+      ],
+      "price_type": "free",
+      "price_note": "Free (v4.0.2)",
+      "license": "Open source (licence name UNVERIFIED)",
+      "official_url": "https://www.audacityteam.org/",
+      "affiliate_ok": false,
+      "affiliate_url": "",
+      "featured": false,
+      "paid_placement": false,
+      "scjg_owned": false,
+      "verification_status": "verified",
+      "last_checked": "2026-11-25",
+      "confidence": "medium",
       "sample": false
     },
     {
@@ -2219,6 +2287,45 @@
       "sample": false
     },
     {
+      "id": "asb2m10-dexed",
+      "name": "Dexed",
+      "maker": "asb2m10 (Dexed project)",
+      "category": "virtual-instruments",
+      "subcategory": "fm-synth",
+      "tags": [
+        "synth",
+        "fm",
+        "dx7",
+        "open-source",
+        "patch-librarian"
+      ],
+      "short_description": "Free FM synth modeled on the Yamaha DX7 that also loads and manages DX7 patch banks.",
+      "who_its_for": "Producers after classic FM sounds",
+      "platforms": [
+        "macOS",
+        "Windows",
+        "Linux"
+      ],
+      "formats": [
+        "VST",
+        "AU",
+        "LV2"
+      ],
+      "price_type": "free",
+      "price_note": "Free (v1.1.0)",
+      "license": "GPL-3.0",
+      "official_url": "https://asb2m10.github.io/dexed/",
+      "affiliate_ok": false,
+      "affiliate_url": "",
+      "featured": false,
+      "paid_placement": false,
+      "scjg_owned": false,
+      "verification_status": "verified",
+      "last_checked": "2026-11-25",
+      "confidence": "medium",
+      "sample": false
+    },
+    {
       "id": "elektron-digitakt-ii",
       "name": "Digitakt II",
       "maker": "Elektron",
@@ -3380,6 +3487,42 @@
       "verification_status": "verified",
       "last_checked": "2026-11-06",
       "confidence": "high",
+      "sample": false
+    },
+    {
+      "id": "flowthru-flowthru",
+      "name": "Flowthru",
+      "maker": "Flowthru",
+      "category": "publishing-rights-metadata",
+      "subcategory": "credits-and-splits",
+      "tags": [
+        "splits",
+        "credits",
+        "collaboration",
+        "pre-release"
+      ],
+      "short_description": "Shared space for unreleased mixes that also collects credits, splits and split sheets.",
+      "who_its_for": "Co-writers and producer-artist teams",
+      "platforms": [
+        "Web",
+        "iOS",
+        "Android",
+        "macOS",
+        "Windows"
+      ],
+      "formats": [],
+      "price_type": "freemium",
+      "price_note": "Free Essential tier; paid plans (monthly prices shown two ways on page) · UNVERIFIED",
+      "license": "N/A (service)",
+      "official_url": "https://flowthru.com/",
+      "affiliate_ok": false,
+      "affiliate_url": "",
+      "featured": false,
+      "paid_placement": false,
+      "scjg_owned": false,
+      "verification_status": "unverified",
+      "last_checked": "",
+      "confidence": "medium",
       "sample": false
     },
     {
@@ -6443,6 +6586,46 @@
       "sample": false
     },
     {
+      "id": "surge-synth-team-ob-xf",
+      "name": "OB-Xf",
+      "maker": "Surge Synth Team",
+      "category": "virtual-instruments",
+      "subcategory": "analog-modeled-polysynth",
+      "tags": [
+        "synth",
+        "polysynth",
+        "open-source",
+        "clap",
+        "lv2"
+      ],
+      "short_description": "Open-source polysynth that continues the OB-Xd project.",
+      "who_its_for": "Synth players wanting an analog-style poly on any OS",
+      "platforms": [
+        "macOS",
+        "Windows",
+        "Linux"
+      ],
+      "formats": [
+        "VST3",
+        "AU",
+        "CLAP",
+        "LV2"
+      ],
+      "price_type": "unknown",
+      "price_note": "Open-source download; no price on page · UNVERIFIED",
+      "license": "Open source (licence name UNVERIFIED)",
+      "official_url": "https://surge-synth-team.org/ob-xf/",
+      "affiliate_ok": false,
+      "affiliate_url": "",
+      "featured": false,
+      "paid_placement": false,
+      "scjg_owned": false,
+      "verification_status": "unverified",
+      "last_checked": "",
+      "confidence": "medium",
+      "sample": false
+    },
+    {
       "id": "thewavewarden-odin-2",
       "name": "Odin 2",
       "maker": "TheWaveWarden",
@@ -8462,6 +8645,43 @@
       "sample": false
     },
     {
+      "id": "queen-mary-c4dm-sonic-visualiser",
+      "name": "Sonic Visualiser",
+      "maker": "Centre for Digital Music, Queen Mary University of London",
+      "category": "analysis-metering",
+      "subcategory": "audio-analysis-app",
+      "tags": [
+        "analysis",
+        "spectrogram",
+        "open-source",
+        "transcription",
+        "vamp"
+      ],
+      "short_description": "Free open-source app for viewing, measuring and annotating the contents of audio recordings.",
+      "who_its_for": "Producers studying references and transcribers",
+      "platforms": [
+        "macOS",
+        "Windows",
+        "Linux"
+      ],
+      "formats": [
+        "Standalone"
+      ],
+      "price_type": "free",
+      "price_note": "Free (v5.2.1)",
+      "license": "Open source (licence name UNVERIFIED)",
+      "official_url": "https://www.sonicvisualiser.org/",
+      "affiliate_ok": false,
+      "affiliate_url": "",
+      "featured": false,
+      "paid_placement": false,
+      "scjg_owned": false,
+      "verification_status": "verified",
+      "last_checked": "2026-11-25",
+      "confidence": "medium",
+      "sample": false
+    },
+    {
       "id": "sonobus",
       "name": "SonoBus",
       "maker": "Sonosaurus LLC",
@@ -9283,6 +9503,39 @@
       "verification_status": "unverified",
       "last_checked": "",
       "confidence": "ai-sourced",
+      "sample": false
+    },
+    {
+      "id": "steinberg-forums",
+      "name": "Steinberg Forums",
+      "maker": "Steinberg",
+      "category": "communities-forums",
+      "subcategory": "vendor-user-forum",
+      "tags": [
+        "forum",
+        "cubase",
+        "dorico",
+        "wavelab",
+        "support"
+      ],
+      "short_description": "Official user forum for Cubase, Nuendo, Dorico, WaveLab and other Steinberg software.",
+      "who_its_for": "Cubase, Dorico and other Steinberg users",
+      "platforms": [
+        "Web"
+      ],
+      "formats": [],
+      "price_type": "free",
+      "price_note": "Free · UNVERIFIED",
+      "license": "N/A (service)",
+      "official_url": "https://forums.steinberg.net/",
+      "affiliate_ok": false,
+      "affiliate_url": "",
+      "featured": false,
+      "paid_placement": false,
+      "scjg_owned": false,
+      "verification_status": "unverified",
+      "last_checked": "",
+      "confidence": "medium",
       "sample": false
     },
     {
@@ -10845,6 +11098,43 @@
       "verification_status": "unverified",
       "last_checked": "",
       "confidence": "ai-sourced",
+      "sample": false
+    },
+    {
+      "id": "x42-plugins-x42-meter-collection",
+      "name": "x42 Meter Collection",
+      "maker": "x42-plugins (Robin Gareus)",
+      "category": "analysis-metering",
+      "subcategory": "metering-suite",
+      "tags": [
+        "metering",
+        "lv2",
+        "ebu-r128",
+        "true-peak",
+        "linux"
+      ],
+      "short_description": "Set of standards-based meters: VU, true-peak, K-meters, EBU R128 and phase scopes.",
+      "who_its_for": "Mixers using Linux or LV2 hosts",
+      "platforms": [
+        "macOS",
+        "Windows",
+        "Linux"
+      ],
+      "formats": [
+        "LV2"
+      ],
+      "price_type": "one-time",
+      "price_note": "$49 licence shown (list $99); source code is GPL",
+      "license": "GPL source; paid binaries",
+      "official_url": "https://x42-plugins.com/x42/x42-meters",
+      "affiliate_ok": false,
+      "affiliate_url": "",
+      "featured": false,
+      "paid_placement": false,
+      "scjg_owned": false,
+      "verification_status": "verified",
+      "last_checked": "2026-11-25",
+      "confidence": "medium",
       "sample": false
     },
     {
