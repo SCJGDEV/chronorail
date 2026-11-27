@@ -1,8 +1,8 @@
 {
   "name": "ChronoRail listings feed",
   "schema_version": 1,
-  "generated_at": "2026-11-24T03:25:26.376Z",
-  "count": 303,
+  "generated_at": "2026-11-27T03:20:07.389Z",
+  "count": 311,
   "sample": false,
   "license_note": "Listing data is curated by SCJG. Descriptions are SCJG's own words. Verify details on each official_url.",
   "ranking_policy": "Order is by name. Featured, paid and affiliate status never changes order.",
@@ -868,6 +868,38 @@
       "sample": false
     },
     {
+      "id": "ardour-forums",
+      "name": "Ardour Forums",
+      "maker": "Ardour",
+      "category": "communities-forums",
+      "subcategory": "vendor-user-forum",
+      "tags": [
+        "forum",
+        "ardour",
+        "linux-audio",
+        "open-source"
+      ],
+      "short_description": "Official Ardour community board for the DAW, Linux audio setup and plugins.",
+      "who_its_for": "Ardour users and Linux-based producers",
+      "platforms": [
+        "Web"
+      ],
+      "formats": [],
+      "price_type": "free",
+      "price_note": "Free to read; optional Ardour support subscriptions ($1, $4, $10 or $50/month) and donations",
+      "license": "N/A (service)",
+      "official_url": "https://discourse.ardour.org/",
+      "affiliate_ok": false,
+      "affiliate_url": "",
+      "featured": false,
+      "paid_placement": false,
+      "scjg_owned": false,
+      "verification_status": "verified",
+      "last_checked": "2026-11-26",
+      "confidence": "high",
+      "sample": false
+    },
+    {
       "id": "ascap",
       "name": "ASCAP",
       "maker": "ASCAP",
@@ -969,7 +1001,7 @@
     },
     {
       "id": "algonaut-atlas-2",
-      "name": "Atlas",
+      "name": "Atlas 2",
       "maker": "Algonaut",
       "category": "sample-managers",
       "subcategory": "ai-drum-map-and-sequencer",
@@ -993,7 +1025,7 @@
         "Standalone"
       ],
       "price_type": "one-time",
-      "price_note": "$99 ($19 upgrade)",
+      "price_note": "$99 list ($49 sale when checked); $19 upgrade · UNVERIFIED",
       "license": "Proprietary",
       "official_url": "https://algonaut.audio/",
       "affiliate_ok": false,
@@ -1004,6 +1036,42 @@
       "verification_status": "unverified",
       "last_checked": "",
       "confidence": "ai-sourced",
+      "sample": false
+    },
+    {
+      "id": "audacity-team-audacity",
+      "name": "Audacity",
+      "maker": "Audacity Team (Muse Group)",
+      "category": "daws",
+      "subcategory": "audio-editor",
+      "tags": [
+        "audio-editor",
+        "open-source",
+        "recording",
+        "free"
+      ],
+      "short_description": "Free open-source audio editor and recorder for cleanup, edits and format conversion.",
+      "who_its_for": "Beginners and anyone editing or converting audio",
+      "platforms": [
+        "macOS",
+        "Windows",
+        "Linux"
+      ],
+      "formats": [
+        "Standalone"
+      ],
+      "price_type": "free",
+      "price_note": "Free (v4.0.2)",
+      "license": "Open source (licence name UNVERIFIED)",
+      "official_url": "https://www.audacityteam.org/",
+      "affiliate_ok": false,
+      "affiliate_url": "",
+      "featured": false,
+      "paid_placement": false,
+      "scjg_owned": false,
+      "verification_status": "verified",
+      "last_checked": "2026-11-25",
+      "confidence": "medium",
       "sample": false
     },
     {
@@ -1471,7 +1539,7 @@
         "Standalone"
       ],
       "price_type": "one-time",
-      "price_note": "$199",
+      "price_note": "$199 · UNVERIFIED",
       "license": "Proprietary",
       "official_url": "https://www.bfddrums.com/bfd3/",
       "affiliate_ok": false,
@@ -2396,6 +2464,45 @@
       "sample": false
     },
     {
+      "id": "asb2m10-dexed",
+      "name": "Dexed",
+      "maker": "asb2m10 (Dexed project)",
+      "category": "virtual-instruments",
+      "subcategory": "fm-synth",
+      "tags": [
+        "synth",
+        "fm",
+        "dx7",
+        "open-source",
+        "patch-librarian"
+      ],
+      "short_description": "Free FM synth modeled on the Yamaha DX7 that also loads and manages DX7 patch banks.",
+      "who_its_for": "Producers after classic FM sounds",
+      "platforms": [
+        "macOS",
+        "Windows",
+        "Linux"
+      ],
+      "formats": [
+        "VST",
+        "AU",
+        "LV2"
+      ],
+      "price_type": "free",
+      "price_note": "Free (v1.1.0)",
+      "license": "GPL-3.0",
+      "official_url": "https://asb2m10.github.io/dexed/",
+      "affiliate_ok": false,
+      "affiliate_url": "",
+      "featured": false,
+      "paid_placement": false,
+      "scjg_owned": false,
+      "verification_status": "verified",
+      "last_checked": "2026-11-25",
+      "confidence": "medium",
+      "sample": false
+    },
+    {
       "id": "elektron-digitakt-ii",
       "name": "Digitakt II",
       "maker": "Elektron",
@@ -2740,8 +2847,8 @@
       "who_its_for": "Beginners collecting field sounds and song ideas",
       "platforms": [],
       "formats": [],
-      "price_type": "unknown",
-      "price_note": "Price not on maker page · UNVERIFIED",
+      "price_type": "one-time",
+      "price_note": "$109.00 (TASCAM US store)",
       "license": "N/A (hardware)",
       "official_url": "https://tascam.com/us/product/dr-05xp/top",
       "affiliate_ok": false,
@@ -2749,9 +2856,9 @@
       "featured": false,
       "paid_placement": false,
       "scjg_owned": false,
-      "verification_status": "unverified",
-      "last_checked": "",
-      "confidence": "medium",
+      "verification_status": "verified",
+      "last_checked": "2026-11-24",
+      "confidence": "high",
       "sample": false
     },
     {
@@ -3560,6 +3667,42 @@
       "sample": false
     },
     {
+      "id": "flowthru-flowthru",
+      "name": "Flowthru",
+      "maker": "Flowthru",
+      "category": "publishing-rights-metadata",
+      "subcategory": "credits-and-splits",
+      "tags": [
+        "splits",
+        "credits",
+        "collaboration",
+        "pre-release"
+      ],
+      "short_description": "Shared space for unreleased mixes that also collects credits, splits and split sheets.",
+      "who_its_for": "Co-writers and producer-artist teams",
+      "platforms": [
+        "Web",
+        "iOS",
+        "Android",
+        "macOS",
+        "Windows"
+      ],
+      "formats": [],
+      "price_type": "freemium",
+      "price_note": "Essential free (20 tracks, 1 GB); Essential Unlimited $6/mo or $48/yr; Pro $14/mo or $120/yr; Business $17/mo or $168/yr (USD)",
+      "license": "N/A (service)",
+      "official_url": "https://flowthru.com/",
+      "affiliate_ok": false,
+      "affiliate_url": "",
+      "featured": false,
+      "paid_placement": false,
+      "scjg_owned": false,
+      "verification_status": "verified",
+      "last_checked": "2026-11-26",
+      "confidence": "high",
+      "sample": false
+    },
+    {
       "id": "forscore-forscore",
       "name": "forScore",
       "maker": "forScore",
@@ -3579,8 +3722,8 @@
         "visionOS"
       ],
       "formats": [],
-      "price_type": "unknown",
-      "price_note": "Price not on maker page · UNVERIFIED",
+      "price_type": "one-time",
+      "price_note": "$24.99 one-time on the App Store (maker FAQ, as of Feb 2025); optional forScore Pro from $14.99/yr",
       "license": "UNVERIFIED",
       "official_url": "https://forscore.co/",
       "affiliate_ok": false,
@@ -3827,8 +3970,8 @@
       "who_its_for": "Field recordists and musicians recording small groups",
       "platforms": [],
       "formats": [],
-      "price_type": "unknown",
-      "price_note": "Price not on maker page · UNVERIFIED",
+      "price_type": "one-time",
+      "price_note": "$329.99 (Zoom US store)",
       "license": "N/A (hardware)",
       "official_url": "https://zoomcorp.com/en/us/handheld-recorders/handheld-recorders/h6essential/",
       "affiliate_ok": false,
@@ -3836,9 +3979,9 @@
       "featured": false,
       "paid_placement": false,
       "scjg_owned": false,
-      "verification_status": "unverified",
-      "last_checked": "",
-      "confidence": "medium",
+      "verification_status": "verified",
+      "last_checked": "2026-11-24",
+      "confidence": "high",
       "sample": false
     },
     {
@@ -6508,7 +6651,7 @@
       ],
       "formats": [],
       "price_type": "freemium",
-      "price_note": "Free (3 scores); Essentials €29.99 lifetime; Premium €9.99/mo, €49.99/yr or €199 lifetime (maker FR page) · UNVERIFIED",
+      "price_note": "Free tier; Essentials €29.99 lifetime; Premium €9.99/mo, €49.99/yr or €199 lifetime (maker page, EUR)",
       "license": "UNVERIFIED",
       "official_url": "https://newzik.com/",
       "affiliate_ok": false,
@@ -6617,6 +6760,46 @@
       "verification_status": "unverified",
       "last_checked": "",
       "confidence": "ai-sourced",
+      "sample": false
+    },
+    {
+      "id": "surge-synth-team-ob-xf",
+      "name": "OB-Xf",
+      "maker": "Surge Synth Team",
+      "category": "virtual-instruments",
+      "subcategory": "analog-modeled-polysynth",
+      "tags": [
+        "synth",
+        "polysynth",
+        "open-source",
+        "clap",
+        "lv2"
+      ],
+      "short_description": "Open-source polysynth that continues the OB-Xd project.",
+      "who_its_for": "Synth players wanting an analog-style poly on any OS",
+      "platforms": [
+        "macOS",
+        "Windows",
+        "Linux"
+      ],
+      "formats": [
+        "VST3",
+        "AU",
+        "CLAP",
+        "LV2"
+      ],
+      "price_type": "free",
+      "price_note": "Free (maker: everything they make is free and open source)",
+      "license": "Open source (licence name UNVERIFIED)",
+      "official_url": "https://surge-synth-team.org/ob-xf/",
+      "affiliate_ok": false,
+      "affiliate_url": "",
+      "featured": false,
+      "paid_placement": false,
+      "scjg_owned": false,
+      "verification_status": "unverified",
+      "last_checked": "",
+      "confidence": "medium",
       "sample": false
     },
     {
@@ -6795,7 +6978,7 @@
         "AAX"
       ],
       "price_type": "one-time",
-      "price_note": "Elements $55 / Standard $219 / Advanced $499 (as shown when checked; sale vs list unclear)",
+      "price_note": "Advanced $499 list ($369 sale when checked); Standard/Elements prices not shown · UNVERIFIED",
       "license": "Proprietary",
       "official_url": "https://www.izotope.com/en/products/ozone.html",
       "affiliate_ok": false,
@@ -7756,7 +7939,7 @@
         "AAX"
       ],
       "price_type": "one-time",
-      "price_note": "$78 list ($54 sale when checked)",
+      "price_note": "£59 list (£40.80 sale when checked; page showed GBP) · UNVERIFIED",
       "license": "Proprietary",
       "official_url": "https://www.masteringthemix.com/products/reference",
       "affiliate_ok": false,
@@ -8639,6 +8822,43 @@
       "sample": false
     },
     {
+      "id": "queen-mary-c4dm-sonic-visualiser",
+      "name": "Sonic Visualiser",
+      "maker": "Centre for Digital Music, Queen Mary University of London",
+      "category": "analysis-metering",
+      "subcategory": "audio-analysis-app",
+      "tags": [
+        "analysis",
+        "spectrogram",
+        "open-source",
+        "transcription",
+        "vamp"
+      ],
+      "short_description": "Free open-source app for viewing, measuring and annotating the contents of audio recordings.",
+      "who_its_for": "Producers studying references and transcribers",
+      "platforms": [
+        "macOS",
+        "Windows",
+        "Linux"
+      ],
+      "formats": [
+        "Standalone"
+      ],
+      "price_type": "free",
+      "price_note": "Free (v5.2.1)",
+      "license": "Open source (licence name UNVERIFIED)",
+      "official_url": "https://www.sonicvisualiser.org/",
+      "affiliate_ok": false,
+      "affiliate_url": "",
+      "featured": false,
+      "paid_placement": false,
+      "scjg_owned": false,
+      "verification_status": "verified",
+      "last_checked": "2026-11-25",
+      "confidence": "medium",
+      "sample": false
+    },
+    {
       "id": "sonobus",
       "name": "SonoBus",
       "maker": "Sonosaurus LLC",
@@ -9460,6 +9680,39 @@
       "verification_status": "unverified",
       "last_checked": "",
       "confidence": "ai-sourced",
+      "sample": false
+    },
+    {
+      "id": "steinberg-forums",
+      "name": "Steinberg Forums",
+      "maker": "Steinberg",
+      "category": "communities-forums",
+      "subcategory": "vendor-user-forum",
+      "tags": [
+        "forum",
+        "cubase",
+        "dorico",
+        "wavelab",
+        "support"
+      ],
+      "short_description": "Official user forum for Cubase, Nuendo, Dorico, WaveLab and other Steinberg software.",
+      "who_its_for": "Cubase, Dorico and other Steinberg users",
+      "platforms": [
+        "Web"
+      ],
+      "formats": [],
+      "price_type": "free",
+      "price_note": "Free to read; sign-up offered, no fee shown",
+      "license": "N/A (service)",
+      "official_url": "https://forums.steinberg.net/",
+      "affiliate_ok": false,
+      "affiliate_url": "",
+      "featured": false,
+      "paid_placement": false,
+      "scjg_owned": false,
+      "verification_status": "verified",
+      "last_checked": "2026-11-26",
+      "confidence": "high",
       "sample": false
     },
     {
@@ -11022,6 +11275,43 @@
       "verification_status": "unverified",
       "last_checked": "",
       "confidence": "ai-sourced",
+      "sample": false
+    },
+    {
+      "id": "x42-plugins-x42-meter-collection",
+      "name": "x42 Meter Collection",
+      "maker": "x42-plugins (Robin Gareus)",
+      "category": "analysis-metering",
+      "subcategory": "metering-suite",
+      "tags": [
+        "metering",
+        "lv2",
+        "ebu-r128",
+        "true-peak",
+        "linux"
+      ],
+      "short_description": "Set of standards-based meters: VU, true-peak, K-meters, EBU R128 and phase scopes.",
+      "who_its_for": "Mixers using Linux or LV2 hosts",
+      "platforms": [
+        "macOS",
+        "Windows",
+        "Linux"
+      ],
+      "formats": [
+        "LV2"
+      ],
+      "price_type": "one-time",
+      "price_note": "$49 licence shown (list $99); source code is GPL",
+      "license": "GPL source; paid binaries",
+      "official_url": "https://x42-plugins.com/x42/x42-meters",
+      "affiliate_ok": false,
+      "affiliate_url": "",
+      "featured": false,
+      "paid_placement": false,
+      "scjg_owned": false,
+      "verification_status": "verified",
+      "last_checked": "2026-11-25",
+      "confidence": "medium",
       "sample": false
     },
     {

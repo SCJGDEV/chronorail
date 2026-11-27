@@ -3,7 +3,7 @@
 > A free, curated, AI-readable directory of music-production tools: DAWs, plugins, sample packs, hardware, AI music tools, learning, distribution and related services. Part of ChronoWare, made by SCJG (Pagosa Springs, Colorado).
 
 ## Data
-- [Listings feed (JSON)](https://chronorail.si/feed/listings.json): every listing with all fields. 303 listings, generated 2026-11-24.
+- [Listings feed (JSON)](https://chronorail.si/feed/listings.json): every listing with all fields. 311 listings, generated 2026-11-27.
 - [Categories](https://chronorail.si/data/categories.json): 29 category slugs with module codes.
 - [Stacks](https://chronorail.si/data/stacks.json): curated lists of listing IDs.
 
@@ -22,8 +22,8 @@ id, name, maker, category, subcategory, tags[], short_description, who_its_for, 
 - About and verification: https://chronorail.si/#about
 
 ## Categories with listings
-- DW DAWs (daws): 12
-- VI Virtual instruments (virtual-instruments): 19
+- DW DAWs (daws): 13
+- VI Virtual instruments (virtual-instruments): 21
 - FX Effects plugins (effects-plugins): 21
 - MD Utility & MIDI plugins (utility-midi-plugins): 8
 - SP Sample packs & libraries (sample-packs-libraries): 11
@@ -37,7 +37,7 @@ id, name, maker, category, subcategory, tags[], short_description, who_its_for, 
 - AG AI music generation (ai-music-generation): 8
 - AS AI stems, mix & master (ai-stems-mix-master): 8
 - MX Mixing & mastering software (mixing-mastering-software): 8
-- MT Analysis & metering (analysis-metering): 8
+- MT Analysis & metering (analysis-metering): 10
 - ED Learning & education (learning-education): 8
 - DS Distribution & aggregators (distribution-aggregators): 8
 - MK Marketplaces (marketplaces): 8
@@ -46,8 +46,8 @@ id, name, maker, category, subcategory, tags[], short_description, who_its_for, 
 - DJ Live & DJ performance (live-dj-performance): 8
 - MB Mobile music apps (mobile-music-apps): 8
 - FR Field recording & sound design (field-recording-sound-design): 11
-- PR Publishing, rights & metadata (publishing-rights-metadata): 18
-- CM Communities & forums (communities-forums): 11
+- PR Publishing, rights & metadata (publishing-rights-metadata): 19
+- CM Communities & forums (communities-forums): 13
 - GT Guitar & amp tools (guitar-amp-tools): 8
 - VX Vocal tools (vocal-tools): 8
 - DR Drum & groove tools (drum-groove-tools): 8
